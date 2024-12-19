@@ -19,7 +19,10 @@ const server = http.createServer((req, res) => {
 
   fs.readFile(filePath, (err, content) => {
     if (err) {
+
     } else {
+      res.writeHead(200, { 'content-type': contentType })
+      res.end(content, "utf-8")
     }
   });
 });
