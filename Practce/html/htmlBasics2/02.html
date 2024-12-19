@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            background: linear-gradient(135deg,#181717, #020740);   
+            color: white;  
+            display: grid;  
+            justify-content: center;
+            align-content: center;
+            height: 100vh;
+            /* min-height: fit-content; */
+        }
+
+        .grids{
+            display: grid;
+            grid-template-columns: 350px;
+        }
+
+        .item1{
+            background-color:white;
+            border-radius: 12px;
+            display: grid;
+            grid-template-rows: 250px;
+            justify-content: center;
+            margin-bottom: 5px;
+        }
+
+        .item2{
+            display: grid;
+            font-family:Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+            grid-template-rows: 30px;
+            justify-content: center;
+            align-content: center;
+            font-size: 20px;
+            font-weight: bolder;
+            margin-bottom: 1px;
+        }
+
+        .item3{
+            display: grid;
+            grid-template-rows: 40px;
+            justify-content: center;
+            align-content: center;
+            font-size: 15px;
+            font-weight: bolder;
+            grid-template-rows: 30px;
+            margin-bottom: 1px;
+            
+        }
+
+        #news{
+            background-color: yellow;
+            font-family:Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+            color: black;
+            height: 18px;
+            padding: 2px;
+            align-items: center;
+            font-weight: bolder;
+            border-radius: 3px;
+        }
+
+        .item4{
+            display: grid;
+            grid-template-rows: 60px;
+            justify-content: center;
+        }  
+
+        #buttons{
+            display: flex;
+            justify-content: space-between;
+            height: 30px;
+            width: 160px;
+        }
+
+        .button1, .button2{
+            font-family:Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+            font-weight: bolder;
+            border-radius: 8px;
+            border:  #101daa solid 2px;
+        }
+
+        .btn:hover{
+            background-color:  #101daa;
+        }
+
+    </style>
+</head>
+<body>
+    <div class="grids">
+        <div class="item item1">
+            <img src="image2.webp" alt="shoe image">
+        </div>
+        <div class="item item2">FUTURISTIC HC SHOE</div>
+        <div class="item item3"><div id="news">COMING SOON</div></div>
+        <div class="item item4">
+            <div id="buttons">
+                <button class="button1 btn">BUY NOW</button>
+                <button class="button2 btn">ADD TO CART</button>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

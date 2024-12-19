@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flat NavBar</title>
+</head>
+<style>
+    body{
+        background-color: rgb(73, 72, 72);
+        color: white;
+        margin: 0;
+        padding: 0;
+    }
+
+
+    .navBar{
+        width: 500px;
+        background-color: white;
+        padding: 10px;
+        font-size: larger;
+        border-radius: 8px;
+        /* border: 2px white solid; */
+        display: flex;
+        flex-direction: row;
+        justify-content: space-around;
+        margin-left: 50%;
+        float: right;
+        margin-right: 8px;
+    }
+
+    .navBar li a{
+        text-decoration: none;
+        color: black;
+        font-weight: bold;
+    }
+
+    .navBar button{
+        color: white;
+        background-color: blue;
+        border-radius: 8px;
+        padding: 4px 10px 3px 10px;
+    }
+
+</style>
+<body>
+    <ul class="navBar">
+        <li><a href="#">Home</a></li>
+        <li><a href="#">About</a></li>
+        <li><a href="#">Products</a></li>
+        <button>Login</button>
+    </ul> 
+</body>
+</html>

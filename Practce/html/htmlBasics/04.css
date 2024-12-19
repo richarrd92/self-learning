@@ -1,0 +1,38 @@
+body{
+    background-color: rgb(67, 67, 69);
+}
+
+#card{
+    text-align: center;
+    padding: 10px;
+    background-color: rgb(80, 80, 82);
+    border-radius: 5px;
+    margin-top: 50%;
+    margin-left: 10%;
+    margin-right: 10%;
+}
+.card-content{
+    margin-bottom: 20px;
+}
+
+#login_button {
+    background-color: green;
+}
+
+input{
+    margin-bottom: 5px;
+    border-radius: 5px;
+    padding: 10px;
+    padding-left: 50px;
+    padding-right: 50px;
+    text-align: center;
+}
+
+button{
+    margin-bottom: 5px;
+    border-radius: 5px;
+    padding: 10px;
+    padding-left: 100px;
+    padding-right: 100px;
+    text-align: center;
+}
