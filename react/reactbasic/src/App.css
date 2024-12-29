@@ -1,0 +1,17 @@
+/* Set the entire page background */
+body {
+  background-color: #333; /* Slightly dark gray */
+  color: white; /* Ensures text is visible on dark background */
+  margin: 0; /* Remove default margin */
+  font-family: Arial, sans-serif; /* Optional: Set a default font */
+}
+
+/* Styling for the <h1> */
+.heading {
+  font-size: 1.875rem; /* Equivalent to 30px */
+  font-weight: bold;
+  padding: 10px;
+  text-align: center;
+  margin: 20px; /* Adds spacing around the heading */
+  border-radius: 5px; /* Optional: Adds rounded corners */
+}
