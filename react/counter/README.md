@@ -1,8 +1,12 @@
-# React + Vite
+# Timer Counter  
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A simple React web application that allows users to run, stop, and reset a timer that tracks elapsed time in seconds.  
 
-Currently, two official plugins are available:
+## Features  
+- **Start**: Begin counting seconds with the click of a button.  
+- **Stop**: Stop the timer temporarily without resetting the count.  
+- **Reset**: Reset the timer to zero at any time.  
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## Technologies Used  
+- **React**: A modern JavaScript library for building user interfaces.  
+- **CSS**: For styling and enhancing the app's visual appeal. 

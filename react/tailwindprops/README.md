@@ -1,8 +1,12 @@
-# React + Vite
+# Component Reusability Practice  
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A React web application designed to practice component reusability by injecting a simple `Card.jsx` component into the main page.  
 
-Currently, two official plugins are available:
+## Features  
+- **Reusable Card Component**: A `Card.jsx` component that can be injected and reused across the main page or other parts of the app.  
+- **Dynamic Content**: The card component can display customizable content, demonstrating how props can be used for reusability.  
+- **Interactive Layout**: An example of how reusable components can enhance development efficiency and improve UI consistency.  
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## Technologies Used  
+- **React**: A modern JavaScript library for building user interfaces.  
+- **CSS**: For styling and ensuring the components are visually appealing.
