@@ -1,4 +1,4 @@
-# Edify
+# EDIFY
 
 This a simple SaaS (Software as a Service) web application powered by Cloudinary's AI tools, built using Next.js, Cloudinary, Prisma, NeonDB, and Daisy UI. The platform leverages AI to process and enhance media assets, providing users with powerful tools for automating and optimizing image and video management in the cloud.
 
@@ -27,14 +27,8 @@ This a simple SaaS (Software as a Service) web application powered by Cloudinary
 - **Advanced AI Tools**: Integrate with additional AI tools from Cloudinary for more advanced image and video processing.
 - **Mobile Support**: Add support for mobile devices to provide a consistent user experience across devices.
 
+---
+
 #### How to Use
 
-- **Link**: https://www.loom.com/share/4da6ba203191485ab441abe3180f7b8b?sid=cf480aa5-df41-40ce-a9ec-e5663f85385c
-
-## Video Demo
-
-![Video Demo](https://www.loom.com/embeds/4da6ba203191485ab441abe3180f7b8b?sid=cf480aa5-df41-40ce-a9ec-e5663f85385c)
-
-
-#### Demo
 - **Link**: https://www.loom.com/share/4da6ba203191485ab441abe3180f7b8b?sid=cf480aa5-df41-40ce-a9ec-e5663f85385c
