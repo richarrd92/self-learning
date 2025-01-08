@@ -2,7 +2,7 @@
 
 This project is a SaaS (Software as a Service) platform powered by Cloudinary's AI tools, built using Next.js, Cloudinary, Prisma, NeonDB, and Daisy UI. The platform leverages AI to process and enhance media assets, providing users with powerful tools for automating and optimizing image and video management in the cloud.
 
-## Technologies Used
+#### Technologies Used
 
 - **Next.js**: A React-based framework for building static and dynamic web applications, optimized for performance and SEO.
 - **Cloudinary**: A cloud-based media management platform that provides AI-driven tools for image and video optimization, transformation, and delivery.
@@ -10,7 +10,7 @@ This project is a SaaS (Software as a Service) platform powered by Cloudinary's 
 - **NeonDB**: A modern serverless PostgreSQL database that provides seamless scaling and a rich feature set for managing relational data.
 - **Daisy UI**: A component library built on top of Tailwind CSS, offering a set of responsive and customizable UI components.
 
-## Features
+#### Features
 
 - **Image and Video Upload**: Users can upload images and videos, which are processed and stored using Cloudinary's media management platform.
 - **AI-Powered Media Enhancements**: Integrate AI tools from Cloudinary to automatically enhance images and videos, including features like auto-cropping, video preview.
@@ -18,6 +18,5 @@ This project is a SaaS (Software as a Service) platform powered by Cloudinary's 
 - **Database Management**: Prisma and NeonDB handle all database-related operations, including user management, asset storage, and history tracking.
 - **Responsive UI**: The front-end is built using Daisy UI components, providing a responsive and user-friendly experience.
 
-# Demo
-
-[demo](<../../../../../../../Desktop/Screen Recording 2025-01-07 at 10.50.55 PM.mov>)
+#### Demo
+- **Link**: https://www.loom.com/share/4da6ba203191485ab441abe3180f7b8b?sid=cf480aa5-df41-40ce-a9ec-e5663f85385c
