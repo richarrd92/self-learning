@@ -4,6 +4,7 @@ import { PrismaClient } from "@prisma/client"
 
 const prisma = new PrismaClient()
 
+// GET
 export async function GET(request: NextRequest){
     try {
         const videos = await prisma.video.findMany({

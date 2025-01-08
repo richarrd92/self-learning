@@ -3,6 +3,7 @@ import { PrismaClient } from "@prisma/client";
 
 const prisma = new PrismaClient();
 
+// GET all images
 export async function GET(request: NextRequest) {
   try {
     const images = await prisma.image.findMany({

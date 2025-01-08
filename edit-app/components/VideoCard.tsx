@@ -6,17 +6,21 @@ import realtiveTime from "dayjs/plugin/relativeTime"
 import {filesize} from "filesize"
 import { Video } from '@/types';
 
+// Initialize dayjs with relativeTime
 dayjs.extend(realtiveTime)
 
+// Define the VideoCard component
 interface VideoCardProps {
     video: Video;
     onDownload: (url: string, title: string) => void;
 }
 
+// Define the VideoCard component
 const  VideoCard: React.FC<VideoCardProps> = ({video, onDownload}) => {
     const [isHovered, setIsHovered] = useState(false)
     const [previewError, setPreviewError] = useState(false)
 
+    // Function to get the image URL
     const getThumbnailUrl = useCallback((publicId: string) => {
         return getCldImageUrl({
             src: publicId,
@@ -30,6 +34,7 @@ const  VideoCard: React.FC<VideoCardProps> = ({video, onDownload}) => {
         })
     }, [])
 
+    // Function to get the image URL
     const getFullVideoUrl = useCallback((publicId: string) => {
         return getCldVideoUrl({
             src: publicId,
@@ -39,6 +44,7 @@ const  VideoCard: React.FC<VideoCardProps> = ({video, onDownload}) => {
         })
     }, [])
 
+    // Function to get the image URL
     const getPreviewVideoUrl = useCallback((publicId: string) => {
         return getCldVideoUrl({
             src: publicId,
@@ -53,12 +59,14 @@ const  VideoCard: React.FC<VideoCardProps> = ({video, onDownload}) => {
         return filesize(size)
     }, [])
 
+    // Function to format the image size
     const formatDuration = useCallback((seconds: number) => {
         const minutes = Math.floor(seconds / 60);
         const remainingSeconds = Math.round(seconds % 60);
         return `${minutes}:${remainingSeconds.toString().padStart(2, "0")}`;
       }, []);
 
+      // Render the ImageCard
       const compressionPercentage = Math.round(
         (1 - Number(video.compressedSize) / Number(video.originalSize)) * 100
       );
@@ -67,16 +75,19 @@ const  VideoCard: React.FC<VideoCardProps> = ({video, onDownload}) => {
         setPreviewError(false);
       }, [isHovered]);
 
+      // Function to handle preview error
       const handlePreviewError = () => {
         setPreviewError(true);
       };
 
-      return (
+  return (
+        // Render the ImageCard
         <div
           className="card bg-base-100 shadow-xl hover:shadow-2xl transition-all duration-300"
           onMouseEnter={() => setIsHovered(true)}
           onMouseLeave={() => setIsHovered(false)}
-        >
+    >
+          {/* Hover overlay */}
           <figure className="aspect-video relative">
             {isHovered ? (
               previewError ? (
@@ -93,18 +104,21 @@ const  VideoCard: React.FC<VideoCardProps> = ({video, onDownload}) => {
                   onError={handlePreviewError}
                 />
               )
-            ) : (
+        ) : (
+            // Render the video thumbnail
               <img
                 src={getThumbnailUrl(video.publicId)}
                 alt={video.title}
                 className="w-full h-full object-cover"
               />
-            )}
+        )}
+        {/* Duration badge */}
             <div className="absolute bottom-2 right-2 bg-base-100 bg-opacity-70 px-2 py-1 rounded-lg text-sm flex items-center">
               <Clock size={16} className="mr-1" />
               {formatDuration(video.duration)}
             </div>
-          </figure>
+      </figure>
+      {/* Card body */}
           <div className="card-body p-4">
             <h2 className="card-title text-lg font-bold">{video.title}</h2>
             <p className="text-sm text-base-content opacity-70 mb-4">
@@ -112,7 +126,8 @@ const  VideoCard: React.FC<VideoCardProps> = ({video, onDownload}) => {
             </p>
             <p className="text-sm text-base-content opacity-70 mb-4">
               Uploaded {dayjs(video.createdAt).fromNow()}
-            </p>
+        </p>
+        {/* Size badges */}
             <div className="grid grid-cols-2 gap-4 text-sm">
               <div className="flex items-center">
                 <FileUp size={18} className="mr-2 text-primary" />
@@ -120,7 +135,8 @@ const  VideoCard: React.FC<VideoCardProps> = ({video, onDownload}) => {
                   <div className="font-semibold">Original</div>
                   <div>{formatSize(Number(video.originalSize))}</div>
                 </div>
-              </div>
+          </div>
+          {/* Compressed size badge */}
               <div className="flex items-center">
                 <FileDown size={18} className="mr-2 text-secondary" />
                 <div>
@@ -128,7 +144,8 @@ const  VideoCard: React.FC<VideoCardProps> = ({video, onDownload}) => {
                   <div>{formatSize(Number(video.compressedSize))}</div>
                 </div>
               </div>
-            </div>
+        </div>
+        {/* Compression percentage badge */}
             <div className="flex justify-between items-center mt-4">
               <div className="text-sm font-semibold">
                 Compression:{" "}

@@ -7,24 +7,27 @@ import VideoCard from "@/components/VideoCard";
 import { Video, Image } from "@/types";
 
 function Home() {
-  const [videos, setVideos] = useState<Video[]>([]);
+  const [videos, setVideos] = useState<Video[]>([]); // State for videos
   const [images, setImages] = useState<Image[]>([]); // State for images
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
 
   const fetchMedia = useCallback(async () => {
     try {
+      // Fetch videos and images from separate API endpoints
       const [videoResponse, imageResponse] = await Promise.all([
         axios.get("/api/videos"),
         axios.get("/api/images"), // Fetch images from a separate API endpoint
       ]);
 
+      // Handle videos
       if (Array.isArray(videoResponse.data)) {
         setVideos(videoResponse.data);
       } else {
         throw new Error("Unexpected video response format");
       }
 
+      // Handle images
       if (Array.isArray(imageResponse.data)) {
         setImages(
           imageResponse.data.map((image) => ({
@@ -47,6 +50,7 @@ function Home() {
     fetchMedia();
   }, [fetchMedia]);
 
+  // Function to handle image download
   const handleDownload = useCallback(
     (url: string, title: string, extension: string) => {
       const link = document.createElement("a");

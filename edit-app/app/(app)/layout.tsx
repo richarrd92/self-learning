@@ -13,12 +13,14 @@ import {
   ImageIcon,
 } from "lucide-react";
 
+// sidebar items
 const sidebarItems = [
   { href: "/home", icon: LayoutDashboardIcon, label: "Home Page" },
   { href: "/social-share", icon: Share2Icon, label: "Social Share" },
   { href: "/video-upload", icon: UploadIcon, label: "Video Upload" },
 ];
 
+// app layout
 export default function AppLayout({
   children,
 }: Readonly<{
@@ -30,16 +32,20 @@ export default function AppLayout({
   const { signOut } = useClerk();
   const { user } = useUser();
 
+  // handle logo click
   const handleLogoClick = () => {
     router.push("/");
   };
 
+  // handle sign out
   const handleSignOut = async () => {
     await signOut();
   };
 
   return (
+    // drawer
     <div className="drawer lg:drawer-open">
+      {/* Sidebar */}
       <input
         id="sidebar-drawer"
         type="checkbox"
@@ -59,6 +65,7 @@ export default function AppLayout({
                 <MenuIcon />
               </label>
             </div>
+            {/* Logo */}
             <div className="flex-1">
               <Link
                 href="/" onClick={handleLogoClick}>
@@ -67,6 +74,7 @@ export default function AppLayout({
                 </div>  
               </Link>
             </div>
+            {/* User profile */}
             <div className="flex-none flex items-center space-x-4">
               {user && (
                 <>
@@ -83,6 +91,7 @@ export default function AppLayout({
                   <span className="text-sm truncate max-w-xs lg:max-w-md">
                     {user.username || user.emailAddresses[0].emailAddress}
                   </span>
+                  {/* Sign out button */}
                   <button
                     onClick={handleSignOut}
                     className="btn btn-ghost btn-circle"
@@ -101,6 +110,7 @@ export default function AppLayout({
           </div>
         </main>
       </div>
+      {/* Sidebar */}
       <div className="drawer-side">
         <label htmlFor="sidebar-drawer" className="drawer-overlay"></label>
         <aside className="bg-base-200 w-64 h-full flex flex-col">

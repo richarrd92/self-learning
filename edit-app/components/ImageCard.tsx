@@ -5,8 +5,10 @@ import dayjs from "dayjs";
 import relativeTime from "dayjs/plugin/relativeTime";
 import { filesize } from "filesize";
 
+// Initialize dayjs with relativeTime
 dayjs.extend(relativeTime);
 
+// Define the Image interface
 interface Image {
   publicId: string;
   title: string;
@@ -15,14 +17,17 @@ interface Image {
   size: number;
 }
 
+// Define the ImageCard component
 interface ImageCardProps {
   image: Image;
   onDownload: (url: string, title: string) => void;
 }
 
+// Define the ImageCard component
 const ImageCard: React.FC<ImageCardProps> = ({ image, onDownload }) => {
   const [isHovered, setIsHovered] = useState(false);
 
+  // Function to get the image URL
   const getImageUrl = useCallback((publicId: string) => {
     return getCldImageUrl({
       src: publicId,
@@ -35,16 +40,19 @@ const ImageCard: React.FC<ImageCardProps> = ({ image, onDownload }) => {
     });
   }, []);
 
+  // Function to format the image size
   const formatSize = useCallback((size: number) => {
     return filesize(size);
   }, []);
 
+  // Render the ImageCard
   return (
     <div
       className="card bg-base-100 shadow-xl hover:shadow-2xl transition-all duration-300"
       onMouseEnter={() => setIsHovered(true)}
       onMouseLeave={() => setIsHovered(false)}
     >
+      {/* Hover overlay */}
       <figure className="aspect-video relative">
         <img
           src={getImageUrl(image.publicId)}
@@ -52,6 +60,7 @@ const ImageCard: React.FC<ImageCardProps> = ({ image, onDownload }) => {
           className="w-full h-full object-cover"
         />
       </figure>
+      {/* Card content */}
       <div className="card-body p-4">
         <h2 className="card-title text-lg font-bold">{image.title}</h2>
         <p className="text-sm text-base-content opacity-70 mb-4">

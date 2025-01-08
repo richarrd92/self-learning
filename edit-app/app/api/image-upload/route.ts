@@ -9,11 +9,13 @@ cloudinary.config({
     api_secret: process.env.CLOUDINARY_API_SECRET // Click 'View Credentials' below to copy your API secret
 });
 
+// Upload
 interface CloudinaryUploadResult {
     public_id: string;
     [key: string]: any
 }
 
+// Upload
 export async function POST(request: NextRequest) {
     const {userId} = auth()
 
@@ -32,6 +34,7 @@ export async function POST(request: NextRequest) {
         const bytes = await file.arrayBuffer()
         const buffer = Buffer.from(bytes)
 
+        // Upload
         const result = await new Promise<CloudinaryUploadResult>(
             (resolve, reject) => {
                 const uploadStream = cloudinary.uploader.upload_stream(

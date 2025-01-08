@@ -1,3 +1,4 @@
+// Define the Video interface
 export interface Video {
   id: string;
   title: string;
@@ -10,6 +11,7 @@ export interface Video {
   updatedAt: Date;
 }
 
+// Define the Image interface
 export interface Image {
   id: string;
   title: string;

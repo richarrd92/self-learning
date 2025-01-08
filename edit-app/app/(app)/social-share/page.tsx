@@ -3,6 +3,7 @@
 import React, { useState, useEffect, useRef } from "react";
 import { CldImage } from "next-cloudinary";
 
+// Define dimensions and aspect ratios
 const socialFormats = {
   " 1:1 ": { width: 1080, height: 1080, aspectRatio: "1:1" },
   " 4:5 ": { width: 1080, height: 1350, aspectRatio: "4:5" },
@@ -13,6 +14,7 @@ const socialFormats = {
 
 type SocialFormat = keyof typeof socialFormats;
 
+// Define the SocialShare component
 export default function SocialShare() {
   const [uploadedImage, setUploadedImage] = useState<string | null>(null);
   const [selectedFormat, setSelectedFormat] = useState<SocialFormat>(" 1:1 ");
@@ -26,6 +28,7 @@ export default function SocialShare() {
     }
   }, [selectedFormat, uploadedImage]);
 
+  // Function to handle file upload
   const handleFileUpload = async (
     event: React.ChangeEvent<HTMLInputElement>
   ) => {
@@ -53,6 +56,7 @@ export default function SocialShare() {
     }
   };
 
+  // Function to handle image transformation
   const handleDownload = () => {
     if (!imageRef.current) return;
 

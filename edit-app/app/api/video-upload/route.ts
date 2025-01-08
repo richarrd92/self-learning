@@ -19,6 +19,7 @@ interface CloudinaryUploadResult {
   [key: string]: any;
 }
 
+// Upload
 export async function POST(request: NextRequest) {
   try {
     //todo to check user
@@ -52,6 +53,7 @@ export async function POST(request: NextRequest) {
     const bytes = await file.arrayBuffer();
     const buffer = Buffer.from(bytes);
 
+    // Upload
     const result = await new Promise<CloudinaryUploadResult>(
       (resolve, reject) => {
         const uploadStream = cloudinary.uploader.upload_stream(
@@ -68,6 +70,8 @@ export async function POST(request: NextRequest) {
         uploadStream.end(buffer);
       }
     );
+    
+    // Create video
     const video = await prisma.video.create({
       data: {
         title,

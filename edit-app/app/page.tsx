@@ -16,6 +16,7 @@ export default function Home() {
   }, []);
 
   return (
+    // Main container
     <div className="fixed inset-0 flex justify-center items-center bg-base-200 text-white">
       {isLoading ? (
         // Loading spinner or placeholder
