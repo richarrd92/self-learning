@@ -1,38 +1,42 @@
 # Complete Web Development Course
 
-I am currently pursuing the Complete Web Development course by Hitesh Choudhary on Udemy. This course provides in-depth training on the essential tools and technologies required to become a proficient full-stack web developer. It covers comprehensive modules on frontend and backend development, deployment, and modern frameworks, with a hands-on approach to building web applications from the ground up.
+Since December 2024, I've been self-teaching myself web development technologies to supplement my learning at University. I'm learning tools and technologies like HTML, CSS, Tailwind, Node.js, React, MongoDB, Prisma, API integration, state management, authentication & authorization, responsive web design etc. My goal is to become proficient in full-stack development and stay up-to-date with modern practices. I plan to document my progress and share my learning journey on this GitHub repository.
 
-## Topics covered
+## Learning Objectives
 
 #### Frontend Development
 
-- HTML5
-- CSS3
-- Tailwind CSS
+- HTML
+- CSS
+- Tailwind
 - JavaScript
-- React.js
+- React
+- TypeScript
+- Next.js
 
 #### Backend Development
 
 - Node.js
 - MongoDB
 - Prisma
+- NeonDB
+- Express.js
+- Postman
+- SQL
 
 #### Full-stack Development
 
 - API Integration
 - State Management (React Hooks)
-
-#### Deployment & DevOps
-
-- Git & GitHub
-- Deployment (Netlify, Heroku, Vercel)
-- Docker (Optional)
+- Authentication & Authorization
+- Responsive Web Design
 
 #### Additional Tools & Skills
 
-- Visual Studio Code
-- Postman
-- Authentication & Authorization
-- Responsive Web Design
 - Basic Command-Line Skills
+- Deployment (Netlify, Heroku, Vercel)
+- Git & GitHub
+- Docker (Optional)
+- Clerk (User Authentication)
+- Cloudinary (Image and Video Upload Services)
+- Dayse UI (Component Library)
