@@ -1,16 +1,16 @@
 # EDIFY
 
-This a simple SaaS (Software as a Service) web application powered by Cloudinary's AI tools, built using Next.js, Cloudinary, Prisma, NeonDB, and Daisy UI. The platform leverages AI to process and enhance media assets, providing users with powerful tools for automating and optimizing image and video management in the cloud.
+This a simple SaaS (Software as a Service) web application powered by Cloudinary's AI tools, built using Next.js, Cloudinary, Prisma, NeonDB, Clerk and Daisy UI. The platform leverages AI to process and enhance media assets, providing users with powerful tools for automating and optimizing image and video management in the cloud.
 
 #### Technologies Used
 
-- **Next.js|React|Typescript**: A React-based framework for building web applications with server-side rendering and static site generation capabilities.
+- **Clerk**: A user authentication and management platform built on top of Next.js and React.
 - **Cloudinary**: A cloud-based media management platform that provides AI-driven tools for image and video optimization, transformation, and delivery.
 - **Prisma**: A powerful ORM for managing the database schema, migration, and query building in a type-safe manner.
 - **NeonDB**: A modern serverless PostgreSQL database that provides seamless scaling and a rich feature set for managing relational data.
-- **Daisy UI**: A component library built on top of Tailwind CSS, offering a set of responsive and customizable UI components. 
+- **Daisy UI**: A component library built on top of Tailwind CSS, offering a set of responsive and customizable UI components.
+- **Next.js|React|Typescript**: A React-based framework for building web applications with server-side rendering and static site generation capabilities.
 - **Tailwind CSS**: A utility-first CSS framework that provides a wide range of pre-built classes for styling web applications.
-- **npm**: A package manager for JavaScript projects.
 
 #### Features
 
