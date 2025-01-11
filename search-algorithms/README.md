@@ -44,9 +44,16 @@ This project has several opportunities for enhancement:
 
 #### Screenshots
 
-![plot](./images/sc_1.png)
-![plot](./images/sc_2.png)
-![plot](./images/sc_3.png)
-![plot](./images/sc_4.png)
+- **Home Page**
+![plot](./images/1.png)
+
+- **Breadth-First Search (BFS)**
+![plot](./images/2.png)
+
+- **Depth-First Search (DFS)**
+![plot](./images/3.png)
+
+- **A Star Search**
+![plot](./images/4.png)
 
 

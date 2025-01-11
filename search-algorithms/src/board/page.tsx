@@ -4,7 +4,7 @@ import breadthFirstSearch from "@/algorithms/bfs-search"; // Import the breadthF
 import depthFirstSearch from "@/algorithms/dfs-search"; // Import the depthFirstSearch function
 import aStarSearch from "@/algorithms/astar-search"; // Import the aStarSearch function
 
-let exportedAlgorithm = "Breadth First";
+// let exportedAlgorithm = "Breadth First";
 // Board component
 function Board() {
   const [algorithm, setAlgorithm] = useState<string>("Breadth First"); // Initial state
@@ -20,7 +20,7 @@ function Board() {
           : "Breadth First";
 
       // Update the exported value
-      exportedAlgorithm = nextAlgorithm;
+      // exportedAlgorithm = nextAlgorithm;
       return nextAlgorithm;
     });
   };
@@ -446,7 +446,7 @@ function Board() {
         </button>
       )}
       {!alert && (
-        <div className="flex justify-center items-center text-center text-gray-400 gap-5 flex-wrap">
+        <div className="flex justify-center items-center text-center text-gray-400 gap-3 flex-wrap">
           {/* Button to increase grid dimension */}
           {canIncrease && dimension < maxDimension && (
             <button
@@ -501,11 +501,6 @@ function Board() {
           )}
 
           {/* Button to increase cell size
-        
-          button is not working for increase dimension - not tracking screen height -- works well for increase cell size - too much rendering going on 
-        
-        
-        
         */}
           {canIncrease && (
             <button
@@ -568,5 +563,5 @@ function Board() {
   );
 }
 
-export { exportedAlgorithm };
+// export { exportedAlgorithm };
 export default Board;
