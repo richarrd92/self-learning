@@ -1,8 +1,9 @@
-// Breadth-first search algorithm
+
 const breadthFirstSearch = (
   grid: boolean[][],
   start: [number, number],
-  end: [number, number]
+  end: [number, number],
+  explored: [number, number][] // Add explored parameter
 ) => {
   // Get grid dimensions
   const rows = grid.length;
@@ -12,8 +13,8 @@ const breadthFirstSearch = (
   const directions = [
     [-1, 0], // Up
     [1, 0], // Down
-    [0, -1], // Left
     [0, 1], // Right
+    [0, -1], // Left
   ];
 
   // Initialize visited and queue
@@ -36,6 +37,9 @@ const breadthFirstSearch = (
   while (queue.length > 0) {
     const [row, col, dist] = queue.shift()!;
 
+    // Mark current cell as explored
+    explored.push([row, col]);
+
     // If we reach the end, stop BFS
     if (row === endRow && col === endCol) {
       let path = [];
@@ -47,7 +51,7 @@ const breadthFirstSearch = (
         current = parent[`${current[0]}-${current[1]}`];
       }
 
-      return path; // Return the path from start to end
+      return { path, explored }; // Return the path and the explored cells
     }
 
     // Explore neighbors
@@ -70,7 +74,7 @@ const breadthFirstSearch = (
     }
   }
 
-  return []; // Return an empty array if no path is found
+  return { path: [], explored }; // Return an empty path if no path is found, along with explored cells
 };
 
 export default breadthFirstSearch;

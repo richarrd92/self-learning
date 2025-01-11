@@ -1,34 +1,99 @@
 "use client";
-import React, { useState, useEffect } from "react";
-import breadthFirstSearch from "@/algorithms/breadth-first"; // Import the breadthFirstSearch function
+import React, { useState, useEffect, useRef } from "react";
+import breadthFirstSearch from "@/algorithms/bfs-search"; // Import the breadthFirstSearch function
+import depthFirstSearch from "@/algorithms/dfs-search"; // Import the depthFirstSearch function
+import aStarSearch from "@/algorithms/astar-search"; // Import the aStarSearch function
 
+let exportedAlgorithm = "Breadth First";
 // Board component
 function Board() {
+  const [algorithm, setAlgorithm] = useState<string>("Breadth First"); // Initial state
+
+  // Function to toggle the algorithm
+  const toggleAlgorithm = () => {
+    setAlgorithm((prev) => {
+      const nextAlgorithm =
+        prev === "Breadth First"
+          ? "Depth First"
+          : prev === "Depth First"
+          ? "A* Search"
+          : "Breadth First";
+
+      // Update the exported value
+      exportedAlgorithm = nextAlgorithm;
+      return nextAlgorithm;
+    });
+  };
+
+  // Function to get the current algorithm value
+  const getAlgorithm = () => {
+    return algorithm;
+  };
+
+  let newDimension: number;
+  const [exploredCells, setExploredCells] = useState<[number, number][]>([]);
+  const boardRef = useRef<HTMLDivElement | null>(null);
   const maxDimension = 70; // Maximum dimension for the grid
-  const [dimension, setDimension] = useState<number>(70); // Initial dimension
+  const [dimension, setDimension] = useState<number>(40); // Initial dimension
+  const [pathInterval, setPathInterval] = useState<number>(100); // Initial interval
+
+
+  // Functions to increase and decrease interval
+  const handleIncreaseInterval = () => {
+    setPathInterval((prev) => prev + 20);
+    console.log("pathInterval: ", pathInterval);
+  };
+
+  const handleDecreaseInterval = () => {
+    setPathInterval((prev) => prev - 20);
+    console.log("pathInterval: ", pathInterval);
+  };
 
   // Functions to increase and decrease dimension
   const handleIncreaseDimension = () => {
-    setDimension((prev) => prev + 5);
-    console.log(dimension);
+    newDimension = dimension + 5;
+    setGrid(
+      Array.from({ length: newDimension }, () => Array(newDimension).fill(true))
+    );
+
+    setDimension(newDimension);
+    console.log("dimension: ", dimension);
   };
 
   const handleDecreaseDimension = () => {
-    setDimension((prev) => prev - 5);
-    console.log(dimension);
+    newDimension = dimension - 5;
+    setGrid(
+      Array.from({ length: newDimension }, () => Array(newDimension).fill(true))
+    );
+
+    setDimension(newDimension);
+    console.log("dimension: ", dimension);
+    // setDimension((prev) => prev - 5);
+    // console.log("dimension: ", dimension);
   };
 
   const [cellSize, setCellSize] = useState<number>(14); // Initial cell size
 
+  const [canIncrease, setCanIncrease] = useState(true); // State to control "+" button visibility
+
+  useEffect(() => {
+    if (boardRef.current) {
+      const boardHeight = boardRef.current.clientHeight;
+      setCanIncrease(boardHeight + 180 < window.innerHeight);
+    }
+    console.log("window height: ", window.innerHeight);
+    console.log("board height: ", boardRef.current?.clientHeight);
+  }, [cellSize, dimension]);
+
   // Functions to increase and decrease cell size
   const handleIncreaseCellSize = () => {
     setCellSize((prev) => prev + 2);
-    console.log(cellSize);
+    console.log("cellSize: ", cellSize);
   };
 
   const handleDecreaseCellSize = () => {
     setCellSize((prev) => prev - 2);
-    console.log(cellSize);
+    console.log("cellSize: ", cellSize);
   };
 
   const [cellShape, setCellShape] = useState<string>(""); // Initial cell shape
@@ -36,7 +101,10 @@ function Board() {
   // Function to toggle cell shape
   const handleSetCellShape = () => {
     setCellShape((prev) => (prev === "" ? "rounded-full" : ""));
-    console.log(cellShape);
+    console.log(
+      "Cell Shape:",
+      cellShape === "rounded-full" ? "Circle" : "Square"
+    );
   };
 
   // State to track mouse holding and hovered cells
@@ -86,43 +154,82 @@ function Board() {
     setIsHolding(true);
   };
 
-  // Handle mouse events for marking obstacles, start, and end points
   useEffect(() => {
-    // Check if both start and end are set
     if (start && end) {
-      const result = breadthFirstSearch(grid, start, end);
-      setPath(result); // Set the path found by BFS
+      let explored: [number, number][] = []; // Initialize an array to track explored cells
+      let result: any;
 
-      // Check if a path was found
-      if (result.length > 0) {
-        console.log("Path found");
-        // Display success message in UI
-        setAlert({ message: "Path found", type: "success" });
+      try {
+        // Choose the appropriate algorithm based on the selected option
+        result =
+          algorithm === "Breadth First"
+            ? breadthFirstSearch(grid, start, end, explored) // Pass explored array to BFS
+            : algorithm === "Depth First"
+            ? depthFirstSearch(grid, start, end, explored) // Pass explored array to DFS
+            : aStarSearch(grid, start, end, explored); // Pass explored array to A* search
 
-        // Slow down the path display by updating one step at a time
-        let step = 0;
-        const interval = setInterval(() => {
-          if (step < result.length) {
-            setPathStep(step + 1);
-            step++;
-          } else {
-            clearInterval(interval); // Stop when the full path is displayed
-          }
-        }, 100); // Delay of 100ms per step
-      } else {
-        console.log("No path found");
-        setAlert({
-          message: "No path found",
-          type: "error",
-        });
+        setPath(result.path); // Set the path found by the algorithm
+        setExploredCells(explored); // Update the explored cells state
+
+        // Check if a path was found
+        if (result.path.length > 0) {
+          console.log("Path found");
+          setAlert({
+            message: `Path found`,
+            type: "success",
+          });
+
+          // Display the path step-by-step
+          let step = 0;
+          const interval = setInterval(() => {
+            if (step < result.path.length) {
+              setPathStep(step + 1);
+              step++;
+            } else {
+              clearInterval(interval);
+            }
+          }, pathInterval); // Delay of pathInterval per step
+          return () => clearInterval(interval);
+        } else {
+          console.log("No path found");
+          setAlert({
+            message: "No path found",
+            type: "error",
+          });
+        }
+      } catch (error) {
+        // Handle stack overflow
+        if (error instanceof RangeError) {
+          console.error("Stack overflow detected:", error);
+          setAlert({
+            message: "Decrease dimension. Try Different Algorithm",
+            type: "error",
+          });
+        }
+
+        // Handle other unexpected errors
+        else {
+          console.error("An unexpected error occurred:", error);
+          setAlert({
+            message: "An unexpected error occurred. Please try again.",
+            type: "error",
+          });
+        }
       }
     }
-
-    // Log changes to cellShape, dimension, and cellSize
-    console.log("Cell Shape:", cellShape);
-    console.log("Dimension:", dimension);
-    console.log("Cell Size:", cellSize);
-  }, [start, end, grid, cellShape, dimension, cellSize]);
+  }, [
+    start,
+    end,
+    grid,
+    cellShape,
+    dimension,
+    cellSize,
+    algorithm,
+    pathInterval,
+    cellSize,
+    start,
+    end,
+  ]);
 
   // Handle mouse events for marking obstacles
   const handleMouseEnter = (row: number, col: number) => {
@@ -141,7 +248,7 @@ function Board() {
 
   const gridRender = []; // Initialize the grid render array
 
-  // Create a dimension x dimension grid
+  // Updated gridRender logic to include the rendering of explored cells
   for (let i = 0; i < dimension; i++) {
     for (let j = 0; j < dimension; j++) {
       const isHovered = hoveredCells[`${i}-${j}`]; // Check if the cell is hovered
@@ -150,6 +257,9 @@ function Board() {
       const isPath = path
         .slice(0, pathStep)
         .some(([row, col]) => row === i && col === j); // Only show part of the path based on the step
+      const isExplored = exploredCells.some(
+        ([row, col]) => row === i && col === j
+      ); // Check if the cell is explored
 
       gridRender.push(
         <div
@@ -159,10 +269,14 @@ function Board() {
           style={{ width: `${cellSize}px`, height: `${cellSize}px` }} // Dynamically set size
           className={`border border-zinc-800 flex ${cellShape} items-center justify-center cursor-pointer 
           ${isStart ? "bg-green-500" : ""}
-          ${isEnd ? "bg-red-500" : ""}
-          ${isPath ? "bg-blue-500" : ""}
-          ${isHovered ? "bg-yellow-500" : ""}
-          ${!grid[i][j] ? "bg-yellow-500" : ""}`} // Highlight start, end, path, and obstacles
+          ${isEnd ? "bg-red-500 " : ""}
+          ${isPath && !isStart && !isEnd ? "bg-blue-600" : ""}
+          ${
+            !isPath && isExplored && !isStart && !isEnd
+              ? "bg-zinc-800 border-zinc-900"
+              : ""
+          }
+          ${(!grid[i][j] && isHovered) || !grid[i][j] ? "bg-yellow-500" : ""}`} // Highlight obstacles
         >
           {/* Optionally render content */}
         </div>
@@ -172,15 +286,14 @@ function Board() {
 
   // Render the grid
   return (
-    <div className="flex flex-col items-center justify-center">
-      <div className="mb-10 text-center px-5 py-2 rounded-[10px] border border-zinc-700 text-gray-300 ">
-        <h1 className="text-2xl text-gray-200">
-          Path Finder - Breadth First Search
-        </h1>
-      </div>
+    <div
+      id="board"
+      ref={boardRef} // Attach the ref here
+      className="flex flex-col items-center justify-center "
+    >
       {/* Grid rendering */}
       <div
-        className="grid shadow-md shadow-black mb-10 hover:shadow-md hover:shadow-gray-700"
+        className="glowing-grid grid shadow-md shadow-black mb-6 glowing-grid:hover "
         onMouseUp={handleMouseUp} // End holding on mouse up
         style={{
           gridTemplateColumns: `repeat(${dimension}, minmax(0, 1fr))`,
@@ -189,20 +302,93 @@ function Board() {
       >
         {gridRender} {/* Render grid cells */}
       </div>
-
+      {/* <div> */} {/* Toggle Button */}
+      <button
+        onClick={toggleAlgorithm}
+        className="flex items-center justify-center mb-3 rounded-md p-2 border border-gray-600 hover:border-zinc-700 text-gray-300 bg-zinc-800 hover:bg-zinc-900"
+      >
+        Switch to{" "}
+        {algorithm === "Breadth First"
+          ? "Depth First Search"
+          : algorithm === "Depth First"
+          ? "A* Search"
+          : "Breadth First Search"}
+      </button>
       {/* Display Alert if it exists */}
       {alert ? (
         <div
-          className={`alert ${alert.type} mb-4 p-2 rounded-md p-2 border border-gray-600  rounded-[7px]`}
+          className={`alert ${alert.type} mb-3 p-2 rounded-md border border-gray-600 rounded-[7px] flex justify-between items-center flex-wrap `}
         >
-          {alert.type === "error" && (
-            <span className="text-red-500 text-[20px]">{alert.message}</span>
-          )}
-          {alert.type === "success" && (
-            <span className="text-green-500 text-[20px]">{alert.message}</span>
-          )}
+          <div>
+            {alert.type === "error" && (
+              <>
+                <span className="text-red-500 text-[5px]">{alert.message}</span>
+                <div className=" text-gray-300 text-[5px] mt-2 ">
+                  <div className="flex flex-row gap-2">
+                    <div
+                      className={` flex ${cellShape} w-[14px] h-[14px] items-center justify-center cursor-pointer bg-blue-600`}
+                    ></div>
+                    <p className="transform -translate-y-1">
+                      Path Steps: {pathStep}
+                    </p>
+                  </div>
+
+                  <div className="flex flex-row gap-2">
+                    <div
+                      className={` flex ${cellShape} w-[14px] h-[14px] items-center justify-center cursor-pointer bg-zinc-800`}
+                    ></div>
+                    <p className="transform -translate-y-1 text-[5px]">
+                      Explored Cells: {exploredCells.length}
+                    </p>
+                  </div>
+                  <div className="flex flex-row gap-2">
+                    <div
+                      className={`border border-gray-600 flex w-[14px] h-[14px] items-center justify-center cursor-pointer bg-zinc-900 text-[5px]`}
+                    />
+                    <p className="transform -translate-y-1 text-[5px]">
+                      Dimension: {dimension} x {dimension}
+                    </p>
+                  </div>
+                </div>
+              </>
+            )}
+            {alert.type === "success" && (
+              <>
+                <span className="text-green-500 text-[5px]">
+                  {alert.message}
+                </span>
+                <div className="text-gray-300 text-[5px] mt-2">
+                  <div className="flex flex-row gap-2">
+                    <div
+                      className={` flex ${cellShape} w-[14px] h-[14px] items-center justify-center cursor-pointer bg-blue-600`}
+                    ></div>
+                    <p className="transform -translate-y-1 text-[5px]">
+                      Path Steps: {pathStep}
+                    </p>
+                  </div>
+
+                  <div className="flex flex-row gap-2 text-[5px]">
+                    <div
+                      className={` flex ${cellShape} w-[14px] h-[14px] items-center justify-center cursor-pointer bg-zinc-800`}
+                    ></div>
+                    <p className="transform -translate-y-1 text-[5px]">
+                      Explored Cells: {exploredCells.length}
+                    </p>
+                  </div>
+                  <div className="flex flex-row gap-2">
+                    <div
+                      className={`border border-gray-600 flex w-[14px] h-[14px] items-center justify-center cursor-pointer bg-zinc-900 text-[5px]`}
+                    />
+                    <p className="transform -translate-y-1 text-[5px]">
+                      Dimension: {dimension} x {dimension}
+                    </p>
+                  </div>
+                </div>
+              </>
+            )}
+          </div>
           <button
-            className="ml-4 p-1  rounded-md px-2 border border-gray-600 hover:border-zinc-700 text-gray-300 bg-zinc-800 hover:bg-zinc-900 rounded-[7px]"
+            className="ml-4 p-1 rounded-md px-2 border border-gray-600 hover:border-zinc-700 text-gray-300 bg-zinc-800 hover:bg-zinc-900 rounded-[7px] "
             onClick={() => {
               // Clear the alert and reset the grid state
               setAlert(null);
@@ -219,6 +405,8 @@ function Board() {
               setEnd(null);
               setPath([]);
               setPathStep(0);
+              setExploredCells([]);
+              // setPathInterval(20);
             }}
           >
             Reset
@@ -237,7 +425,7 @@ function Board() {
         >
           {isPlacingObstacles ? (
             <>
-              Toggle to place start{" "}
+              Click to place start{" "}
               <div
                 className={`border border-zinc-800 flex ${cellShape} w-[14px] h-[14px] items-center justify-center cursor-pointer bg-green-500 mx-[5px]`}
               />
@@ -249,7 +437,7 @@ function Board() {
             </>
           ) : (
             <>
-              Toggle to place obstacles{" "}
+              Click to place obstacles{" "}
               <div
                 className={`border border-zinc-800 flex ${cellShape} w-[14px] h-[14px] items-center justify-center cursor-pointer bg-yellow-500 mx-[5px]`}
               />
@@ -257,64 +445,128 @@ function Board() {
           )}
         </button>
       )}
-      <div className="flex justify-center items-center text-center text-gray-400 gap-5 flex-wrap">
-        {/* Button to increase grid dimension */}
-        {dimension < maxDimension && (
-          <button
-            className=" p-2 border border-gray-600 hover:border-zinc-700 text-gray-300 bg-zinc-800 hover:bg-zinc-900 rounded-[7px]"
-            onClick={() => handleIncreaseDimension()} // Increase grid dimension
-          >
-            <span className="text-green-500">+</span>
-            Dimension
-          </button>
-        )}
-
-        {/* Button to decrease grid dimension */}
-        {dimension > 6 && (
-          <button
-            className=" p-2 border border-gray-600 hover:border-zinc-700 text-gray-300 bg-zinc-800 hover:bg-zinc-900 rounded-[7px]"
-            onClick={() => handleDecreaseDimension()} // Decrease grid dimension
-          >
-            <span className="text-red-500">-</span>Dimension
-          </button>
-        )}
-
-        {/* Button to increase cell size */}
-        <button
-          className=" p-2 border border-gray-600 hover:border-zinc-700 text-gray-300 bg-zinc-800 hover:bg-zinc-900 rounded-[7px]"
-          onClick={() => handleIncreaseCellSize()} // Increase cell size
-        >
-          <span className="text-green-500">+</span>Cell Size
-        </button>
-
-        {/* Button to decrease cell size */}
-        {cellSize > 10 && (
-          <button
-            className=" p-2 border border-gray-600 hover:border-zinc-700 text-gray-300 bg-zinc-800 hover:bg-zinc-900 rounded-[7px]"
-            onClick={() => handleDecreaseCellSize()} // Decrease cell size
-          >
-            <span className="text-red-500">-</span>Cell Size
-          </button>
-        )}
-
-        {/* Button to change cell shape */}
-        <button
-          className=" p-2 border border-gray-600 hover:border-zinc-700 text-gray-300 bg-zinc-800 hover:bg-zinc-900 rounded-[7px] gap-1 flex justify-between items-center"
-          onClick={handleSetCellShape}
-        >
-          {cellShape === "rounded-full" ? (
-            <div
-              className={`border border-zinc-800 flex ${cellShape} w-[14px] h-[14px] items-center justify-center cursor-pointer bg-yellow-500`}
-            />
-          ) : (
-            <div
-              className={`border border-zinc-800 flex ${cellShape} w-[14px] h-[14px] items-center justify-center cursor-pointer bg-yellow-500`}
-            />
+      {!alert && (
+        <div className="flex justify-center items-center text-center text-gray-400 gap-5 flex-wrap">
+          {/* Button to increase grid dimension */}
+          {canIncrease && dimension < maxDimension && (
+            <button
+              className="p-2 border border-gray-600 hover:border-zinc-700 text-gray-300 bg-zinc-800 hover:bg-zinc-900 rounded-[7px]"
+              onClick={() => {
+                // const newDimension = dimension + 1;
+                // setGrid(
+                //   Array.from({ length: newDimension }, () =>
+                //     Array(newDimension).fill(true)
+                //   )
+                // );
+                handleIncreaseDimension();
+                setHoveredCells({});
+                setStart(null);
+                setEnd(null);
+                setPath([]);
+                setPathStep(0);
+                setExploredCells([]);
+                setPathInterval(20);
+                setAlert(null);
+                // setDimension(newDimension); // Update dimension last
+              }}
+            >
+              <span className="text-green-500">+</span>Dimension
+            </button>
           )}
-          Toggle Cell Shape
-        </button>
-      </div>
+
+          {dimension > 6 && (
+            <button
+              className="p-2 border border-gray-600 hover:border-zinc-700 text-gray-300 bg-zinc-800 hover:bg-zinc-900 rounded-[7px]"
+              onClick={() => {
+                // const newDimension = dimension - 1;
+                // setGrid(
+                //   Array.from({ length: newDimension }, () =>
+                //     Array(newDimension).fill(true)
+                //   )
+                // );
+                handleDecreaseDimension();
+                setHoveredCells({});
+                setStart(null);
+                setEnd(null);
+                setPath([]);
+                setPathStep(0);
+                setExploredCells([]);
+                setPathInterval(20);
+                setAlert(null);
+                setDimension(newDimension); // Update dimension last
+              }}
+            >
+              <span className="text-red-500">-</span>Dimension
+            </button>
+          )}
+
+          {/* Button to increase cell size
+        
+          button is not working for increase dimension - not tracking screen height -- works well for increase cell size - too much rendering going on 
+        
+        
+        
+        */}
+          {canIncrease && (
+            <button
+              className="p-2 border border-gray-600 hover:border-zinc-700 text-gray-300 bg-zinc-800 hover:bg-zinc-900 rounded-[7px]"
+              onClick={handleIncreaseCellSize}
+            >
+              <span className="text-green-500">+</span> Cell Size
+            </button>
+          )}
+
+          {/* Button to decrease cell size */}
+          {cellSize > 10 && (
+            <button
+              className=" p-2 border border-gray-600 hover:border-zinc-700 text-gray-300 bg-zinc-800 hover:bg-zinc-900 rounded-[7px]"
+              onClick={() => handleDecreaseCellSize()} // Decrease cell size
+            >
+              <span className="text-red-500">-</span>Cell Size
+            </button>
+          )}
+
+          {/* Button to increase path interval */}
+          {pathInterval > 1 && (
+            <button
+              className="p-2 border border-gray-600 hover:border-zinc-700 text-gray-300 bg-zinc-800 hover:bg-zinc-900 rounded-[7px]"
+              onClick={() => handleDecreaseInterval()} // Reset the interval to default or a specific value
+            >
+              <span className="text-green-500">+</span>Speed
+            </button>
+          )}
+
+          {/* Button to decrease path interval */}
+          {pathInterval < 350 && (
+            <button
+              className="p-2 border border-gray-600 hover:border-zinc-700 text-gray-300 bg-zinc-800 hover:bg-zinc-900 rounded-[7px]"
+              onClick={() => handleIncreaseInterval()} // Reset the interval to default or a specific value
+            >
+              <span className="text-red-500">-</span>Speed
+            </button>
+          )}
+
+          {/* Button to change cell shape */}
+          <button
+            className=" p-2 border border-gray-600 hover:border-zinc-700 text-gray-300 bg-zinc-800 hover:bg-zinc-900 rounded-[7px] gap-1 flex justify-between items-center"
+            onClick={handleSetCellShape}
+          >
+            {cellShape === "rounded-full" ? (
+              <div
+                className={`border border-gray-600 flex ${cellShape} w-[14px] h-[14px] items-center justify-center cursor-pointer bg-zinc-900`}
+              />
+            ) : (
+              <div
+                className={`border border-gray-600 flex ${cellShape} w-[14px] h-[14px] items-center justify-center cursor-pointer bg-zinc-900`}
+              />
+            )}
+            Toggle Cell Shape
+          </button>
+        </div>
+      )}
     </div>
   );
 }
+
+export { exportedAlgorithm };
 export default Board;
