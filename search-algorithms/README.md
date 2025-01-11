@@ -41,3 +41,12 @@ This project has several opportunities for enhancement:
 - **Performance Optimization**: Work on improving the visualization speed for larger grids.
 - **Path and Visited Cells Visualization**: Display not only the final path but also the visited cells during the search.
 - **Stack Overflow Prevention**: Address potential issues with large grids to prevent stack overflow errors.
+
+#### Screenshots
+
+![plot](./images/sc_1.png)
+![plot](./images/sc_2.png)
+![plot](./images/sc_3.png)
+![plot](./images/sc_4.png)
+
+
