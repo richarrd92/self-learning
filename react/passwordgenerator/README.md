@@ -12,3 +12,18 @@ A React web application that allows users to generate secure, random passwords b
 ## Technologies Used  
 - **React**: A modern JavaScript library for building user interfaces.  
 - **CSS**: For styling and enhancing the app's visual appeal. 
+
+## Screenshots
+
+- **Image 1:**
+![plot](./public/image1.png)
+
+- **Image 2:**  
+![plot](./public/image2.png)
+
+- **Image 3:**  
+![plot](./public/image3.png)
+
+- **Image 4:**  
+![plot](./public/image4.png)
+

@@ -12,3 +12,11 @@ A React web application that allows users to convert one currency to another usi
 - **React**: A modern JavaScript library for building user interfaces.  
 - **CSS**: For styling and enhancing the app's visual appeal.  
 - **RESTful API**: For fetching real-time currency conversion rates.
+
+## Screenshots
+
+- **Image 1:**
+![plot](./public/image1.png)
+
+- **Image 2:**  
+![plot](./public/image2.png)
