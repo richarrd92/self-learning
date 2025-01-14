@@ -18,21 +18,23 @@ const About = () => {
       <div className="container mx-auto px-8 md:px-16 lg:px-24">
         <h2 className="text-3xl font-bold text-center mb-2">About Me</h2>
         <div className="flex flex-col items-center">
-          <p className="text-md mt-4 text-gray-400 px-3 indent-8 break-words">
-            I am a senior Computer Science student at UMBC with a strong
-            foundation in full-stack web development and a passion for creating
-            impactful applications. I am proficient in frontend technologies
-            such as HTML5, CSS3, Tailwind CSS, JavaScript, and React, as well as
-            backend tools like Node.js, MongoDB, and Prisma. My skills include
-            API integration, state management with React Hooks, and deploying
-            applications on platforms like Netlify and Vercel.
+          <p className="text-md mt-4 text-gray-400 px-3 break-words">
+            I am a senior Computer Science student at the University of
+            Maryland, Baltimore County (UMBC) graduating in May 2025, with a
+            foundation in full-stack web development and a passion for building
+            impactful applications. My experience spans frontend technologies,
+            including HTML5, CSS3, Tailwind CSS, JavaScript, and React, as well
+            as backend tools such as Node.js, MongoDB, and Prisma.
           </p>
-          <p className="text-md mt-4 text-gray-400 px-3 indent-8 break-words">
-            I am also actively expanding my knowledge in modern web development
-            practices, including Git and GitHub, Docker, authentication
-            mechanisms, responsive design, and data structures and algorithms
-            using Python. Additionally, I am proficient in programming languages
-            like C++ and Python.
+          <p className="text-md mt-4 text-gray-400 px-3 break-words">
+            I have hands-on experience in API integration, state management with
+            React Hooks, and deploying applications to the cloud. My technical
+            skills extend to modern web development practices, including version
+            control with Git and GitHub, implementing authentication mechanisms,
+            designing responsive user interfaces, and solving complex problems
+            using data structures and algorithms in Python. Additionally, I am
+            proficient in programming languages such as C++ and Python, further
+            strengthening my ability to tackle diverse technical challenges.
           </p>
           <div className="mt-5">
             <h3 className="text-l font-semibold text-center  mb-4">

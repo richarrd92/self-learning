@@ -12,7 +12,7 @@ const Hero = () => {
       <h1 className="text-3xl font-bold">
         <span>Richard Maliyetu</span>
       </h1>
-      <p className="text-md mt-2 text-gray-400 px-4">
+      <p className="text-md mt-2 text-gray-400 px-4 mb-2">
         Aspiring software | web developer
       </p>
       <div className="flex justify-center space-x-4 my-2 md:my-0 text-center mt-3 text-xl">
