@@ -1,0 +1,17 @@
+body {
+  background-color: rgb(81, 80, 80);
+
+  #pageTitle {
+    background-color: rgb(53, 53, 53);
+    color: white;
+    text-align: center;
+    padding: 20px;
+  }
+
+  p{
+    padding: 20px;
+    text-align: center;
+    font-weight: bolder;
+  }
+
+}

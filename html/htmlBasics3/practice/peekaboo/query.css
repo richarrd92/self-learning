@@ -1,0 +1,18 @@
+#buttons {
+  text-align: center;
+}
+
+button {
+  font-size: 15px;
+  font-weight: bolder;
+  background-color: rgb(216, 216, 26);
+  border-radius: 10px;
+}
+
+#button2 {
+  display: none;
+}
+
+#notes1 {
+  display: none;
+}

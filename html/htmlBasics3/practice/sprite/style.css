@@ -1,0 +1,30 @@
+body{
+    background-color: rgb(69, 67, 67);
+    #image{
+        display: none;
+    }
+    overflow: hidden;
+}
+
+#canvas1{
+    border: 2px solid black;
+    border-radius: 5px;
+    background-color: beige;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 1000px;
+    height: 800px;
+}
+
+#gameTitle{
+    color: white;
+    text-align: center;
+    font-size: 50px;
+    margin-top: 150px;
+}    
+
+#gameTitle::first-letter{
+        color: green;
+}
