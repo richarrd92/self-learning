@@ -108,4 +108,23 @@ const handleDelete = async (noteId: string) => {
 - Enable sorting and searching of notes.
 - Improve animations for a smoother user experience.
 
+---
+
+## Screenshots
+
+- **Image 1:**
+![plot](./public/image1.png)
+
+- **Image 2:**  
+![plot](./public/image2.png)
+
+- **Image 3:**  
+![plot](./public/image3.png)
+
+- **Image 4:**  
+![plot](./public/image4.png)
+
+- **Image 5:**  
+![plot](./public/image5.png)
+
 

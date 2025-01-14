@@ -29,6 +29,22 @@ This a simple SaaS (Software as a Service) web application powered by Cloudinary
 
 ---
 
+## Screenshots
+
+- **Image 1:**
+![plot](./public/image1.png)
+
+- **Image 2:**  
+![plot](./public/image2.png)
+
+- **Image 3:**  
+![plot](./public/image3.png)
+
+- **Image 4:**  
+![plot](./public/image4.png)
+
+---
+
 #### How to Use
 
 - **Link**: https://www.loom.com/share/4da6ba203191485ab441abe3180f7b8b?sid=cf480aa5-df41-40ce-a9ec-e5663f85385c
