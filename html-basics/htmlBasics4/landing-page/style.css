@@ -1,0 +1,249 @@
+body {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  background-color: rgb(73, 72, 72);
+  color: white;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+header,
+footer {
+  background-color: #1f2937;
+  color: #fff;
+  text-align: center;
+  padding: 8px;
+  flex: 0 0 auto; /* Maintain natural size based on content */
+}
+
+.headerSection {
+  display: flex;
+  justify-content: space-between;
+  padding: 5px;
+  font-weight: bold;
+  padding-left: 60px;
+  padding-right: 60px;
+}
+
+.navLinks .Logo {
+  font-weight: bold;
+  font-size: 6%;
+}
+
+.navList {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: row;
+  gap: 20px;
+}
+
+.navLinks {
+  text-decoration: none;
+  color: white;
+}
+
+main {
+  text-align: center;
+  background-color: rgb(73, 72, 72);
+  display: flex;
+  flex-direction: column; /* Stack sections vertically */
+  height: 100vh; /* Full viewport height */
+}
+.mainSection1,
+.mainSection2,
+.mainSection3,
+.mainSection4 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%; /* Full width */
+  border: 1px solid white;
+  background-color: #333;
+  color: #fff;
+  padding-left: 60px;
+  padding-right: 60px;
+  flex-grow: 1; /* Dynamically adjust height to fill available space */
+  flex-shrink: 0; /* Prevent sections from shrinking below content height */
+  overflow-x: hidden; /* Prevent horizontal scrolling */
+  box-sizing: border-box; /* Include padding and border in width */
+}
+
+.mainSection1 {
+  background-color: #1f2937;
+  border: none;
+  display: flex;
+}
+
+.mainSection1Text,
+.mainSection1Image {
+  flex: 1;
+  text-align: center;
+  padding: 10px;
+}
+
+.mainSection1TextParagraph {
+  text-align: left;
+  color: #e5e7eb;
+}
+
+.mainSection1ImagePlaceholderText {
+  text-align: center;
+  color: #e5e7eb;
+}
+
+.mainSection1Button {
+  background-color: #3882f6;
+  color: #fff;
+  padding: 7px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  margin-top: 20px;
+}
+
+.mainSection1Image {
+  width: 400px;
+  height: 190px;
+  background-color: #434852;
+  color: #1f2937;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.mainSection2 {
+  background-color: white;
+  color: black;
+}
+
+.box {
+  width: 100px;
+  height: 100px;
+  border: #3882f6 3px solid;
+  border-radius: 8px;
+  color: #1f2937;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.mainSection2BoxesContainer {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap: 15px;
+}
+
+.mainSection2Box1,
+.mainSection2Box2,
+.mainSection2Box3,
+.mainSection2Box4 {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.box-text {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100px;
+  color: #1f2937;
+  font-size: 8px;
+  margin-top: 5px;
+}
+
+.mainSection3 {
+  background-color: #e5e7eb;
+  color: #1f2937;
+  padding-left: 95px;
+  padding-right: 95px;
+}
+
+.mainSection3Quote {
+  font-size: 25px;
+  color: #1f2937;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+}
+
+.quote-box {
+  text-align: left;
+  font-style: italic;
+  font-weight: 100;
+  font-family: "Times New Roman", Times, serif;
+  margin: 0 auto;
+  /* max-width: 800px; */
+  /* line-height: 1.5; */
+  background-color: #e5e7eb;
+}
+
+.quote-author {
+  display: flex;
+  justify-content: end;
+  margin-top: 10px;
+  text-align: right;
+  font-style: italic;
+  font-weight: bolder;
+  font-family: "Times New Roman", Times, serif;
+  color: #1f2937;
+  font-size: 20px;
+}
+
+.mainSection4 {
+  background-color: white;
+}
+
+.mainSection4CallToAction {
+  background-color: #3882f6;
+  width: 100%;
+  height: 120px;
+  border-radius: 8px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-left: 60px;
+  padding-right: 60px;
+  gap: 20px;
+}
+
+.mainSection4CallToActionButton {
+  background-color: #3882f6;
+  border: #fff 2px solid;
+  padding: 7px 20px;
+  width: 100px;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  margin-top: 20px;
+  color: white;
+}
+
+.mainSection4CallToActionText {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.mainSection4CallToActionTextHeader {
+  color: #fff;
+  font-size: 15px;
+  font-weight: bold;
+  text-align: left;
+}
+
+.mainSection4CallToActionTextParagraph {
+  color: #fff;
+  font-size: 10px;
+  text-align: left;
+}
