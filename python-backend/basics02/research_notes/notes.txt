@@ -1,0 +1,45 @@
+React and python project structure
+
+1: Set up the client/frontend
+- pick a framework eg React, vite
+- Run: npx create-vite
+- choose framework and variant
+- navigate to frontend directory: npm install
+- Start dev: npm run dev to test the frontend
+
+2: Set up the backend 
+- make a backend directory eg mkdir server, then cd server
+- create virtual environment: python3 -m venv venv
+- activate virtual environment: source venv/bin/activate
+- install necessary dependencies: pip3 install Flask 
+- Once Flask framework has been installed
+- Create a python file to run all the backend code
+
+
+# In apps with a seperate frontend and backend, there must be a connection (API) this communication happens via Https 
+# logic behind app; use frontend to retrieve data from the backend and display in on the web-page
+# For the frontend to be able to make requests to the backend, corgins must be enable in the flask app 
+
+- Must install CORS: pip3 Flask-CORS
+- Enable the necessary requests
+
+# In the frontend/client side
+- Install axios: npm axios
+- Axios is used to fetch api requests
+
+# GET vs POST
+- Use GET when requesting data without modifying anything.
+- Use POST when sending data to be processed or stored securely.
+
+
+# To load sensitive information from a .env file, you can use the python-dotenv package. 
+# Here’s how to modify your Flask app to use environment variables:
+- pip install python-dotenv
+
+# Install the required database driver:
+- pip install mariadb
+- pip install psycopg2
+
+
+
+
