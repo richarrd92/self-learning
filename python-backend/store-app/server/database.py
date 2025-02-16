@@ -30,7 +30,7 @@ Base = declarative_base()
 import models  
 
 # Automatically create tables in the database if they do not exist
-print("📌 Creating database tables...")
+print("Creating database tables...")
 Base.metadata.create_all(bind=engine)
 print("Tables created successfully!")
 

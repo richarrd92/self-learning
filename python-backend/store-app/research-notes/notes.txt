@@ -37,7 +37,7 @@ React and python project structure
 - pip install python-dotenv
 
 # Install the required database driver:
-- pip install mariadb
+- pip install mariadb (less problematic)
 - pip install psycopg2
 
 

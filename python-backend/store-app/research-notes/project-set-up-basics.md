@@ -60,10 +60,15 @@ DATABASE_STRING="mysql+pymysql://username:password@localhost/database_name"
 
 ### Create a project folder and activate virtual environment:
 ```sh
-mkdir inventory-app && cd inventory-app
+mkdir inventory-app 
+cd inventory-app
 python3 -m venv venv
 source venv/bin/activate  # Mac/Linux
 venv\Scripts\activate   # Windows
+```
+### Install required dependencies:
+```sh
+pip install fastapi uvicorn sqlalchemy psycopg2-binary pydantic bcrypt jwt python-multipart python-dotenv mariadb pymysql
 ```
 
 ### Generate requirements.txt:
@@ -81,11 +86,6 @@ pip install -r requirements.txt
 pip install --upgrade -r requirements.txt
 ```
 
-### Install required dependencies:
-```sh
-pip install fastapi uvicorn sqlalchemy psycopg2-binary pydantic bcrypt jwt
-pip install python-multipart python-dotenv mariadb pymysql
-```
 
 #### **Key Libraries and Their Purpose:**
 

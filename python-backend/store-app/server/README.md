@@ -154,5 +154,4 @@ This will initialize the database and ensure everything is working correctly.
 - Implement database migrations with Alembic
 - Deploy to a cloud service (Heroku, AWS, etc.)
 
-This guide ensures a solid foundation for future backend projects. 🚀
 

@@ -1,7 +1,7 @@
-import mariadb # database connector
+import mariadb # database connector # type: ignore
 import os # access system env variables
-from flask import Flask, jsonify
-from flask_cors import CORS # API access from different domains
+from flask import Flask, jsonify # type: ignore
+from flask_cors import CORS # API access from different domains # type: ignore
 from dotenv import load_dotenv 
 
 # Load environment variables

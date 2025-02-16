@@ -1,13 +1,22 @@
-# Import necessary modules from FastAPI
-from fastapi import FastAPI, Depends, HTTPException  # FastAPI framework and dependencies handling # type: ignore 
-from sqlalchemy.orm import Session  # SQLAlchemy session management # type: ignore 
-from models import Item, User, Category  # Import database models
-from database import get_db  # Import database session dependency
-import bcrypt  # For handling password hashing and security # type: ignore 
+from fastapi import FastAPI, Depends, HTTPException
+from fastapi.middleware.cors import CORSMiddleware  # Import CORS middleware
+from sqlalchemy.orm import Session
+from models import Item, User, Category
+from database import get_db
+import bcrypt # type: ignore
+
 
 # Initialize FastAPI application
 app = FastAPI()
 
+# Enable CORS
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=["http://localhost:5173"],  # Adjust to your frontend URL
+    allow_credentials=True,
+    allow_methods=["*"],  # Allow all HTTP methods (GET, POST, PUT, DELETE, etc.)
+    allow_headers=["*"],  # Allow all headers
+)
 # Landing page endpoint
 @app.get("/")
 def read_root():
