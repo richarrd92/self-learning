@@ -1,5 +1,0 @@
-TOPICS TO RESEARCH
-
-- Panda library 
-- Jupyter notebook
-- 
