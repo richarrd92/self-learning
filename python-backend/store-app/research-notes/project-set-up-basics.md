@@ -36,7 +36,7 @@ CREATE USER 'username'@'%' IDENTIFIED BY 'password';
 
 ### Grant access to the store database:
 ```sql
-GRANT ALL PRIVILEGES ON inventory_database.* TO 'username'@'%' WITH GRANT OPTION;
+GRANT ALL PRIVILEGES ON inventory_database.* TO 'inventory_db_users'@'%' WITH GRANT OPTION;
 ```
 
 ### MariaDB Connection String:
