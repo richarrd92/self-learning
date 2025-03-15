@@ -1,0 +1,84 @@
+/* Global styles */
+body {
+  font-family: Arial, sans-serif;
+  background-color: #313030;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  margin: 0;
+}
+
+/* Main container */
+.game-container {
+  background: rgb(82, 81, 81);
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+  width: 300px;
+}
+
+/* Title */
+h2 {
+  color: white;
+  margin-bottom: 15px;
+}
+
+/* Buttons container */
+.button-container {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+}
+
+/* Player buttons */
+.player-btn {
+  background-color: #313030;
+  color: white;
+  border: none;
+  padding: 10px 15px;
+  font-size: 16px;
+  cursor: pointer;
+  border-radius: 5px;
+  transition: background 0.2s ease-in-out;
+}
+
+.player-btn:hover {
+  background-color: #2980b9;
+}
+
+.game-message {
+  font-size: 16px;
+  color: white;
+  display: none;
+}
+
+/* Optional styles to hide the game mode buttons after the game mode is selected */
+button.mode-btn {
+  display: block;
+  margin: 10px 0;
+  background-color: #313030;
+  color: white;
+  border: none;
+  padding: 10px 15px;
+  font-size: 10px;
+  cursor: pointer;
+  border-radius: 5px;
+  transition: background 0.2s ease-in-out;
+}
+
+button.mode-btn:hover {
+  background-color: #2980b9;
+}
+
+/* Optional: Style for when game buttons are visible */
+#player-buttons {
+  margin-top: 20px;
+}
+
+/* Style for the message */
+.game-message {
+  margin-top: 20px;
+  font-size: 18px;
+}

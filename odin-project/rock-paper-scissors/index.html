@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Rock Paper Scissors</title>
+    <link rel="stylesheet" href="style.css" />
+    <script src="script.js" defer></script>
+  </head>
+  <body>
+    <div class="game-container">
+      <h2>Choose your game mode:</h2>
+      <!-- Buttons for game mode selection -->
+      <div class="button-container" id="mode-buttons">
+        <button id="human-vs-computer" class="mode-btn">
+          Human vs Computer</button
+        ><button id="human-vs-human" class="mode-btn">Human vs Human</button>
+      </div>
+
+      <div class="button-container" id="player-buttons" style="display: none">
+        <button class="player-btn" data-choice="rock">Rock</button>
+        <button class="player-btn" data-choice="paper">Paper</button>
+        <button class="player-btn" data-choice="scissors">Scissors</button>
+      </div>
+
+      <div class="game-message" style="display: none">
+        <p>Player won</p>
+      </div>
+    </div>
+  </body>
+</html>
