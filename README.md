@@ -19,6 +19,8 @@ My goal is to become proficient in full-stack development and stay up-to-date wi
 #### Backend Development
 
 - Node.js
+- Python
+- FastAPI
 - MongoDB
 - Prisma
 - NeonDB
