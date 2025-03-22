@@ -1,26 +1,24 @@
-const link = document.querySelector("a")
-link.textContent = "Mozilla Developer Network";
-link.href = "https://developer.mozilla.org";
+const input = document.getElementById("itemInput");
+const addItemButton = document.getElementById("addItem-btn");
+const itemList = document.getElementById("itemList");
 
-const sect = document.querySelector("section");
+addItemButton.addEventListener("click", () => {
+  const item = input.value.trim(); // Get input value, trim spaces
+  if (!item) return console.log("Please enter a value"); // Prevent empty input
 
-const para = document.createElement("p");
-para.textContent = "We hope you enjoyed the ride. -->";
+  const liDiv = document.createElement("div"); // Wrapper div
+  liDiv.classList.add("li-div");
 
-sect.appendChild(para)
+  const li = document.createElement("li"); // List item
+  li.textContent = item;
 
-const text = document.createTextNode(
-  " — the premier source for web development knowledge."
-);
+  const deleteButton = document.createElement("button"); // Delete button
+  deleteButton.classList.add("delete-btn");
+  deleteButton.textContent = "Delete";
+  deleteButton.addEventListener("click", () => itemList.removeChild(liDiv)); // Remove item
 
-const lastChild = sect.lastElementChild
+  liDiv.append(li, deleteButton); // Append list item & button
+  itemList.appendChild(liDiv); // Add to list
 
-const linkPara = document.querySelector("p");
-
-lastChild.appendChild(text)
-
-para.style.color = "white";
-para.style.backgroundColor = "black";
-para.style.padding = "10px";
-para.style.width = "250px";
-para.style.textAlign = "center";
+  input.value = ""; // Clear input
+});
