@@ -1,6 +1,6 @@
 # **Data Structures and Algorithms**
 
-This repository contains implementations of various data structures and algorithms, serving as a personal practice collection to enhance problem-solving skills and deepen my understanding of algorithmic concepts.
+This directory contains implementations of various data structures and algorithms, serving as a personal practice collection to enhance problem-solving skills and deepen my understanding of algorithmic concepts.
 
 ## **Contents**
 - Sorting algorithms (e.g., Quick Sort, Merge Sort, Bucket Sort)  
