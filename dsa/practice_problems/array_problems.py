@@ -1,4 +1,4 @@
-from data import numbers
+from data import numbers, bills, checks
 
 # (a) Find if two integers in array sum to zero (Brute Force)
 def findSumZero(arr, counter=0):
@@ -86,6 +86,43 @@ def rankSort(arr: list) -> list:
 
     return result
 
+# Design a reasonably efficient algorithm for solving each
+# of the following problems and determine its efficiency class.
+# a. You are given n telephone bills and m checks sent to pay the bills (n ≥ m).
+# Assuming that telephone numbers are written on the checks, we want to find out who (all) failed to pay. 
+# (For simplicity, you may also assume that only one check is written for a particular bill and that it covers the bill in full.)
+
+# approach 1: use of set
+def find_unpaid_bills(bills_arr: list, checks_arr: list) -> list:
+    check_set = set() # O(n)
+
+    for check in checks_arr: # O(n)
+        check_set.add(check)
+    
+    unpaid = []
+    for bill in bills_arr: # O(n)
+        if bill not in check_set: 
+            unpaid.append(bill)
+
+    return unpaid
+
+
+
+
+
+
+
+
+
+print(find_unpaid_bills(bills, checks))
+
+
+
+
+
+
+
+
 
 # === Run and print results ===
 
@@ -110,5 +147,5 @@ def rankSort(arr: list) -> list:
 # distinct, count = presorted_distinct_elements_optimal(numbers)
 # print(f"\nDistinct Elements Presorted Optimal:\nResult: {distinct}\nLoop ran: {count} times")
 
-print("\nOriginal numbers:", numbers)
-print(rankSort(numbers))
+# print("\nOriginal numbers:", numbers)
+# print(rankSort(numbers))
