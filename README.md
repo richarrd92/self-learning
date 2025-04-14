@@ -1,58 +1,45 @@
-
 # **Web Development & DSA**
 
-Welcome! This repository tracks my journey as a self-taught full-stack developer and my deep dive into data structures and algorithms. Alongside my studies at the University of Maryland, Baltimore County, I'm building hands-on experience with modern web development technologies and sharpening my problem-solving skills for technical interviews and real-world applications.
+Welcome! This repo documents my self-taught journey as a full-stack developer and my exploration of data structures and algorithms. While studying at UMBC, I’m gaining hands-on experience with modern web technologies and sharpening my problem-solving skills for both interviews and real-world scenarios.
 
 ## **Full-Stack Web Development**
 
-I’m learning and applying tools like HTML, CSS, React, Node.js, FastAPI, MongoDB, Prisma, and more. My goal is to build scalable full-stack applications, understand modern development workflows, and stay current with the latest best practices.
+I'm building scalable applications using tools like HTML, CSS, React, Node.js, FastAPI, MongoDB, Prisma, and more. My focus is on mastering full-stack workflows and staying up-to-date with industry best practices.
 
-#### **Frontend Development**
-- HTML  
-- CSS  
-- Tailwind  
-- JavaScript  
-- React  
-- TypeScript  
-- Next.js  
+### **Frontend**
+- HTML, CSS, Tailwind  
+- JavaScript, TypeScript  
+- React, Next.js  
 
-#### **Backend Development**
-- Node.js  
-- Python  
-- FastAPI  
-- MongoDB  
-- Prisma  
-- NeonDB  
-- Express.js  
-- Postman  
-- SQL  
+### **Backend**
+- Node.js, Python, FastAPI  
+- Express.js, MongoDB, Prisma, NeonDB  
+- SQL, Postman  
 
-#### **Full-Stack Development**
+### **Full-Stack**
 - API Integration  
 - State Management (React Hooks)  
-- Authentication & Authorization  
-- Responsive Web Design  
+- Auth (Login/Signup)  
+- Responsive Design  
 
-#### **Additional Tools & Skills**
-- Basic Command-Line Skills  
+### **Tools & Extras**
+- Git, GitHub  
 - Deployment (Netlify, Heroku, Vercel)  
-- Git & GitHub  
-- Docker (Optional)  
-- Clerk (User Authentication)  
-- Cloudinary (Media Upload Services)  
-- DaisyUI (Component Library)  
+- Clerk (Auth), Cloudinary (Media)  
+- Docker (Optional), DaisyUI  
+- Command Line Basics  
 
-## **Data Structures and Algorithms**
+## **Data Structures & Algorithms**
 
-This section contains my personal practice with various data structures and algorithms. It’s a space for me to learn, experiment, and prepare for technical interviews by building a solid foundation in algorithmic thinking.
+This section features my DSA practice from basic concepts to advanced topics as I build a strong foundation for interviews and future development.
 
-#### **Contents**
-- Sorting Algorithms (e.g., Quick Sort, Merge Sort, Bucket Sort)  
-- Searching Algorithms (e.g., Binary Search, Linear Search)  
-- Data Structures (e.g., Linked Lists, Stacks, Queues, Trees, Graphs)  
-- Advanced Topics (e.g., Dynamic Programming, Graph Algorithms, Heaps)  
+### **Topics Covered**
+- Sorting (Quick, Merge, Bucket)  
+- Searching (Binary, Linear)  
+- Data Structures (Lists, Stacks, Queues, Trees, Graphs)  
+- Advanced (Dynamic Programming, Graphs, Heaps)  
 
-#### **Purpose**
-- Strengthen problem-solving and algorithmic thinking  
-- Understand efficiency and time/space complexity  
-- Build a go-to reference for future projects and interviews  
+### **Goals**
+- Improve problem-solving and efficiency  
+- Master time and space complexity  
+- Build a personal reference for interviews and projects  
