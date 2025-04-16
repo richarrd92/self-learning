@@ -58,8 +58,25 @@ def find_all_path(m: int, n: int, path="") -> list:
     
     return paths
 
-print("find all path: ",find_all_path(13, 13))
-print("find number of paths: ",grid_traversal(1, 1))
-print("find number of paths: ",grid_traversal(2, 3))
-print("Normal grid traversal 6x6: ",grid_traversal(6, 6))
-print("Optimized grid traversal 18x18: ",optimized_grid_traversal(18, 18))
+
+from data import grid
+
+# Collect max coin
+def collect_max_coins_recursive(map, row, col):
+    if row < 0 or col < 0:
+        return 0
+    return max(
+        collect_max_coins_recursive(map, row - 1, col),
+        collect_max_coins_recursive(map, row, col - 1)
+    ) + map[row][col]
+
+max_coins = collect_max_coins_recursive(grid, len(grid) -1, len(grid[0]) -1)
+print("the max coins collected are: ", max_coins)
+
+
+
+# print("find all path: ",find_all_path(13, 13))
+# print("find number of paths: ",grid_traversal(1, 1))
+# print("find number of paths: ",grid_traversal(2, 3))
+# print("Normal grid traversal 6x6: ",grid_traversal(6, 6))
+# print("Optimized grid traversal 18x18: ",optimized_grid_traversal(18, 18))
