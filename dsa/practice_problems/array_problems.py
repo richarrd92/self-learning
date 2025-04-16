@@ -1,5 +1,5 @@
-from data import numbers, bills, checks
-
+from data import numbers, bills, checks, pattern1, text1
+# **************************************************************************************************** 
 # (a) Find if two integers in array sum to zero (Brute Force)
 def findSumZero(arr, counter=0):
     for i in range(len(arr)):
@@ -59,6 +59,7 @@ def distinct_elements_optimal(arr, counter=0):
         seen.add(num)
     return True, counter
 
+# **************************************************************************************************** 
 # Distinct check using sorted array
 def presorted_distinct_elements_optimal(arr, counter=0):
     arr = sorted(arr)
@@ -68,6 +69,8 @@ def presorted_distinct_elements_optimal(arr, counter=0):
             return False, counter
     return True, counter
 
+
+# **************************************************************************************************** 
 # count sort algorithm
 def rankSort(arr: list) -> list:
     n = len(arr)
@@ -86,13 +89,11 @@ def rankSort(arr: list) -> list:
 
     return result
 
-# Design a reasonably efficient algorithm for solving each
-# of the following problems and determine its efficiency class.
-# a. You are given n telephone bills and m checks sent to pay the bills (n ≥ m).
+# **************************************************************************************************** 
+# You are given n telephone bills and m checks sent to pay the bills (n ≥ m).
 # Assuming that telephone numbers are written on the checks, we want to find out who (all) failed to pay. 
-# (For simplicity, you may also assume that only one check is written for a particular bill and that it covers the bill in full.)
-
-# approach 1: use of set
+# Assume that only one check is written for a particular bill and that it covers the bill in full.)
+# use of set
 def find_unpaid_bills(bills_arr: list, checks_arr: list) -> list:
     check_set = set() # O(n)
 
@@ -106,6 +107,83 @@ def find_unpaid_bills(bills_arr: list, checks_arr: list) -> list:
 
     return unpaid
 
+# **************************************************************************************************** 
+# Horspool algorithm - pattern matching
+# Step 1: Make alphabet shift table
+def build_alphabet_shift_table(pattern: str, alphabet_shift_table={}) -> dict:
+    for i in range(26):
+        uppercase_letter = chr(ord('A') + i)
+        alphabet_shift_table[uppercase_letter] = len(pattern)
+
+    alphabet_shift_table[' '] = len(pattern)
+
+    print("{")
+    for character, shift_value in alphabet_shift_table.items():
+        print(f'    {character} : {shift_value}')
+    print("}")
+
+    return alphabet_shift_table
+
+# Step 2: Create position table for characters in the pattern
+def build_character_position_table(pattern: str) -> dict:
+    character_position_map = {}
+    for index, character in enumerate(pattern):
+        position_from_right = abs(index - (len(pattern) - 1))
+        character_position_map[position_from_right] = character
+
+    print("{")
+    for shift_distance, character in character_position_map.items():
+        print(f'    {shift_distance} : {character}')
+    print("}")
+
+    return character_position_map
+
+
+# Step 3: Update alphabet table with actual pattern character positions
+def update_shift_table_with_pattern(alphabet_table: dict, character_position_table: dict) -> dict:
+    for shift_distance, character in character_position_table.items():
+        alphabet_table[character] = shift_distance
+    print("{")
+    for character, shift_value in alphabet_table.items():
+        print(f'    {character} : {shift_value}')
+    print("}")
+
+    return alphabet_table
+
+# Step 4: Perform Horspool algorithm
+def horspool_algorithm(pattern: str, text: str, shift_table: dict) -> list:
+    n = len(text)
+    m = len(pattern)
+    match_positions = []
+
+    if m > n:
+        return match_positions
+
+    i = 0
+    while i <= n - m:
+        j = m - 1
+        while j >= 0 and pattern[j] == text[i + j]:
+            j -= 1
+        if j < 0:
+            match_positions.append(i)
+            i += m
+        else:
+            mismatched_char = text[i + m - 1]
+            shift = shift_table.get(mismatched_char, m)
+            i += max(1, shift)
+
+    return match_positions
+
+print("\nAlphabet table")
+alphabet_table = build_alphabet_shift_table(pattern1)
+
+print("\nPattern table")
+character_position_table = build_character_position_table(pattern1)
+
+main_table = update_shift_table_with_pattern(alphabet_table, character_position_table)
+
+print("\nHorspool algorithm result:")
+print(horspool_algorithm(pattern1, text1, main_table))
 
 
 
@@ -114,7 +192,6 @@ def find_unpaid_bills(bills_arr: list, checks_arr: list) -> list:
 
 
 
-print(find_unpaid_bills(bills, checks))
 
 
 
@@ -149,3 +226,5 @@ print(find_unpaid_bills(bills, checks))
 
 # print("\nOriginal numbers:", numbers)
 # print(rankSort(numbers))
+
+# print(find_unpaid_bills(bills, checks))
