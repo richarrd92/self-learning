@@ -174,26 +174,31 @@ def horspool_algorithm(pattern: str, text: str, shift_table: dict) -> list:
 
     return match_positions
 
-print("\nAlphabet table")
-alphabet_table = build_alphabet_shift_table(pattern1)
+# We are given two strings S and T , each n characters long. 
+# We have to check whether one of them is a right cyclic shift of the other. 
+# For example, PLEA is a right cyclic shift of LEAP, and vice versa. 
+# (Formally, T is a right cyclic shift of S if T can be obtained by concatenating the (n − i)-character suffix of
+# S and the i-character prefix of S for some 1≤ i ≤ n.)
+# (a) Design a space-efficient algorithm for the task. Indicate the space and time
+# efficiencies of your algorithm.
 
-print("\nPattern table")
-character_position_table = build_character_position_table(pattern1)
+def is_right_cyclic(text1: str, text2: str) -> bool:
+    # strings not equal in length
+    if len(text1) != len(text2):
+        return False
+    
+    # check if text2 is a substring of text1
+    new_text = text1 + text1
+    pos = new_text.find(text2)
 
-main_table = update_shift_table_with_pattern(alphabet_table, character_position_table)
+    # -1 not found and 0 text1 == text 2
+    return pos != -1 and pos != 0
 
-print("\nHorspool algorithm result:")
-print(horspool_algorithm(pattern1, text1, main_table))
-
-
-
-
-
-
-
-
-
-
+word1, word2 = "LEAP", "PLEA"
+if is_right_cyclic(word1, word2):
+    print("The strings are right cyclic")
+else:
+    print("The strings are not right cyclic")
 
 
 
@@ -227,4 +232,16 @@ print(horspool_algorithm(pattern1, text1, main_table))
 # print("\nOriginal numbers:", numbers)
 # print(rankSort(numbers))
 
+# print("\nUnpaid bills")
 # print(find_unpaid_bills(bills, checks))
+
+# print("\nAlphabet table")
+# alphabet_table = build_alphabet_shift_table(pattern1)
+
+# print("\nPattern table")
+# character_position_table = build_character_position_table(pattern1)
+
+# main_table = update_shift_table_with_pattern(alphabet_table, character_position_table)
+
+# print("\nHorspool algorithm result:")
+# print(horspool_algorithm(pattern1, text1, main_table))
