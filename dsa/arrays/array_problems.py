@@ -1,4 +1,4 @@
-from practice_problems.arrays.data import numbers, bills, checks, pattern1, text1
+from data import numbers, bills, checks, pattern1, text1
 # **************************************************************************************************** 
 # (a) Find if two integers in array sum to zero (Brute Force)
 def findSumZero(arr, counter=0):
