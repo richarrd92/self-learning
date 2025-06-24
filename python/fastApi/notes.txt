@@ -1,0 +1,71 @@
+--> How to install and activate new virtual environment:
+
+    - to create a virtual environment, venv can be any name of choice: python3 -m venv venv
+    - to activate virtual environment:  source venv/bin/activate
+    - to deactivate virtual environment: deactivate
+    - to completely remove virtual environment: rm -rf venv
+    - to create a requirement.txt file: pip freeze > requirements.txt
+    - to install from requirement.txt file: pip3 install -r requirements.txt
+    - to uninstall from requirement.txt file: pip uninstall -r requirements.txt -y 
+
+--> How to run FastApi app:
+
+    1: Runs file and continues to update behind scence: uvicorn <name of python file>:app --reload
+    2: For new versions of FastApi:
+        - To run in production mode: fastapi run <name of python file>.py
+        - To run in development mode: fastapi dev <name of python file>.py
+
+--> How to create and run a simple fastapi endpoint:
+
+    from fastapi import FastAPI
+
+    app = FastAPI() # create the application
+
+    @app.get("/")   # ensures type of endpoint
+    async def first_api():
+        return {"message" : "You have reached the first endpoint of the app"}
+
+--> Pydantic v1 vs Pydantic v2
+
+FastAPI is now compatible with both Pydantic v1 and Pydantic v2. Based on how new the version of FastAPI you are using, there could be small method name changes. The three biggest are;
+    - .dict() function is now renamed to .model_dump()
+    - schema_extra function within a Config class is now renamed to json_schema_extra
+    - Optional variables need a =None example: id: Optional[int] = None
+
+--> What is Pydantic?
+
+Pydantic is a python library/framework that is used for data modeling, data parsing and has efficient error handling. Pydantics is commonly used as a resource for data validation and how to handle data coming to our FastAPI application
+    - field: used to validate attributes in basemodel class
+    - path: used to validate parameters
+    - query: used to validate queries
+
+--> What are query parameters?
+
+    - These are request parameters that have been attached after a question mark
+    - They have a name=value pairs eg 127.0.0.1:800/books/?category=math
+
+--> What are status codes?
+
+Http status code used to help client (user or system submitting data to the server | frontend) to understand what happend on the server side of the application ie backend. Status codes are international standards on how client|server should handle the result of a request. Allows everyone sending a request to know if their submission was successful or not. Examples;
+    -  1XX: information response: request processing
+    -  2XX: Success: Request successfully complete
+        - 200: OK -> standard response for successful request ie GET requests
+        - 201: Created -> used mainly for successful POST requests
+        - 204: No content -> request was successful but didnt create nor return anything ie PUT requests
+    -  3XX: Redirection: Further action must be complete
+    -  4XX: Client errors: An error was caused by the client
+        - 400: Bad request -> request cant be processed due to client error. ie invalid requests
+        - 401: Unauthorized -> client doesnt have valid authentication for resource
+        - 404: Not found -> client requested resource can not be found
+        - 422: Unprocessable entity -> semantic errors in the client requests
+    -  5XX: Server errors: An error occurred on the server
+        - 500: internal server error -> generic error message when an unexpected issue on the server occurs
+
+
+
+--> Notes:
+
+    - In fastapi URLs you cant have space, instead you should use %20 ie title four == title%20four
+    - endpoints are accessed from top to bottom like try-catch errors therefore ensure more specificity at the top 
+    - for most get requests its best to return status 200 Ok, for post requests status 201 created, for put and delete requests 204 no content this is because no new data is created eg (HTTPException) -> `status_code=status.HTTP_200_OK`
+

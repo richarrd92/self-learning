@@ -1,0 +1,3 @@
+# Books2.py
+
+This is a continuation of project01. Similar to project one we will continue working with books data and common http endpoints, however the data will be slightly more sophisticated ie new information will be added. Also endpoints will include data validation, exception handling, status codes, swagger configuration, python request objects. For a more realistic approach to data storage we will use a class for books

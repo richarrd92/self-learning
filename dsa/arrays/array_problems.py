@@ -1,3 +1,4 @@
+from collections import defaultdict
 from data import numbers, bills, checks, pattern1, text1
 # **************************************************************************************************** 
 # (a) Find if two integers in array sum to zero (Brute Force)
@@ -40,6 +41,21 @@ def findSumTargetOptimal(arr, target, counter=0):
         mp[num] = i
     return False, counter, "No values found"
 
+# === Run and print results ===
+
+# def print_result(title, result):
+#     print(f"\n{title}")
+#     found, counter, detail = result
+#     print("Found:", found)
+#     print("Loop ran:", counter, "times")
+#     print("Details:", detail)
+
+# print_result("Sum Zero Brute Force", findSumZero(numbers))
+# print_result("Sum Zero Optimal", findSumZeroOptimal(numbers))
+# print_result("Sum Target Brute Force", findSumTarget(numbers, 15))
+# print_result("Sum Target Optimal", findSumTargetOptimal(numbers, 15))
+# **************************************************************************************************** 
+
 # Distinct element check - brute force
 def distinct_elements(arr, counter=0):
     for i in range(len(arr)):
@@ -48,6 +64,9 @@ def distinct_elements(arr, counter=0):
             if arr[i] == arr[j]:
                 return False, counter
     return True, counter
+
+# distinct, count = distinct_elements(numbers)
+# print(f"\nDistinct Elements Brute Force:\nResult: {distinct}\nLoop ran: {count} times")
 
 # Distinct element check - optimal with hashing
 def distinct_elements_optimal(arr, counter=0):
@@ -59,6 +78,9 @@ def distinct_elements_optimal(arr, counter=0):
         seen.add(num)
     return True, counter
 
+# distinct, count = distinct_elements_optimal(numbers)
+# print(f"\nDistinct Elements Optimal:\nResult: {distinct}\nLoop ran: {count} times")
+
 # **************************************************************************************************** 
 # Distinct check using sorted array
 def presorted_distinct_elements_optimal(arr, counter=0):
@@ -69,6 +91,8 @@ def presorted_distinct_elements_optimal(arr, counter=0):
             return False, counter
     return True, counter
 
+# distinct, count = presorted_distinct_elements_optimal(numbers)
+# print(f"\nDistinct Elements Presorted Optimal:\nResult: {distinct}\nLoop ran: {count} times")
 
 # **************************************************************************************************** 
 # count sort algorithm
@@ -89,6 +113,10 @@ def rankSort(arr: list) -> list:
 
     return result
 
+# print("\nOriginal numbers:", numbers)
+# print(rankSort(numbers))
+
+
 # **************************************************************************************************** 
 # You are given n telephone bills and m checks sent to pay the bills (n ≥ m).
 # Assuming that telephone numbers are written on the checks, we want to find out who (all) failed to pay. 
@@ -106,6 +134,10 @@ def find_unpaid_bills(bills_arr: list, checks_arr: list) -> list:
             unpaid.append(bill)
 
     return unpaid
+
+# print("\nUnpaid bills")
+# print(find_unpaid_bills(bills, checks))
+
 
 # **************************************************************************************************** 
 # Horspool algorithm - pattern matching
@@ -137,7 +169,6 @@ def build_character_position_table(pattern: str) -> dict:
     print("}")
 
     return character_position_map
-
 
 # Step 3: Update alphabet table with actual pattern character positions
 def update_shift_table_with_pattern(alphabet_table: dict, character_position_table: dict) -> dict:
@@ -174,6 +205,17 @@ def horspool_algorithm(pattern: str, text: str, shift_table: dict) -> list:
 
     return match_positions
 
+# print("\nAlphabet table")
+# alphabet_table = build_alphabet_shift_table(pattern1)
+
+# print("\nPattern table")
+# character_position_table = build_character_position_table(pattern1)
+
+# main_table = update_shift_table_with_pattern(alphabet_table, character_position_table)
+
+# print("\nHorspool algorithm result:")
+# print(horspool_algorithm(pattern1, text1, main_table))
+
 # We are given two strings S and T , each n characters long. 
 # We have to check whether one of them is a right cyclic shift of the other. 
 # For example, PLEA is a right cyclic shift of LEAP, and vice versa. 
@@ -194,54 +236,31 @@ def is_right_cyclic(text1: str, text2: str) -> bool:
     # -1 not found and 0 text1 == text 2
     return pos != -1 and pos != 0
 
-word1, word2 = "LEAP", "PLEA"
-if is_right_cyclic(word1, word2):
-    print("The strings are right cyclic")
-else:
-    print("The strings are not right cyclic")
+# word1, word2 = "LEAP", "PLEA"
+# if is_right_cyclic(word1, word2):
+#     print("The strings are right cyclic")
+# else:
+#     print("The strings are not right cyclic")
+
+
+def topKFrequent(nums: list[int], k: int) -> list[int]:
+    mp = defaultdict(int)
+    noDup = set() # use set for no dup
+
+    for i in range(len(nums)):
+        mp[nums[i]] += 1 # track freq
+        if mp[nums[i]] >= k:
+            # if mp[nums[i]] not in noDup:
+            #     noDup.add(mp[nums[i]])
+            print("the most freq: ", nums[i], " : " ,mp[nums[i]])
+            noDup.add(nums[i]) # filter dup
+
+    return list(noDup)
+
+nums = [1,2]
+k = 2
+print(topKFrequent(nums, k))
 
 
 
 
-
-
-
-# === Run and print results ===
-
-# def print_result(title, result):
-#     print(f"\n{title}")
-#     found, counter, detail = result
-#     print("Found:", found)
-#     print("Loop ran:", counter, "times")
-#     print("Details:", detail)
-
-# print_result("Sum Zero Brute Force", findSumZero(numbers))
-# print_result("Sum Zero Optimal", findSumZeroOptimal(numbers))
-# print_result("Sum Target Brute Force", findSumTarget(numbers, 15))
-# print_result("Sum Target Optimal", findSumTargetOptimal(numbers, 15))
-
-# distinct, count = distinct_elements(numbers)
-# print(f"\nDistinct Elements Brute Force:\nResult: {distinct}\nLoop ran: {count} times")
-
-# distinct, count = distinct_elements_optimal(numbers)
-# print(f"\nDistinct Elements Optimal:\nResult: {distinct}\nLoop ran: {count} times")
-
-# distinct, count = presorted_distinct_elements_optimal(numbers)
-# print(f"\nDistinct Elements Presorted Optimal:\nResult: {distinct}\nLoop ran: {count} times")
-
-# print("\nOriginal numbers:", numbers)
-# print(rankSort(numbers))
-
-# print("\nUnpaid bills")
-# print(find_unpaid_bills(bills, checks))
-
-# print("\nAlphabet table")
-# alphabet_table = build_alphabet_shift_table(pattern1)
-
-# print("\nPattern table")
-# character_position_table = build_character_position_table(pattern1)
-
-# main_table = update_shift_table_with_pattern(alphabet_table, character_position_table)
-
-# print("\nHorspool algorithm result:")
-# print(horspool_algorithm(pattern1, text1, main_table))
