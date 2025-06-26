@@ -61,6 +61,15 @@ Http status code used to help client (user or system submitting data to the serv
     -  5XX: Server errors: An error occurred on the server
         - 500: internal server error -> generic error message when an unexpected issue on the server occurs
 
+--> Sqlite3 database
+This is a simple lightweight file-based database. It does not require a separate server process, making it ideal for small to medium-sized applications, testing, and local storage. SQLite stores the entire database in a single .db file, supports standard SQL, and is widely used in mobile apps, embedded systems, and local desktop applications due to its minimal setup and zero-configuration nature. To run in terminal;
+    - to start database: sqlite3 <name of database file>
+    - to view schema: .schema
+    - to change view mode: 
+        - .mode column
+        - .mode markdown
+        - .mode box
+        - .mode table
 
 
 --> Notes:
@@ -68,4 +77,8 @@ Http status code used to help client (user or system submitting data to the serv
     - In fastapi URLs you cant have space, instead you should use %20 ie title four == title%20four
     - endpoints are accessed from top to bottom like try-catch errors therefore ensure more specificity at the top 
     - for most get requests its best to return status 200 Ok, for post requests status 201 created, for put and delete requests 204 no content this is because no new data is created eg (HTTPException) -> `status_code=status.HTTP_200_OK`
+    - To generate secure SECRET_KEY: 
+        - import secrets
+        - secrets.token_hex(32)
+        
 

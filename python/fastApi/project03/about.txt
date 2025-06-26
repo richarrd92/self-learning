@@ -1,0 +1,10 @@
+# project 03 - Todo App
+
+- Unlike project 1 and 2, project 3 takes it a little further in terms of complexity. 
+- Focus will switch from BOOKS to a todo App. 
+- New information It will include; 
+    - a full SQL database
+    - authentication
+    - authorization
+    - hashing passwords 
+- This will be done following a 3 tier mode structure -> a web page, server and database

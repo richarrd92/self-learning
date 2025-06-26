@@ -1,6 +1,7 @@
 # Books.py
 
-This is a simple project to mimic crud operations on books ie data stored. Something similar to a database; We will use common HTTP requests methods like get, post, put, delete etc. Main goal is to learn the fundamentals of HTTP methods and how to use them to create, read, update and delete data
+- This is a simple project to mimic crud operations on books ie data stored. 
+- Something similar to a database; We will use common HTTP requests methods like get, post, put, delete etc. - Main goal is to learn the fundamentals of HTTP methods and how to use them to create, read, update and delete data
 
 CRUD    <------->   HTTP requests
 
