@@ -1,45 +1,64 @@
-# **Web Development & DSA**
+# **Fullstack Development, Data Structures, Algorithms, and Java**
 
-Welcome! This repo documents my self-taught journey as a full-stack developer and my exploration of data structures and algorithms. While studying at UMBC, I’m gaining hands-on experience with modern web technologies and sharpening my problem-solving skills for both interviews and real-world scenarios.
+Welcome! This repo documents my self-taught journey as a full-stack developer, my exploration of data structures and algorithms, and my deep dive into the Java ecosystem.
 
-## **Full-Stack Web Development**
-
-I'm building scalable applications using tools like HTML, CSS, React, Node.js, FastAPI, MongoDB, Prisma, and more. My focus is on mastering full-stack workflows and staying up-to-date with industry best practices.
+## **Full-Stack Development**
 
 ### **Frontend**
-- HTML, CSS, Tailwind  
-- JavaScript, TypeScript  
-- React, Next.js  
+- HTML, CSS, Tailwind, Bootstrap
+- JavaScript, TypeScript
+- React, Next.js, Angular
+- Responsive Design & UI/UX Principles
 
 ### **Backend**
-- Node.js, Python, FastAPI  
-- Express.js, MongoDB, Prisma, NeonDB  
-- SQL, Postman  
+- Node.js, Python (FastAPI), Java (Core Java SE & Java EE)
+- Express.js, MongoDB, Prisma, NeonDB, MySQL
+- SQL Concepts, JDBC (Java Database Connectivity)
+- API Development & Integration
 
-### **Full-Stack**
-- API Integration  
-- State Management (React Hooks)  
-- Auth (Login/Signup)  
-- Responsive Design  
+### **Java-Specific Topics**
+- **Core Java / Java SE** – standalone/desktop applications
+    - Basics: Comments, Keywords, Variables, Data Types, Operators, Scanner Class
+    - Control Flow: If, Switch, Loops (While, Do-While, For)
+    - Arrays
+    - OOP: Class, Object, This, Constructors, Static, Packages, Inheritance, Polymorphism, Super, Final, Inner Classes, Access Modifiers, Encapsulation, Abstract Classes, Interfaces
+    - Lang Package: Object, String, StringBuffer, StringBuilder, Math, Wrapper Classes
+    - Exception Handling
+    - Multithreading
+    - Collections Framework
+    - Functional Interfaces, Lambda Expressions, Stream API
+    - IO Package
+- **Advanced Java / Java EE** – web applications
+    - Servlets, JSP (Java Server Pages)
+- **Frameworks**
+    - Hibernate ORM
+    - Spring Framework: Core/Bean, DAO, JDBC, ORM, Data JPA, MVC, Boot, REST
+    - Microservices with Spring Boot
+
+### **Full-Stack Skills**
+- State Management (React Hooks, Angular State)
+- Authentication (Login/Signup, Clerk, Firebase)
+- REST APIs (Spring Boot, FastAPI, Express)
+- Deployment (Netlify, Heroku, Vercel)
+- Cloud Services (Cloudinary, AWS basics)
 
 ### **Tools & Extras**
-- Git, GitHub  
-- Deployment (Netlify, Heroku, Vercel)  
-- Clerk (Auth), Cloudinary (Media)  
-- Docker (Optional), DaisyUI  
-- Command Line Basics  
+- Git, GitHub
+- Postman (API testing)
+- Maven, Lombok
+- Docker (optional)
+- Command Line Basics
+
 
 ## **Data Structures & Algorithms**
 
-This section features my DSA practice from basic concepts to advanced topics as I build a strong foundation for interviews and future development.
-
 ### **Topics Covered**
-- Sorting (Quick, Merge, Bucket)  
-- Searching (Binary, Linear)  
-- Data Structures (Lists, Stacks, Queues, Trees, Graphs)  
-- Advanced (Dynamic Programming, Graphs, Heaps)  
+- Sorting: Quick, Merge, Bucket
+- Searching: Binary, Linear
+- Data Structures: Arrays, Lists, Stacks, Queues, Trees, Graphs
+- Advanced: Dynamic Programming, Heaps, Graph Algorithms
 
 ### **Goals**
-- Improve problem-solving and efficiency  
-- Master time and space complexity  
-- Build a personal reference for interviews and projects  
+- Improve problem-solving skills
+- Master time & space complexity analysis
+- Build a personal reference for interviews
