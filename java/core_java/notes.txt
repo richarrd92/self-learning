@@ -1,0 +1,606 @@
+Basic Programming Concepts
+--------------------------
+
+Program
+-------
+A program is a set of instructions given to a computer to perform a task
+
+Comments
+--------
+Comments are used to document a program and ignored by the programming language
+
+	Types of comments
+	-----------------
+	- Single line comments => //
+	- Multiline comments => /* ... */
+
+	Ex:
+		//to find area of a circle
+
+	Ex:
+		/*
+			to add a product
+			into the shopping cart
+		*/
+
+Keyword
+-------
+A keyword is a reserved word/predefined word whose meaning is known to the language directly
+
+	Ex:
+		class, if, else, switch, while, do, for, int, float, char, public, private etc
+
+Variable
+--------
+A variable is an identifier which allocates some memory space to hold the data
+
+	Ex:
+		studentName
+		customer_address
+		employeeSalary
+		itemName
+
+Data Type
+---------
+Type of data the variable holds is called as data type
+
+	- int //EX: 25, 98, 0, -86
+	- char //Ex: 'a', 'p', '9', '*'
+	- float //EX: 5.4, 3.14, 87,9, -75.56
+	- String //Ex: "apple", "Mumbai", "1234-hyd"
+
+Declaration of Variable
+-----------------------
+In order to allocate memory space for variable we need to declare the variable
+
+syntax (Rules of a language)
+------
+datatype var_1, var_2, ..., var_n;
+
+Ex:
+	int a,b;
+	char c;
+	float f;
+
+Method/Function
+---------------
+A method is a subprogram which is used to do a specific task
+
+Ex:
+
+	//Defining the method
+	float areaCircle(int radius)//radius is called as argument/parameter
+	{
+  	   float PI = 3.14;
+	   float area = PI * radius * radius;
+	   return area;
+	}
+
+	//calling the method
+	float area = areaCircle(5);
+	print(area);//78.5
+
+	The return type of areaCircle() method is float
+
+	void areaCircle(int radius)//radius is called as argument/parameter
+	{
+  	   float PI = 3.14;
+	   float area = PI * radius * radius;
+	   print(area);
+	}
+
+	void means no return type
+
+	Ex:
+		void printMessage(String msg)
+		{
+			print(msg);
+        }
+
+		printMessage("Hello");
+
+	Ex:
+		int calculateTotal(int mark1, int mark2, int mark3)
+		{
+		   int total;
+		   total = mark1 + mark2 + mark3;
+		   return total;
+		}
+
+---------------------------------------------------------------------------->
+
+Java Basics
+-----------------
+- Java is an Object-Oriented Programming Language developed by James Gosling at Sun Microsystems
+- Sun Microsystems is acquired by Oracle Corp in 2010 year
+
+Object Oriented Concepts
+------------------------
+- Object
+- Class
+- Abstraction
+- Encapsulation
+- Inheritance
+- Polymorphism
+
+Object
+------
+An object is a real time entity which has identity, state and behavior
+
+	Refer diagram object.png
+
+Class
+-----
+A class is a collection of data members and methods
+
+Ex:
+	class Person
+	{
+	   //Data members
+	   int age;
+	   String name;
+	   float height;
+       
+	   //Methods
+ 	   void walk(){...}
+       void eat(){...}
+	}
+
+{} => block/scope
+
+age = 25;//error
+
+The members (data members/methods) of the class are accessed using objects with dot(.) operator
+
+Creating objects
+----------------
+
+syntax (Rules of a language)
+------
+ClassName objName = new ClassName();
+
+Ex:
+	Person p = new Person();//p is an object of class Person
+
+	p.age = 25;
+	p.name = "John";
+	p.height = 5.4;
+	p.walk();
+	p.eat();
+
+Identifying Objects and Classes
+-------------------------------
+Mr.XXX teaches Java at RRR Technologies. PPP attends Java Sessions.
+Mrs.XXX teaches Testing at the same company. QQQ attends Testing Sessions.
+
+Objects (Nouns)
+---------------
+Mr.XXX
+Java
+RRR
+PPP
+Mrs.XXX
+Testing
+QQQ
+
+Classes (A class is a collection of related objects)
+-------
+Faculty (Mr.XXX and Mrs.XXX)
+Course  (Java and Testing)
+Company (RRR)
+Student (PPP and QQQ)
+
+---------------------------------------------------------------------------->
+
+Download and Install Java 20+ version
+------------------------------------
+Google: java 20+ download
+url: https://www.oracle.com/in/java/technologies/downloads/
+
+Developing a Java Application at command prompt
+-----------------------------------------------
+- Open terminal
+	C:\>
+
+- Create a folder/directory "JavaPrograms" as follows
+	C:\>mkdir JavaPrograms
+
+	mkdir means make directory
+
+- Change the folder/directory to "JavaPrograms" as follows
+	C:\>cd JavaPrograms
+	C:\JavaPrograms>
+		cd means change directory
+
+- Create a Java source code file "HelloWorld.java" as follows
+	C:\JavaPrograms>nano HelloWorld.java
+
+	Note: Can use also vim
+
+- Type the following code in HelloWorld.java
+
+	//to display Hello World message onto the screen
+	class HelloWorld
+	{
+   	   public static void main(String[] args)
+   	   {
+		System.out.println("Hello World");
+   	   }
+	}
+
+
+- Compile the Java source code file, HelloWorld.java as follows
+	C:\JavaPrograms>javac HelloWorld.java
+		which creates HelloWorld.class, called as byte code
+
+- Run the Java byte code file, HelloWorld.class as follows
+	C:\JavaPrograms>java HelloWorld
+
+	which displays "Hello World"  message onto the screen
+
+
+Note
+----
+- In Java, every statement should end with a semicolon (;)
+- Java is case-sensitive programming language means there is a difference between upper case and lower case letters
+
+System.out.println()
+--------------------
+It is used to display messages or the value of variables or both onto the screen. System is a predefined class
+
+Ex:
+	System.out.println("Welcome");
+
+	output
+	------
+	Welcome
+
+Ex:
+	int age = 20;
+	System.out.println(age);
+
+	output
+	------
+	20
+
+Ex:
+	int netSalary = 50000;
+	System.out.println("Net Salary = "+netSalary);
+
+	output
+	------
+	Net Salary = 50000
+
+---------------------------------------------------------------------------->
+
+Datatype
+--------
+Type of data the variable holds is called as datatype
+
+Types
+-----
+- Primitive Data Types
+- Reference Data Types
+
+Primitive Data Types
+--------------------
+	Refer diagram Primitive Types.png
+
+Reference Data Types
+--------------------
+	Ex:
+		Arrays, Classes (Predefined Classes/User Defined Classes)
+
+
+	Predefined Classes => String, System, Exception, Thread, ArrayList etc
+	User Defined Classes => Employee, Student, Customer, Account etc
+
+
+Points on Data Types
+--------------------
+- Default values are applicable only to the data members (declared within a class) of the class
+  not for local variables (declared within a method)
+
+	Ex:
+		class Sample
+		{
+		   int m;//data member
+		   void ppp()//method
+		   {
+			int n;//local variable
+			SOP(n);//Error - local variable n should be initialized
+                   }
+		   static void main()
+	  	   {
+			Sample s = new Sample();
+			SOP(s.m);//default value 0
+			s.ppp();
+                   }
+		}
+
+		SOP() => System.out.println() => Acronym used to display messages or the value of variables or both on screen
+
+
+- Local variables need to be initialized
+
+- Memory allocation for reference data type is done during runtime using new operator
+
+- Default value for reference data type is null
+	Ex:
+		String s;//data member
+		SOP(s);//null
+
+
+Type Casting
+------------
+Converting one primitive data type into another primitive data type or converting one reference data type
+into another reference data type is called as type casting
+
+	Types of Casting
+	----------------
+	- Implicit Casting
+	- Explicit Casting
+
+Implicit Casting
+----------------
+Converting lower data type into higher data type
+
+
+Ex:
+	short s = 45;
+	int n = s;
+	SOP(n);//45
+
+Ex:
+	byte b = 35;
+	double d = b;
+	SOP(d);//35.0
+
+Ex:
+	char c = 'A';
+	int n = c;
+	SOP(n);//65 - UNICODE of char 'A'
+
+	
+	Note
+	----
+	- C/C++ supports ASCII Codes (256 symbols)
+	- Java/.NET/PHP/Python supports UNICODEs (65536 symbols)
+	- ASCII Codes are subset of UNICODEs
+
+Explicit Casting
+----------------
+Converting higher data type into lower data type
+
+Ex:
+	long x = 100;
+	int n = x;//error
+	int n = (int)x;
+	SOP(n);//100
+
+Ex:
+	double d = 55.5;
+	byte b = d;//error
+	byte b = (byte)d;
+	SOP(b);//55
+
+Ex:
+	int n = 65;
+	char c = n;//error
+	char c = (char)n;
+	SOP(c);//A
+
+Ex:
+	float f = 35.5;//error - In Java, a value with decimal point is double data type
+	
+	float f = (float)35.5;
+		or
+	float f = 35.5f;
+		or
+	float f = 35.5F;
+
+
+JShell tool
+-----------
+- JShell tool is added in Java 9 version
+- JShell is an interactive tool to execute the Java Statements
+
+To open JShell
+--------------
+Open command prompt/terminal
+
+C:\>jshell
+
+jshell>
+
+Ex:
+jshell>System.out.println("Welcome to JShell");
+Welcome to JShell
+
+To Exit
+-------
+jshell>/exit
+
+C:\>
+
+---------------------------------------------------------------------------->
+
+Operators
+---------
+- Arithmetic Operators => +, -, *, /, % (modulus - remainder)
+	+ => addition
+	- => subtraction
+	* => multiplication
+	/ => division
+	% => modulus (remainder)
+
+	Ex:
+		5 / 2 = 2 (quotient)
+		5 % 2 = 1 (remainder)
+
+		5.0 / 2 = 2.5
+		5 / 2.0 = 2.5
+		5.0 / 2.0 = 2.5
+
+		5.0 % 2.0 = 1.0
+
+
+- Relational Operators => >, <, >=, <=,==, != (not equal)
+	- used to form the conditions (comparisons)
+
+	Ex:
+		int salary = 5000;
+
+		(salary < 10000) //condition
+
+		A condition can be either true or false but cannot be both
+
+		(salary == 5000) //check for equality
+
+- Logical Operators => && (AND), || (OR), ! (NOT)
+	- used to join the conditions
+
+	Ex:
+		((m1 >= 40) && (m2 >= 40) && (m3 >= 40))
+			result = "pass";
+
+		((m1 < 40) || (m2 < 40) || (m3 < 40))
+			result = "fail";
+
+	- In case of && all conditions should be true
+	- In case of || any one condition can be true
+
+- Assignment Operators => =, +=, -=, *=, /=, %=
+	- shortcut/shorthand operators
+
+	Ex:
+		int m = 5;
+		m = m + 5;//m = 5 + 5 = 10
+
+		Using shorthand,
+			m += 5;
+	
+	Ex:
+		int m = 10;
+		m = m * 20;//m = 10 * 20 = 200
+
+		Using shorthand,
+			m *= 20;
+
+- Conditional Operator => ? (ternary operator)
+	syntax
+	------
+		(condition) ? expression1 : expression2;
+
+
+
+	It is used to check a condition and if the condition is true it will execute
+	expression1 else if the condition is false it will execute expression2
+
+	Ex:
+		int n1 = 10;
+		int n2 = 5;
+		int big = (n1 > n2) ? n1 : n2;
+		SOP(big)//10
+
+	Ex:
+		int n1 = 10;
+		int n2 = 15;
+		int big = (n1 > n2) ? n1 : n2;
+		SOP(big)//15
+
+- Increment and Decrement Operators => ++, --
+
+	Increment => ++ => value of the variable is incremented by 1
+	Decrement => -- => value of the variable is decremented by 1
+
+	Ex:
+		int x = 5;
+		x++;
+		SOP(x);//6
+
+	Ex:
+		int x = 5;
+		x--;
+		SOP(x);//4
+
+
+	Types
+	-----
+	- Pre
+	- Post
+
+		Refer diagram Pre vs Post.png
+
+---------------------------------------------------------------------------->
+
+Scanner class
+-------------
+- Scanner class is a predefined class and added in Java 5 version
+- Scanner class is used to accept the user input during the program execution (runtime)
+- Scanner class is used to accept the values into the variables from keyboard during program execution
+- Scanner class is present in java.util package (A package is a collection of related classes)
+	import java.util.Scanner;
+
+- Creating Scanner class object
+	Scanner s = new Scanner(System.in);//System.in represents keyboard
+
+Methods of Scanner class
+------------------------
+- nextInt() => used to read an int value
+- nextLong() => used to read a long value
+- nextByte() => used to read a byte value
+- nextShort() => used to read a short value
+- nextFloat() => used to read a float value
+- nextDouble() => used to read a double value
+- next() => used to read a String value without spaces
+- nextLine() => used to read a String value with spaces
+
+	Ex:
+		int m = s.nextInt();
+		float f = s.nextFloat();
+		String empName = s.next();
+
+
+--------------------------------
+class Person
+{
+   void eat(){...}
+   void walk(){...}
+}
+
+Person p = new Person();
+p.eat();
+p.walk();
+----------------------------------
+
+
+Write a program (WAP) to find area of a rectangle
+	area = length * breadth
+
+	Refer program Rectangle.java
+
+
+
+WAP to accept roll number, name and marks in three subjects. Find total and average.
+Display roll number, name, total and average
+	Refer program Student.java
+
+
+Assignment - 1
+--------------
+1. WAP to find area of a Circle
+	
+	double PI = 3.14;
+	area = PI * radius * radius;
+
+
+2. WAP to accept item number, item name, rate and quantity. Find amount (rate * qty).
+   Display item number, item name and amount
+
+
+How to submit Assignments?
+--------------------------
+Send the source code files (Circle.java and Item.java) to rajonlinejava@gmail.com
+
+Subject: Assignment - 1
