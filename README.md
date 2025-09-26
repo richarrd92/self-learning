@@ -1,64 +1,57 @@
-# **Fullstack Development, Data Structures, Algorithms, and Java**
+# **Full-Stack Development | Data Structures & Algorithms**
 
-Welcome! This repo documents my self-taught journey as a full-stack developer, my exploration of data structures and algorithms, and my deep dive into the Java ecosystem.
+This repository highlights my ongoing journey as a software engineer. It documents my practice with full-stack development, exploration of data structures and algorithms, and focused study of the Java ecosystem.
 
 ## **Full-Stack Development**
 
+### **Java**
+- **Core Java / SE**  
+  - Basics: Variables, Data Types, Operators, Scanner  
+  - Control Flow: If/Switch, Loops  
+  - OOP: Classes, Objects, Constructors, Inheritance, Polymorphism, Encapsulation, Interfaces  
+  - Lang Package, Exception Handling, Multithreading  
+  - Collections, Functional Interfaces, Lambdas, Streams, IO  
+- **Advanced Java / EE**  
+  - Servlets, JSP  
+- **Frameworks**  
+  - Hibernate ORM  
+  - Spring (Core, DAO, JDBC, ORM, Data JPA, MVC, Boot, REST, Microservices) 
+
 ### **Frontend**
-- HTML, CSS, Tailwind, Bootstrap
-- JavaScript, TypeScript
-- React, Next.js, Angular
-- Responsive Design & UI/UX Principles
+- HTML, CSS, Tailwind, Bootstrap  
+- JavaScript, TypeScript  
+- React, Next.js, Angular  
+- Responsive Design & UI/UX Principles  
 
 ### **Backend**
-- Node.js, Python (FastAPI), Java (Core Java SE & Java EE)
-- Express.js, MongoDB, Prisma, NeonDB, MySQL
-- SQL Concepts, JDBC (Java Database Connectivity)
-- API Development & Integration
+- Node.js, Python (FastAPI), Java (SE & EE)  
+- Express.js, MongoDB, Prisma, NeonDB, MySQL  
+- SQL Concepts & JDBC  
+- API Development & Integration  
 
-### **Java-Specific Topics**
-- **Core Java / Java SE** – standalone/desktop applications
-    - Basics: Comments, Keywords, Variables, Data Types, Operators, Scanner Class
-    - Control Flow: If, Switch, Loops (While, Do-While, For)
-    - Arrays
-    - OOP: Class, Object, This, Constructors, Static, Packages, Inheritance, Polymorphism, Super, Final, Inner Classes, Access Modifiers, Encapsulation, Abstract Classes, Interfaces
-    - Lang Package: Object, String, StringBuffer, StringBuilder, Math, Wrapper Classes
-    - Exception Handling
-    - Multithreading
-    - Collections Framework
-    - Functional Interfaces, Lambda Expressions, Stream API
-    - IO Package
-- **Advanced Java / Java EE** – web applications
-    - Servlets, JSP (Java Server Pages)
-- **Frameworks**
-    - Hibernate ORM
-    - Spring Framework: Core/Bean, DAO, JDBC, ORM, Data JPA, MVC, Boot, REST
-    - Microservices with Spring Boot
+### Additional Skills
+- **State Management:** React Hooks, Angular State  
+- **Authentication:** Clerk, Firebase  
+- **REST APIs:** Spring Boot, FastAPI, Express  
+- **Deployment:** Netlify, Heroku, Vercel  
+- **Cloud Services:** Cloudinary, AWS Basics  
 
-### **Full-Stack Skills**
-- State Management (React Hooks, Angular State)
-- Authentication (Login/Signup, Clerk, Firebase)
-- REST APIs (Spring Boot, FastAPI, Express)
-- Deployment (Netlify, Heroku, Vercel)
-- Cloud Services (Cloudinary, AWS basics)
-
-### **Tools & Extras**
-- Git, GitHub
-- Postman (API testing)
-- Maven, Lombok
-- Docker (optional)
-- Command Line Basics
-
+**Tools & Extras:**  
+- Git, GitHub  
+- Postman (API testing)  
+- Maven, Lombok  
+- Docker (optional)  
+- Command Line Basics  
 
 ## **Data Structures & Algorithms**
 
-### **Topics Covered**
-- Sorting: Quick, Merge, Bucket
-- Searching: Binary, Linear
-- Data Structures: Arrays, Lists, Stacks, Queues, Trees, Graphs
-- Advanced: Dynamic Programming, Heaps, Graph Algorithms
+### **Topics**
+- Sorting: Quick, Merge, Bucket  
+- Searching: Binary, Linear  
+- Structures: Arrays, Lists, Stacks, Queues, Trees, Graphs  
+- Advanced: Dynamic Programming, Heaps, Graph Algorithms  
 
-### **Goals**
-- Improve problem-solving skills
-- Master time & space complexity analysis
-- Build a personal reference for interviews
+### **Objectives**
+- Strengthen problem-solving skills  
+- Deepen understanding of time/space complexity  
+- Build a solid reference for technical interviews  
