@@ -1,0 +1,225 @@
+
+Operators
+---------
+- Arithmetic Operators => +, -, *, /, % (modulus - remainder)
+	+ => addition
+	- => subtraction
+	* => multiplication
+	/ => division
+	% => modulus (remainder)
+
+	Ex:
+		5 / 2 = 2 (quotient)
+		5 % 2 = 1 (remainder)
+
+		5.0 / 2 = 2.5
+		5 / 2.0 = 2.5
+		5.0 / 2.0 = 2.5
+
+		5.0 % 2.0 = 1.0
+
+
+- Relational Operators => >, <, >=, <=,==, != (not equal)
+	- used to form the conditions (comparisons)
+
+	Ex:
+		int salary = 5000;
+
+		(salary < 10000) //condition
+
+		A condition can be either true or false but cannot be both
+
+		(salary == 5000) //check for equality
+
+- Logical Operators => && (AND), || (OR), ! (NOT)
+	- used to join the conditions
+
+	Ex:
+		((m1 >= 40) && (m2 >= 40) && (m3 >= 40))
+			result = "pass";
+
+		((m1 < 40) || (m2 < 40) || (m3 < 40))
+			result = "fail";
+
+	- In case of && all conditions should be true
+	- In case of || any one condition can be true
+
+
+- Assignment Operators => =, +=, -=, *=, /=, %=
+	- shortcut/shorthand operators
+
+	Ex:
+		int m = 5;
+		m = m + 5;//m = 5 + 5 = 10
+
+		Using shorthand,
+			m += 5;
+	
+	Ex:
+		int m = 10;
+		m = m * 20;//m = 10 * 20 = 200
+
+		Using shorthand,
+			m *= 20;
+
+- Conditional Operator => ? (ternary operator)
+	syntax
+	------
+		(condition) ? expression1 : expression2;
+
+
+	It is used to check a condition and if the condition is true it will execute
+	expression1 else if the condition is false it will execute expression2
+
+	Ex:
+		int n1 = 10;
+		int n2 = 5;
+		int big = (n1 > n2) ? n1 : n2;
+		SOP(big)//10
+
+	Ex:
+		int n1 = 10;
+		int n2 = 15;
+		int big = (n1 > n2) ? n1 : n2;
+		SOP(big)//15
+
+- Increment and Decrement Operators => ++, --
+
+	Increment => ++ => value of the variable is incremented by 1
+	Decrement => -- => value of the variable is decremented by 1
+
+	Ex:
+		int x = 5;
+		x++;
+		SOP(x);//6
+
+	Ex:
+		int x = 5;
+		x--;
+		SOP(x);//4
+
+
+	Types
+	-----
+	- Pre
+	- Post
+
+		Refer diagram pre-post.png
+
+
+Scanner class
+-------------
+- Scanner class is a predefined class and added in Java 5 version
+- Scanner class is used to accept the user input during the program execution (runtime)
+- Scanner class is used to accept the values into the variables from keyboard during program execution
+- Scanner class is present in java.util package (A package is a collection of related classes)
+	import java.util.Scanner;
+
+- Creating Scanner class object
+	Scanner s = new Scanner(System.in);//System.in represents keyboard
+
+
+Methods of Scanner class
+------------------------
+- nextInt() => used to read an int value
+- nextLong() => used to read a long value
+- nextByte() => used to read a byte value
+- nextShort() => used to read a short value
+- nextFloat() => used to read a float value
+- nextDouble() => used to read a double value
+- next() => used to read a String value without spaces
+- nextLine() => used to read a String value with spaces
+
+	Ex:
+		int m = s.nextInt();
+		float f = s.nextFloat();
+		String empName = s.next();
+
+--------------------------------
+class Person
+{
+   void eat(){...}
+   void walk(){...}
+}
+
+Person p = new Person();
+p.eat();
+p.walk();
+----------------------------------
+
+
+Write a program (WAP) to find area of a rectangle
+	area = length * breadth
+
+	Refer program Rectangle.java
+
+WAP to accept roll number, name and marks in three subjects. Find total and average.
+Display roll number, name, total and average
+	Refer program Student.java
+
+
+Assignment - 1
+--------------
+1. WAP to find area of a Circle
+	
+	double PI = 3.14;
+	area = PI * radius * radius;
+
+
+2. WAP to accept item number, item name, rate and quantity. Find amount (rate * qty).
+   Display item number, item name and amount
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

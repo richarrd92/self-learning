@@ -1,0 +1,168 @@
+
+Multithreading
+--------------
+- A thread is a light weight process under execution within a process
+- Multithreading is used to increase the performance of application
+
+Ex:
+	void main()
+	{
+	   se = sumEven();
+	   so = sumOdd();
+	}
+
+	int sumEven()
+	{
+	   ...
+	   ...
+	}
+
+	int sumOdd()
+	{
+	   ...
+	   ...
+	}
+
+Creating Threads
+----------------
+- By creating a class which extends Thread class
+	or
+- By creating a class which implements Runnable interface
+
+
+Using Thread class
+------------------
+class MyThread extends Thread //Thread is a concrete class (fully implemented, not abstract)
+{
+   public void run()
+   {
+	//logic
+   }
+}
+
+MyThread t = new MyThread();
+t.start();//creates a thread and invokes run()
+
+
+State Transition Diagram of a Thread
+------------------------------------
+	Refer diagram thread-states.png
+
+
+Methods of Thread class
+-----------------------
+- Thread currentThread()
+- void start()
+- void run()
+- void setName(String)
+- String getName()
+- void setPriority(int)
+- int getPriority()
+- String toString()
+- void sleep(long)
+
+
+	Refer program ThreadMethodsDemo.java
+
+Thread[#29,Thread-0,5,main]
+---------------------------
+#29 => Thread number/id
+Thread-0 => Name of the thread
+5 => thread priority
+main => thread group (collection of threads)
+
+
+interface Runnable
+{
+   public void run();
+}
+
+public class Thread implements Runnable
+{
+   public static final int MIN_PRIORITY = 1;
+   public static final int NORM_PRIORITY = 5;
+   public static final int MAX_PRIORITY = 10;
+   public void run(){}//empty method
+   public void start()
+   {
+	...
+	...
+	run();
+   }
+   ...
+   ...
+}
+
+
+Note
+----
+- If the priority is <1 or >10 then it will throw IllegalArgumentException
+- IllegalArgumentException is a subclass of RuntimeException class and categorized as unchecked exception
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

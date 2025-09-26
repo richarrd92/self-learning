@@ -1,0 +1,160 @@
+
+Inheritance
+-----------
+- The process of creating new classes from an existing classes is called as inheritance
+- In Java, extends keyword is used to create a new class from an existing class
+
+	Ex:
+		class Vehicle //Base or Super or Parent class
+		{
+		   ...
+		}
+		class Car extends Vehicle //Derived or Sub or Child class
+		{
+		   ...
+		}
+
+- Through inheritance we can achieve reusability of the code
+
+- Java does not support multiple inheritance due to ambiguities means in Java a class can extend
+  only one class
+
+	Ex:
+		class A
+		{
+		   ...
+		}
+		class B
+		{
+		   ...
+		}
+		class C extends A, B {...}//error - does not support multiple inheritance
+
+Ex:
+
+Furniture (Chair, Table)
+Fruit (Mango, Apple, Orange)
+Vehicle (Bike, Car)
+Account (SavingAccount, CurrentAccount)
+
+- Inheritance is "is-a" relationship
+
+has-a relationship
+------------------
+Ex:
+	class Book
+	{
+	  ...
+	}
+
+	class Library extends Book {...} //not good
+
+
+	class Library //Library has Book
+	{
+	   Book book;
+	}
+
+
+	Refer program InheritanceDemo1.java
+
+
+Polymorphism
+------------
+Polymorphism means many forms
+
+	Types
+	-----
+	- Compile time
+		- Method overloading
+
+	- Runtime time
+		- Method overriding
+
+
+Method overloading
+------------------
+- Method name is same but the signature is different
+	signature => number of arguments/type of arguments
+
+	Ex:
+		int area(int, int, int){...}
+		int area(int, int){...}
+		float area(float, float){...}
+
+- Applicable within the same class as well as subclasses
+
+
+Method overriding
+-----------------
+- Method name is same and signature is also same
+- Applicable only in subclasses
+
+	Ex:
+		class Vehicle
+		{
+		   void drive(){...}
+		}
+		class Car extends Vehicle
+		{
+		   void drive(int speed){...}//overloaded method
+		   void drive(){...}//overridden method
+		}
+
+		Car c = new Car();
+		c.drive();//invokes drive() of Car
+
+- If a subclass object invokes the overridden method then it can invoke the method present in subclass
+
+super reference 
+---------------
+It is used to invoke the Base class members from Derived class method
+
+	Refer program InheritanceDemo2.java
+
+
+Previous Assignment solutions
+-----------------------------
+WAP to find biggest of given three numbers using Conditional Operator (?)
+
+	Refer program BigThreeCond.java
+
+
+Discount Program
+----------------
+	Refer program Discount.java
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

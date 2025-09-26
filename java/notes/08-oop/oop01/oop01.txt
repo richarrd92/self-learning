@@ -1,0 +1,229 @@
+
+Java OOP (Object Oriented Programming)
+--------------------------------------
+classes
+objects
+this reference
+constructors
+static keyword
+packages
+inheritance
+polymorphism
+super reference
+final keyword
+inner classes
+access modifiers
+abstract classes
+interfaces
+
+
+class
+-----
+A class is a collection of data members and methods
+
+Ex:
+	class Employee
+	{
+	   //Data members
+	   int empNum;
+	   String empName;
+	   double empSalary;
+	   //Methods
+	   void setEmpDetails()
+           {
+		...
+           }
+	   void dispEmpDetails()
+	   {
+		...
+           }
+	}
+
+	empName = "Ramu";//error
+
+Object
+------
+An instance of a class is called as object
+
+syntax
+------
+ClassName objName = new ClassName();
+
+Ex:
+	Employee e = new Employee();//e is an object of class Employee
+
+
+The members(data members/methods) of the class are accessed using objects with dot(.) operator
+
+Ex:
+	e.empNum = 101;
+	e.empName = "Ramu";
+	e.setEmpDetails();
+
+
+When a new object is created for a class then it allocates new memory for all data members of the class
+and the values in data members are default values
+
+Default Values
+--------------
+byte, short, int, long => 0
+float, double => 0.0
+char => ' '
+boolean => false
+REference Type (String) => null
+
+
+this reference
+--------------
+- this refers to the current object
+- this reference is generally used to differentiate data members of a class and arguments
+  of a method when the names are same
+
+
+
+	Refer program EmployeeTest.java
+
+Constructors
+------------
+- A constructor is a special method whose name is same as the classname which is used
+  to initialize the object and does not return anything not even void
+- In Java objects are created using constructors
+
+	Ex:
+		class Sample
+		{
+		   int m;
+		   int n;
+		   Sample()//constructor
+		   {
+			m = 10;
+			n = 20;
+                   }
+		   void Sample(){}//not a constructor, an ordinary method
+		}
+
+
+		Sample s = new Sample();//constructor
+		SOP(s.m+" "+s.n);//10 20
+
+
+	Refer program ConstructorDemo1.java
+
+
+Points on Constructors
+----------------------
+- If a class does not contain a constructor, Java creates a default constructor (no argument constructor)
+
+	Ex:
+		class Sample
+		{
+		   Sample(){} //default constructor - added implicitly
+		}
+
+- If a class contains a parameterized constructor then it is responsibility of the programmer
+  to create default constructor in the class
+
+	Refer program ConstructorDemo2.java
+
+
+
+Java OOP Assignments
+--------------------
+	Refer document Java OOP Assignments.pdf
+
+
+Previous Assignment Solutions
+------------------------------
+WAP to check whether the given age is major(>=18) or minor
+
+	Note: If the age is < 0, this display "Invalid Age"
+
+	Refer program CheckAge.java
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

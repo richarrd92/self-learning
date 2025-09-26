@@ -1,0 +1,195 @@
+
+Programming Concepts
+--------------------
+Program
+-------
+A program is a set of instructions given to a computer to perform a task
+
+Comments
+--------
+Comments are used to document a program and ignored by the programming language
+
+	Types of comments
+	-----------------
+	- Single line comments => //
+	- Multiline comments => /* ... */
+
+	Ex:
+		//to find area of a circle
+
+	Ex:
+		/*
+			to add a product
+			into the shopping cart
+		*/
+
+Keyword
+-------
+A keyword is a reserved word/predefined word whose meaning is known to the language directly
+
+	Ex:
+		class, if, else, switch, while, do, for, int, float, char, public, private etc
+
+
+Variable
+--------
+A variable is an identifier which allocates some memory space to hold the data
+
+	Ex:
+		studentName
+		customer_address
+		employeeSalary
+		itemName
+
+
+Data Type
+---------
+Type of data the variable holds is called as data type
+
+	- int //EX: 25, 98, 0, -86
+	- char //Ex: 'a', 'p', '9', '*'
+	- float //EX: 5.4, 3.14, 87,9, -75.56
+	- String //Ex: "apple", "Mumbai", "1234-hyd"
+
+
+Declaration of Variable
+-----------------------
+In order to allocate memory space for variable we need to declare the variable
+
+syntax (Rules of a language)
+------
+datatype var1, var2, ..., varn;
+
+
+Ex:
+	int a,b;
+	char c;
+	float f;
+
+
+Method/Function
+---------------
+A method is a subprogram which is used to do a specific task
+
+Ex:
+
+	//Defining the method
+	float areaCircle(int radius)//radius is called as argument/parameter
+	{
+  	   float PI = 3.14;
+	   float area = PI * radius * radius;
+	   return area;
+	}
+
+	
+	//calling the method
+	float area = areaCircle(5);
+	print(area);//78.5
+
+	The return type of areaCircle() method is float
+
+
+	void areaCircle(int radius)//radius is called as argument/parameter
+	{
+  	   float PI = 3.14;
+	   float area = PI * radius * radius;
+	   print(area);
+	}
+
+
+	void means no return type
+
+
+	Ex:
+		void printMessage(String msg)
+		{
+			print(msg);
+                }
+
+		printMessage("Hello");
+
+
+
+	Ex:
+		int calculateTotal(int mark1, int mark2, int mark3)
+		{
+		   int total;
+		   total = mark1 + mark2 + mark3;
+		   return total;
+		}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,317 @@
+
+java.lang package
+-----------------
+java.lang package is imported to all Java programs implicitly
+
+
+Classes under java.lang package
+-------------------------------
+- Object
+- String
+- StringBuffer
+- StringBuilder
+- Math
+
+Wrapper classes
+---------------
+- Byte
+- Short
+- Character
+- Integer
+- Long
+- Float
+- Double
+- Boolean
+
+Object class
+------------
+- Object class is a the top most class in Java Hierarchy
+- Any class in Java is a subclass of Object class
+
+	Ex:
+		class X [extends Object]
+		{
+		   ...
+		}
+
+		class Y extends X
+		{
+	  	   ...
+		}
+
+String class
+------------
+- A String is a collection of characters
+- In Java, String is immutable (like a constant)
+
+	Refer diagram String.png
+
+
+Methods of String class
+-----------------------
+- charAt()
+	- used to return the char at the given index
+		Ex:
+			String s = "Hello";
+			SOP(s.charAt(1));//e
+
+- compareTo()
+	- used to compare one string with another string
+
+	Ex:
+		String s1 = "abc";
+		String s2 = "pqr";
+		if ((s1.compareTo(s2)) < 0)
+		  SOP(s1+" is less than "+s2);
+		else
+		   if ((s1.compareTo(s2)) > 0)
+			SOP(s1+" is greater than "+s2);
+		   else
+			SOP(s1+" is equal to "+s2);
+
+		output
+		------
+		abc is less than pqr
+
+- concat()
+	- used to concat/join one string with another string
+
+	Ex:
+		String s1 = "Hello";
+		String s2 = "World";
+		SOP(s1.concat(s2));//HelloWorld => s1 = s1 + s2
+
+- contains()
+	- used to check whether a substring is present in the given string
+
+	Ex:
+		String s = "Welcome";
+		SOP(s.contains("come"));//true
+		SOP(s.contains("pqr"));//false
+
+- endsWith() and startsWith()
+	Ex:
+		String s = "Welcome";
+		SOP(s.endsWith("come"));//true
+		SOP(s.startsWith("Wel"));//true
+
+- equals() and equalsIgnoreCase()
+	- used to check for the equality of the strings
+
+	equals() => case sensitive
+	equalsIgnoreCase() => not case sensitive
+
+	Ex:
+		String s1 = "HeLLo";
+		String s2 = "hello";
+		SOP(s1.equals(s2));//false
+		SOP(s1.equalsIgnoreCase(s2));//true
+
+- indexOf()
+	- used to return the index of given sub string from the given string
+		EX:
+			String s = "welcome";
+			SOP(s.indexOf("come"));//3
+			SOP(s.indexOf("pqr"));//-1
+
+- length()
+	- used to return the number of characters from the given string
+	Ex:
+		String s = "hello";
+		SOP("Length = "+s.length());//Length = 5
+
+- split()
+	- used to divide the given string into substrings based on the given delimiter (space, semicolon, colon etc)
+	
+	Ex:
+		String str = "hibernate is an orm framework";
+		String[] strArray  = str.split(" ");
+		for(String s : strArray)
+		   SOP(s);
+
+		output
+		------
+		hibernate
+		is
+		an
+		orm
+		framework
+		
+- toCharArray()
+	- used to convert the given string into a char array
+
+	EX:
+		String s = "hello";
+		char[] charArray = s.toCharArray();
+
+		charArray => {'h','e','l','l','o'}
+
+- toLowerCase() and toUpperCase()
+	Ex:
+		String s = "HeLLo";
+		SOP(s.toLowerCase());//hello
+		SOP(s.toUpperCase());//HELLO
+
+- trim()
+	- used to remove the white spaces before and end of the string
+
+	Ex:
+		String s = "   Hello   World   ";
+		SOP(s.trim());//Hello  World
+
+- valueOf()
+	- used to convert other data types into String
+
+	Ex:
+		int n = 345;
+		String s1 = String.valueOf(n);
+		SOP(s1);//"345"
+
+	Ex:
+		float f = 45.5f;
+		String s2 = String.valueOf(f);
+		SOP(s2);//"45.5"
+
+
+WAP to check whether the given char is a vowel or consonant
+	Refer program CheckChar.java
+
+
+StringBuffer class
+------------------
+- StringBuffer is mutable
+- The methods present in StringBuffer class are synchronized
+
+
+StringBuilder class
+-------------------
+- StringBuilder is mutable
+- The methods present in StringBuilder class are not synchronized
+
+
+Generating Random numbers
+-------------------------
+Random numbers are used to generate the OTPs (One Time Password)
+
+Math.random() is used to generate random numbers
+
+	0.0 > Math.random() < 1.0
+
+
+	Refer program RandomDemo.java
+
+
+Wrapper classes
+---------------
+- For every primitive data type there is a corresponding reference data type called as wrapper class
+- Wrapper classes are final means we cannot create subclasses for Wrapper classes
+	Ex:
+		class MyClass extends Integer {} //error - Integer is final class
+
+- Wrapper classes are immutable
+- Wrapper classes are used to convert reference type into primitive type called as parsing
+
+	Ex:
+		String s1 = "565";
+		int n = Integer.parseInt(s1);
+		SOP(n);//565
+
+	Ex:
+		String s2 = "45.6";
+		double d = Double.parseDouble(s2);
+		SOP(d);//45.6
+
+
+Assignment - Strings
+--------------------
+1. WAP to count number of vowels, consonants and words from the given line of text
+
+2. WAP to check whether the given string is palindrome or not
+	Ex: madam, liril, radar
+
+3. WAP to reverse every word from the given line of text (Hint: split() method)
+	
+	I/P : java is simple
+	O/P : avaj si elpmis
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

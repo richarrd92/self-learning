@@ -1,0 +1,187 @@
+
+Note
+----
+If a Base class reference refers to the subclass object then it can invoke only
+the overridden methods of subclass
+
+	Ex:
+		class Vehicle
+		{
+		   void drive(){...}
+		}
+
+		class Car extends Vehicle
+		{
+		   void drive(){...}//overridden method
+		   void changeGear(){...}
+		}
+
+		Vehicle v = new Car();
+		v.drive();//invokes drive() of Car
+		v.changeGear();//error
+
+
+		Car c = new Vehicle();//error
+
+Abstract Classes
+----------------
+- It is used to form the rules/specifications
+- A method which is declared is called as abstract method
+- An abstract class contains zero or more abstract methods
+
+
+	Ex:
+		abstract class Sample
+		{
+		   void xxx(){...}//defined or implemented or concrete method
+		   abstract void yyy();//declared method
+		}
+
+- If a class extends an abstract class then we need to override all abstract methods
+  else make the class as abstract
+
+	Ex:
+		class Sample1 extends Sample
+		{
+		   void yyy(){...}
+		   void zzz(){...}
+		}
+
+		abstract class Sample2 extends Sample
+		{
+		   void ppp(){...}
+		}
+
+- We cannot create objects for abstract classes but we can create references referring
+  to the subclass object
+
+	Ex:
+		Sample s = new Sample();//error
+		Sample s1 = new Sample1();//valid
+
+
+- Forces "is-a" relationship
+
+
+	Refer program AbstractDemo.java
+
+
+Interfaces
+----------
+- It is used to form the rules/specifications
+- Does not force "is-a" relationship
+- In an interface all data members are public, static and final by default
+- In an interface all methods are public and abstract by default
+	Ex:
+		interface I1
+		{
+		   [public static final] int MAX = 100;
+		   [public abstract] void xxx();
+		   [public abstract] void yyy();
+		}
+
+		[] => by default/implicit/optional
+
+- If a class implements an interface then we need to override all abstract methods
+  else make the class as abstract
+	Ex:
+		class C1 implements I1
+		{
+		   void xxx(){...}
+		   void yyy(){...}
+		}
+
+
+- We cannot create objects for interfaces but we can create references referring to 
+  the subclass object
+	Ex:
+		I1 i = new I1();//error
+		I1 i1 = new C1();//valid
+
+- A class can implement multiple interfaces
+	Ex:
+		interface I2
+		{
+		   void zzz();
+		}
+		class C2 implements I1, I2
+		{
+		   void xxx(){...}
+		   void yyy(){...}
+		   void zzz(){...}
+		}
+
+- class to class => extends
+  class to interface => implements
+  interface to interface => extends
+	Ex:
+		interface I3 extends I1 {}
+  interface to class => error
+
+- An interface can extend multiple interfaces
+	Ex:
+		interface I4 extends I1, I2 {..}
+	
+Note
+----
+- From Java 8 version we can define methods in interfaces using default keyword
+- From Java 8 version we can define static methods in interfaces
+- From Java 9 version we can define private methods in interfaces
+
+	Refer program InterfaceDemo.java
+
+Note
+----
+abstract and final are illegal combination of modifiers
+
+Ex:
+	abstract final class Base {} //error - abstract and final are illegal combination of modifiers
+
+
+Java OOP Assignments
+--------------------
+Q8 (abstract classes)
+Q9 (interfaces)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

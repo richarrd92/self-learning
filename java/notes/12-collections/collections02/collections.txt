@@ -1,0 +1,157 @@
+
+Methods of List interface
+-------------------------
+- boolean add(Object) => adds an element at last
+- void add(int,Object) => adds an element at the given index
+- void set(int,Object) => update/modify the element at given index
+- boolean remove(Object) => delete the given element
+- Object remove(int) => delete the element at given index
+- Object get(int) => returns the element at given index
+- int size() => returns the number of elements
+
+
+	Refer program ArrayListDemo.java
+
+
+Additional methods in LinkedList class
+--------------------------------------
+- addFirst()
+- addLast()
+- removeFirst()
+- removeLast()
+
+
+
+Traversing/Iterating
+--------------------
+Accessing every element of List/Set is called as traversing
+
+
+Generics in Collections
+-----------------------
+- Generics are added in Java 5 version
+- Generics are used to manage different data types
+- When Generics are used in Collections we can ensure that only similar type of elements are present
+  in collection
+- When Generics are used in collections we can traverse the elements of collection using Enhanced for loop
+
+	Refer program GenericCollection.java
+
+Set interface
+-------------
+- Set is an unordered collection of elements
+- Set does not allow duplicate elements
+
+Classes under Set interface
+---------------------------
+- HashSet => unordered and no duplicate elements
+- LinkedHashSet => ordered and no duplicate elements
+- TreeSet => sorted and no duplicate elements
+
+	Refer program SetDemo.java
+
+Note
+----
+In TreeSet all the elements should be of same type else it will throw ClassCastException
+
+
+WAP to remove duplicate mobile numbers from the given list of mobile numbers
+	Refer program RemoveDuplicate.java
+
+
+Map interface
+-------------
+- Map is used to collect the elements in the form of key-value pairs
+- Map does not allow duplicate keys
+
+Classes under Map interface
+---------------------------
+- HashMap => unordered based on keys and no duplicate keys
+- LinkedHashMap => ordered based on keys and no duplicate keys
+- TreeMap => sorted based on keys and no duplicate keys
+
+	Refer program MapDemo.java
+
+
+Iterating/Traversing Maps
+-------------------------
+- Get the keys of Map into a Set
+
+	Ex:
+		HashMap<String,Integer> hm = new HashMap<String,Integer>();
+		Set<String> keys = hm.keySet();
+
+
+- Iterate the keys present in Set
+
+	for(String k : keys)
+	   SOP(k+":"+hm.get(k));
+
+	hm.get(key) => return the value of the given key
+
+	Refer program IterateMapDemo.java
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

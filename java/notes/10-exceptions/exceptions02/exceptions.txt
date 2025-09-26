@@ -1,0 +1,209 @@
+
+Runtime Exceptions
+------------------
+- The exceptions which occur during program execution are Runtime Exceptions
+- All Runtime Exceptions are subclasses of RuntimeException class
+- All Runtime Exceptions are categorized as unchecked exceptions
+
+
+	Refer program RuntimeExceptionDemo.java
+
+- ArithmeticException
+	- trying to divide a number by zero
+
+- ArrayIndexOutOfBoundsException
+	- trying to access an array element which is out of index
+
+- StringIndexOutOfBoundsException
+	- trying to access a char of a String which is out of index
+
+- NegativeArraySizeException
+	- when the given array size is negative
+
+- NumberFormatException
+	- trying to convert a String into number type which is not possible
+
+- NullPointerException
+	- trying to access the members of a class when the object of the class is pointing to null
+
+
+try with multiple catch blocks
+------------------------------
+It is used to provide proper message to the user based on the exception type
+
+syntax
+------
+try
+{
+   st-1;
+   st-2;
+   ...
+   st-n;
+}
+catch(ExceptionType1 e)
+{
+   //handle
+}
+catch(ExceptionType2 e)
+{
+  //handle
+}
+...
+...
+catch(ExceptionTypen e)
+{
+   //handle
+}
+
+	Refer program MultipleCatchDemo.java
+
+
+Note
+----
+In try with multiple catch blocks, the order of catch blocks cannot be from super class to subclass
+
+
+finally block
+-------------
+finally block is executed irrespective of exception present in try block
+
+
+syntax
+------
+try
+{
+   statements;
+}
+catch(Exception e)
+{
+  //handle
+}
+finally
+{
+  //closing or cleanup operations
+}
+
+
+	Ex:
+		try
+		{
+		   con = //database connection
+		   trans-1;
+		   trans-2;//exception
+		   trans-3;
+		   ...
+		   trans-n;
+		   
+		}
+		catch(Exception e)
+		{
+		  //handle
+		}
+		finally
+		{
+		   con.close();
+		}
+
+
+toString() method
+-----------------
+- When an object is displayed in SOP(), toString() is invoked implicitly
+- toString() belongs to Object class
+- toString() of Object class returns the classname along with the hashcode
+- In order to represent the object value in readable/string format we need to override
+  toString() in the class
+
+
+
+	Refer program ToStringDemo.java
+
+
+User Defined Exceptions/Custom Exceptions
+-----------------------------------------
+User defined exceptions are created by creating a class which is subclass of Exception class
+
+Ex:
+	class MyException extends Exception
+	{
+	   MyException(String msg)
+  	   {
+		super(msg);
+           }
+	   MyException(){}
+	}
+
+
+Create a user defined exception "AgeException".
+Create a class "Customer" with a method "setAge()" which takes "age" as an argument.
+If the age is <18 or >60 then it should throw "AgeException" with the message "Age should be between 18 and 60".
+
+	Refer program CustomExceptionDemo.java
+
+Methods of Throwable class
+--------------------------
+- String toString() => to represent the object value in String format
+- String getMessage() => returns the message of the exception
+- void printStackTrace() => displays the root cause of exception
+
+Assignment- Exceptions
+----------------------
+Create a user defined exception "WithdrawException".
+Create a class "Account" with a method "withdraw()" which takes "amount" and "balance" as arguments.
+If the amount > balance then it should throw "WithdrawException" with the message "Insuffient Balance"
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

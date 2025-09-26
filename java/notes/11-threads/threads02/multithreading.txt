@@ -1,0 +1,160 @@
+
+sleep()
+-------
+When sleep() is invoked on a thread, the current thread will goto block state for the
+given interval of time
+	Ex:
+		Thread.sleep(1000);//1000 milliseconds (1 second)
+
+Note
+----
+When start() is invoked on a thread multiple times then it throws "IllegalThreadStateException"
+
+	Refer program MultiThreadDemo.java
+
+
+Creating Threads using Runnable interface
+-----------------------------------------
+- If a class extends another class and to make this class as thread, the class should implement
+  Runnable interface as Java does not support multiple inheritance
+- Ensures that run() is overridden
+
+
+	Ex:
+		class A
+		{
+		   ...
+		}
+
+		class B extends A, Thread //Error - does not support multiple inheritance
+		{
+		   ...
+		}
+
+		class B extends A implements Runnable
+		{
+		    public void run(){...}
+		}
+
+	Refer program RunnableDemo.java
+
+
+Synchronization
+---------------
+	Refer diagram Synchronization.png
+
+- When two or more threads access the same resource then there is a change of getting concurrency problems
+- Synchronization is used to avoid concurrency problems
+- synchronized keyword is used for synchronization
+- synchronized keyword can be used for a method or block of statements only
+	Ex:
+		synchronized void ppp()
+		{
+		   ...
+		   ...
+		}
+	
+		void qqq()
+		{
+		   ...
+		   ...
+		   synchronized(object) //synchronized block
+		   {
+		     ...
+		     ...
+		   }
+		   ...
+		   ...
+		}
+
+- In a synchronized context (method/block) only one thread will be running which degrades
+  the performance of application
+
+
+Inter Thread Communication
+---------------------------
+Thread1 -> Task -> Result -> Thread2
+
+- It is done using wait(), notify() and notifyAll() methods
+- These methods belongs to Object class
+- When wait() is invoked on a thread, the other threads will goto block state until notified
+  using notify()/notifyAll() methods
+- If there is only one thread in block state we can use notify()/notifyAll() methods but if there
+  are multiple threads in block state we use notifyAll()
+- These methods need to be used in synchronized context only else it will throw "IllegalMonitorStateException"
+
+	
+	Refer program InterThreadDemo.java
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

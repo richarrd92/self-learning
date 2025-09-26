@@ -1,0 +1,213 @@
+
+Java Introduction
+-----------------
+Java is an Object Oriented Programming Language
+
+Object Oriented Concepts
+------------------------
+- Objects => is a real time entity which has identity, state and behavior
+- Classes => It is a collection of data members and methods
+	Ex:
+		class Person
+		{
+		    //Data members
+		    int age;
+		    String name;
+		    float height;
+	  	    //Methods
+		     void eat(){...}
+		     void walk(){...}
+		}
+
+- Abstraction
+- Encapsulation
+- Inheritance
+- Polymorphism
+
+
+Platform Independent
+--------------------
+- Java is platform independent
+
+	Refer aboutJava.png
+
+
+Download and Install Java 23 version
+------------------------------------
+Google: java 23 download
+url: https://www.oracle.com/in/java/technologies/downloads/
+
+
+
+C:\Program Files\Java\jdk-23 } JAVA_HOME
+
+java.exe and javac.exe commands are present in JAVA_HOME\bin folder
+
+Setting path to JAVA_HOME\bin folder at command prompt
+------------------------------------------------------
+C:\>set path = C:\Program Files\Java\jdk-23\bin;%path%;
+
+
+Developing a Java Application at command prompt
+-----------------------------------------------
+- Open command prompt by typing "cmd" in search/run
+	C:\>
+
+- Create a folder/directory "JavaPrograms" as follows
+	C:\>md JavaPrograms
+
+	md means make directory
+
+- Change the folder/directory to "JavaPrograms" as follows
+	C:\>cd JavaPrograms
+	C:\JavaPrograms>
+		cd means change directory
+
+- Create a Java source code file "HelloWorld.java" as follows
+	C:\JavaPrograms>notepad HelloWorld.java
+
+- Type the following code in HelloWorld.java
+
+	//to display Hello World message onto the screen
+	class HelloWorld
+	{
+   	   public static void main(String[] args)
+   	   {
+		System.out.println("Hello World");
+   	   }
+	}
+
+	Note: Save the file (ctrl + s)
+
+- Compile the Java source code file, HelloWorld.java as follows
+	C:\JavaPrograms>javac HelloWorld.java
+		which creates HelloWorld.class, called as byte code
+
+- Run the Java byte code file, HelloWorld.class as follows
+	C:\JavaPrograms>java HelloWorld
+
+	which displays "Hello World"  message onto the screen
+
+
+Note
+----
+- In Java, every statement should end with a semicolon (;)
+- Java is case sensitive programming language means there is a difference between upper case and lower case letters
+
+
+System.out.println()
+--------------------
+It is used to display messages or the value of variables or both onto the screen
+
+System is a predefined class
+
+Ex:
+	System.out.println("Welcome");
+
+	output
+	------
+	Welcome
+
+Ex:
+	int age = 20;
+	System.out.println(age);
+
+	output
+	------
+	20
+
+
+Ex:
+	int netSalary = 50000;
+	System.out.println("Net Salary = "+netSalary);
+
+	output
+	------
+	Net Salary = 50000
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

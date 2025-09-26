@@ -1,0 +1,151 @@
+
+Java Introduction
+-----------------
+- Java is an Object Oriented Programming Language developed by James Gosling
+  at Sun Microsystems
+- Sun Microsystems is acquired by Oracle Corp in 2010 year
+
+
+Object Oriented Concepts
+------------------------
+- Object
+- Class
+- Abstraction
+- Encapsulation
+- Inheritance
+- Polymorphism
+
+
+Object
+------
+An object is a real time entity which has identity, state and behavior
+
+	Refer diagram object.png
+
+Class
+-----
+A class is a collection of data members and methods
+
+Ex:
+	class Person
+	{
+	   //Data members
+	   int age;
+	   String name;
+	   float height;
+           //Methods
+ 	   void walk(){...}
+           void eat(){...}
+	}
+
+
+{} => block/scope
+
+	age = 25;//error
+
+
+The members (data members/methods) of the class are accessed using objects with dot(.) operator
+
+
+Creating objects
+----------------
+syntax (Rules of a language)
+------
+ClassName objName = new ClassName();
+
+
+Ex:
+	Person p = new Person();//p is an object of class Person
+
+	p.age = 25;
+	p.name = "John";
+	p.height = 5.4;
+	p.walk();
+	p.eat();
+
+
+
+Identifying Objects and Classes
+-------------------------------
+Mr.XXX teaches Java at RRR Technologies. PPP attends Java Sessions.
+Mrs.XXX teaches Testing at the same company. QQQ attends Testing Sessions.
+
+
+Objects (Nouns)
+---------------
+Mr.XXX
+Java
+RRR
+PPP
+Mrs.XXX
+Testing
+QQQ
+
+Classes (A class is a collection of related objects) 
+-------
+Faculty (Mr.XXX and Mrs.XXX)
+Course  (Java and Testing)
+Company (RRR)
+Student (PPP and QQQ)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

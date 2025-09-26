@@ -1,0 +1,135 @@
+
+Collections
+-----------
+Collections are used to collect the elements of variable size (not fixed)
+
+Arrays vs Collections
+---------------------
+- In Arrays we can collect the elements of fixed size where as in Collections we can 
+  collect the elements of variable size (not fixed)
+- In Arrays we can collect only similar type of elements where as in Collections we
+  can collect different type of elements
+- In Arrays we can collect primitive type as well as reference type of elements where as
+  in Collections we can collect only reference type of elements
+
+
+Collections Hierarchy
+---------------------
+	Refer diagram collections-hierarchy.png
+
+
+Collection vs Map
+-----------------
+Collection is used to only to collect the elements where as Map is used to collect 
+the elements in the form of key-value pairs
+
+	Ex:
+		Collection => ["tiger","lion","elephant"]
+		Map => {"bno"=111,"bname"="learn spring","price"=500.0}
+
+
+List vs Set
+-----------
+- List is ordered where as Set is unordered
+- List allow duplicate elements where as Set does not allow duplicate elements
+
+Ex:
+	elements : [5,8,6,4,7]
+	ordered  : [5,8,6,4,7]
+	unordered: [8,6,7,5,4]
+	sorted   : [4,5,6,7,8],[8,7,6,5,4]
+
+ArrayList vs LinkedList
+------------------------
+- In ArrayList the elements are stored in continuous memory locations where as 
+  in LinkedList the elements are stored in non-continuous memory locations in the form
+  of nodes (A node is divided into two parts : element value and link to the next node)
+- The cost of insert and delete operations are more in ArrayList where as the cost of these
+  operations are less in LinkedList
+- ArrayList occupies less memory than LinkedList
+
+
+HashSet
+-------
+HashSet is unordered and does not allow duplicate elements
+
+LinkedHashSet
+-------------
+LinkedHashSet is ordered and does not allow duplicate elements
+
+TreeSet
+-------
+TreeSet is sorted and does not allow duplicate elements
+TreeSet is sorted based on keys and no duplicate keys
+
+HashMap
+-------
+HashMap is unordered based on keys and no duplicate keys
+
+LinkedHashMap
+-------------
+LinkedHashMap is ordered based on keys and no duplicate keys
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

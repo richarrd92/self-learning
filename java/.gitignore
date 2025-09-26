@@ -1,0 +1,55 @@
+# -----------------------
+# Maven / Java build
+# -----------------------
+
+# Compiled class files
+*.class
+
+# Maven build folder
+target/
+
+# Log files
+*.log
+
+# Package files
+*.jar
+*.war
+*.ear
+
+# -----------------------
+# IDE / Editor files
+# -----------------------
+
+# VS Code
+.vscode/
+
+# IntelliJ IDEA
+.idea/
+*.iml
+*.iws
+
+# Eclipse
+.project
+.classpath
+.settings/
+
+# -----------------------
+# OS-specific
+# -----------------------
+.DS_Store
+Thumbs.db
+
+# -----------------------
+# Environment variables / secrets
+# -----------------------
+.env
+.env.local
+.env.*.local
+
+# -----------------------
+# Optional: backup or temp files
+# -----------------------
+*.swp
+*~
+
+posgress-connection.env

@@ -1,0 +1,232 @@
+
+Datatype
+--------
+Type of data the variable holds is called as datatype
+
+Types
+-----
+- Primitive Data Types
+- Reference Data Types
+
+Primitive Data Types
+--------------------
+	Refer diagram Datatypes.png
+
+Reference Data Types
+--------------------
+	Ex:
+		Arrays, Classes (Predefined Classes/User Defined Classes)
+
+
+	Predefined Classes => String, System, Exception, Thread, ArrayList etc
+	User Defined Classes => Employee, Student, Customer, Account etc
+
+
+Points on Data Types
+--------------------
+- Default values are applicable only to the data members (declared within a class) of the class
+  not for local variables (declared within a method)
+
+	Ex:
+		class Sample
+		{
+		   int m;//data member
+		   void ppp()//method
+		   {
+			int n;//local variable
+			SOP(n);//Error - local variable n should be initialized
+                   }
+		   static void main()
+	  	   {
+			Sample s = new Sample();
+			SOP(s.m);//0
+			s.ppp();
+                   }
+		}
+
+		SOP() => System.out.println() => used to display messages or the value of variables or both on screen
+
+
+- Local variables need to be initialized
+
+- Memory allocation for reference data type is done during runtime using new operator
+
+- Default value for reference data type is null
+	Ex:
+		String s;//data member
+		SOP(s);//null
+
+
+Type Casting
+------------
+Converting one primitive data type into another primitive data type or converting one reference data type
+into another reference data type is called as type casting
+
+	Types of Casting
+	----------------
+	- Implicit Casting
+	- Explicit Casting
+
+Implicit Casting
+----------------
+Converting lower data type into higher data type
+
+
+Ex:
+	short s = 45;
+	int n = s;
+	SOP(n);//45
+
+Ex:
+	byte b = 35;
+	double d = b;
+	SOP(d);//35.0
+
+Ex:
+	char c = 'A';
+	int n = c;
+	SOP(n);//65 - UNICODE of char 'A'
+
+	
+	Note
+	----
+	- C/C++ supports ASCII Codes (256 symbols)
+	- Java/.NET/PHP/Python supports UNICODEs (65536 symbols)
+	- ASCII Codes are subset of UNICODEs
+
+
+Explicit Casting
+----------------
+Converting higher data type into lower data type
+
+Ex:
+	long x = 100;
+	int n = x;//error
+	int n = (int)x;
+	SOP(n);//100
+
+Ex:
+	double d = 55.5;
+	byte b = d;//error
+	byte b = (byte)d;
+	SOP(b);//55
+
+Ex:
+	int n = 65;
+	char c = n;//error
+	char c = (char)n;
+	SOP(c);//A
+
+Ex:
+	float f = 35.5;//error - In Java, a value with decimal point is double data type
+	
+	float f = (float)35.5;
+		or
+	float f = 35.5f;
+		or
+	float f = 35.5F;
+
+
+JShell tool
+-----------
+- JShell tool is added in Java 9 version
+- JShell is an interactive tool to execute the Java Statements
+
+To open JShell
+--------------
+Open command prompt/terminal
+
+C:\>jshell
+
+jshell>
+
+Ex:
+jshell>System.out.println("Welcome to JShell");
+Welcome to JShell
+
+To Exit
+-------
+jshell>/exit
+
+C:\>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

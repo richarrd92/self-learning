@@ -1,0 +1,150 @@
+
+Full Stack Java
+---------------
+	Refer diagram fullStackDev.png
+
+
+- Core Java / Java SE
+	- Java SE stands for Java Standard Edition
+	- used to develop standalone/desktop applications
+		- Programming Concepts
+		- Java Introduction
+		- Download and Install Java 23 version
+		- Developing a Java Application at command prompt
+		- Download Eclipse IDE
+		- Developing a Java Application in Eclipse IDE
+		- Java Basics
+			- comments, keywords, variables, data types, operators, Scanner class,
+			  if statement, switch statement, while loop, do..while loop, for loop etc
+		- Arrays
+		- Java OOP (Object Oriented Programming)
+			- class, object, this reference, constructors, static keyword, packages,
+			  inheritance, polymorphism, super reference, final keyword, inner classes,
+			  access modifiers, encapsulation, abstract classes, interfaces etc
+		- lang package (A package is a collection of related classes)
+			- Object class, String class, StringBuffer class, StringBuilder class, Math class,
+			  Wrapper classes etc
+		- Exception Handling
+		- Multithreading
+		- Collections
+		- Functional Interfaces, Lambda Expressions, Stream API
+		- IO Package
+		- JDBC 
+		
+- Database 
+	- SQL Concepts using MySQL Database
+
+- Web Technologies / UI Design / Front End Design
+	- HTML
+	- CSS
+	- JavaScript
+	- Bootstrap
+	- XML
+	- JSON
+	- TypeScript
+	- Angular
+
+- Advance Java/Java EE
+	- Java EE stands for Java Enterprise Edition
+	- Java EE is used to develop web applications
+		- Servlets
+		- JSP (Java Server Pages)
+	
+- Frameworks
+	- Hibernate Framework
+	- Spring Framework
+		- Spring Core/Bean Module
+		- Spring DAO Module
+			- Spring JDBC Module
+			- Spring ORM Module (Hibernate)
+			- Spring Data JPA Module
+		- Spring MVC Module => used to develop web applications
+		- Spring Boot Module
+		- Spring REST Module => used to develop REST APIs (distributed applications)
+	- Microservices using Spring Boot
+
+- Real time tools
+	- Maven
+	- JUnit
+	- Postman
+	- Lombok
+	- GitHub
+
+- Project
+	- Project using Spring Boot and Angular
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

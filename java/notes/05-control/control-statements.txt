@@ -1,0 +1,259 @@
+
+Control Statements
+------------------
+These statements are used to control the flow of execution of program
+
+	Types
+	-----
+	- if statement / if .. else statement
+	- switch statement
+	- while loop
+	- do..while loop
+	- for loop
+	- break and continue
+
+
+if statement / if .. else statement
+-----------------------------------
+It is used to execute the set of statements when the condition is true.
+If the condition if false it will execute the set of statements present in else part
+
+syntax
+------
+if (condition)
+{
+   statement-1;
+   statement-2;
+   ...
+   statement-n;
+}
+else
+{
+   statement-1;
+   statement-2;
+   ...
+   statement-n;
+}
+
+{} => scope/block
+
+
+Points on if statement
+----------------------
+- For if, else is optional
+- For else, if is mandatory
+- If {} are not used then it considers only one statement means for one statement using {} is optional
+
+Ex:
+	int n1 = 10;
+	int n2 = 5;
+	if (n1 > n2)
+	   SOP("Big = "+n1);
+	else
+	   SOP("Big = "+n2);
+
+	output
+	------
+	Big = 10
+
+
+Ex:
+	int n1 = 10;
+	int n2 = 15;
+	if (n1 > n2)
+	   SOP("Big = "+n1);
+	else
+	   SOP("Big = "+n2);
+
+	output
+	------
+	Big = 15
+
+
+
+WAP to check whether the given number is even or odd
+	Refer program EvenOdd.java
+
+
+Nested if
+---------
+if within if is called as nested if
+
+syntax
+------
+if (condition1)
+{
+   statements;
+}
+else
+   if (condition2)
+   {
+	statements;
+   }
+   else
+	if (condition3)
+	{
+	   statements;
+        }
+	...
+	...
+	else
+	   if (condition-n)
+	   {
+		statements;
+           }
+	   else
+	   {
+		statements;
+           }
+
+WAP to check whether the given number is positive or negative or zero
+	Refer program CheckNumber.java
+
+
+WAP to find biggest of given three numbers
+	n1, n2, n3
+
+	Refer program BigThree.java
+
+
+switch statement
+----------------
+- It is used to choose an option among the given set of options
+- It is mainly used for menu driven applications
+
+syntax
+------
+switch (expression)
+{
+   case opt1: statements;break;
+   case opt2: statements;break;
+   case opt3: statements;break;
+   ...
+   case optn: statements;break;
+   default: statements;
+}
+
+
+Points on switch statement
+--------------------------
+- if expression is not matching with anyone of the options then it will execute the
+  statements present in default
+- default is optional
+- default can be any where in between cases
+- break is used to come out of switch
+- if break is not used then it will execute the statements present in other options until break
+- expression should be of type int (byte/short/char)
+- From Java 7 version, expression can be of type String
+
+	Ex:
+		String os = "windows";
+		switch (os)
+		{
+		   case "windows": SOP("Windows");break;
+		   case "Linux": SOP("Linux");break;
+		   case "mac": SOP("Mac");break;
+		}
+
+
+WAP to accept two numbers and display the following options/menu
+	
+	1.Add
+	2.Subtract
+	3.Multiply
+	4.Divide
+
+	Display result based on the user choice
+
+	n1=10, n2=5, ch=1 => Result = 15
+	n1=10, n2=5, ch=3 => Result = 50
+	n1=10, n2=5, ch=7 => Invalid Choice
+
+
+	Refer program Calculator.java
+
+
+Assignment - 2
+--------------
+1. WAP to check whether the given age is major (>=18) or minor
+	Note: If the given age is < 0, then display "Invalid Age"
+
+2. WAP to find biggest of given three numbers using conditional operator (?)
+
+3. WAP to accept item number, item name, rate and quantity. Find amount (rate * qty).
+   	Calculate discount as follows
+
+	if (amount >= 1000 and < 2000)
+	   discount is 10% on amount
+	if (amount >= 2000 and < 3000)
+	   discount is 15% on amount
+	if (amount >= 3000 and < 5000)
+	   discount is 20% on amount
+	if (amount >= 5000)
+	   discount is 25% on amount
+
+	Calculate net amount (amount - discount).
+	Display item number, item name, amount, discount and net amount
+
+
+	
+	Program
+	-------
+	if (amount >= 1000 && amount < 2000)
+	   discount = 0.10 * amount;
+
+
+4. WAP to check whether the given character is vowel or consonant (switch)
+
+
+
+syntax
+------
+(condition) ? expression1 : expression2;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

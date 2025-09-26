@@ -1,0 +1,170 @@
+
+IDEs
+----
+- IDE stands for Integrated Development Environment
+- IDEs are used to develop applications very easily and rapidly
+
+Popular Java IDEs
+-----------------
+- Eclipse
+- Spring Tool Suite (STS)
+- IntelliJ
+- JDeveloper
+- JBuilder
+- MyEclipse
+
+
+Download Eclipse IDE
+--------------------
+Google: eclipse ide download
+url: https://www.eclipse.org/downloads/
+
+
+Batch No : Java-Online-11 in 2024 year
+
+
+Developing a Java Application in Eclipse IDE
+--------------------------------------------
+- Create a Java Project
+	
+	Click on File -> New -> Project -> Java Project
+
+	Click Next
+
+	Project Name : MyProject
+
+	Uncheck "create module-info.java"
+
+	and click Finish
+
+
+- Create a class "HelloWorld" in Java Project (MyProject)
+
+	Right click on MyProject -> New -> Class
+
+	Name : HelloWorld
+
+	Make check mark to main()
+
+	and click Finish
+
+- Type the following code in HelloWorld.java
+
+	public class HelloWorld {
+	    public static void main(String[] args) {
+		System.out.println("Hello World");
+	    }
+        }
+
+- Run the application, HelloWorld.java
+
+	Right click on HelloWorld.java -> Run As -> Java Application
+
+	which opens Console tab and displays "Hello World" in console
+
+
+Eclipse IDE Shortcuts
+---------------------
+- public static void main(String[] args){}
+	shortcut : type main and press ctrl + space + Enter key
+
+- System.out.println();
+	shortcut : type sysout and press ctrl + space + Enter key
+
+- To Run
+	shortcut : ctrl + F11
+
+- To comment single line (//)
+	shortcut : ctrl + /
+
+- To comment multiple lines (/* ... */)
+	shortcut : select the lines and press ctrl + shift + /
+
+- To increase font size 
+	shortcut : ctrl + =
+
+- To decrease font size
+	shortcut : ctrl + -
+
+- To format the source code
+	shortcut : ctrl + shift + f
+
+
+
+Eclipse shortcuts (Mac OS)
+--------------------------
+https://www.shortcutfoo.com/app/dojos/eclipse-mac/cheatsheet
+
+Java Basics
+-----------
+Comments
+--------
+Comments are used to document a program and ignored by the compiler (programming language)
+
+	Types of comments
+	------------------
+	// => Single line Comments
+	
+	/* ... */ => Multiline comments
+
+	Ex:
+		//to find area of a Circle
+
+	Ex:
+		/*
+			to add a product into
+			the cart
+		*/
+
+
+Keyword
+-------
+- A keyword is a reserved word/predefined word whose meaning is known to the compiler directly
+- In Java, all keywords are small case letters
+
+	Ex:
+	    class, public, static, void, if, else, switch, do, for, break,
+	    continue, try, catch, finally etc
+
+Variable
+--------
+A variable is an identifier which allocates some memory space to hold the data
+
+
+Rules for Identifiers (variable name / method name / class name)
+----------------------------------------------------------------
+- Can contain A-Z, a-z, 0-9, _, $
+- Cannot start with a digit (0-9)
+- Cannot be a keyword
+
+Valid Identifiers
+-----------------
+empName
+student_RollNo
+customerAddress123
+$empSalary
+
+
+Invalid Identifiers
+-------------------
+product Name	(space is not allowed)
+123rollno	(cannot start with a digit)
+studentName*	(* is not allowed)
+continue	(cannot be a keyword)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

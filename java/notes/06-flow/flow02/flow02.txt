@@ -1,0 +1,201 @@
+
+for loop
+--------
+syntax
+------
+for(initialization;condition;expression)
+{
+   st-1;
+   st-2;
+   ...
+   st-n;
+}
+
+Note: If no {} then it considers only one statement
+
+Ex:
+	1 2 3 ... 9 10
+
+
+	for(int i=1;i<=10;i++)
+             SOP(i);
+
+
+
+Ex:
+	for(int i=1;i<=10;i++);
+	    SOP(i);//Error
+
+	output
+	------
+	Error - cannot find symbol variable i
+
+Ex:
+	int i;
+	for(i=1;i<=10;i++);
+	    SOP(i);
+
+	output
+	------
+	11
+
+
+WAP to find the factorial of a given number
+
+	n = 5
+
+	5! = 5 * 4 * 3 * 2 * 1 = 120
+
+	f = 1
+
+	Refer program Factorial.java
+
+
+Method/Function
+---------------
+A method is subprogram which is used to do a specific task
+
+
+
+WAP to display multiplication table for a given number
+
+	n = 5
+
+	5 * 1 = 5
+	5 * 2 = 10
+	...
+	5 * 9 = 45
+	5 * 10 = 50
+
+	Refer program MTable.java
+
+
+
+break and continue
+-------------------
+- break is used to come out of loop
+- continue is used to continue the loop
+
+Ex:
+	while (condition)
+	{
+	   ...
+	   ...
+	   break;
+	   ...
+	   ...
+	}
+
+
+
+	while (condition)
+	{
+	   ...
+	   ...
+	   continue;
+	   ...
+	   ...
+	}
+
+WAP to accept the numbers from user until the user enters zero (0) and find the sum of
+these numbers
+
+	Refer program BreakDemo.java
+
+
+while (true){...} //infinite while loop
+
+do{...}while (true); //infinite do .. while loop
+
+for(;;){...} //infinite for loop
+
+
+WAP to display the following output
+
+	1 2 3 4 6 7 8 9 10
+
+	Refer program ContinueDemo.java
+
+Assignment - 4
+--------------
+1. WAP to display the following output
+
+	-------------------
+	 Number  Factorial
+	-------------------
+	   1        1
+	   2        2
+	   3        6
+	   4       24
+	   5      120
+	--------------------
+	    Sum = 153
+	---------------------
+
+
+2. WAP to display multiplication tables from 1 to 10
+
+3. WAP to check whether the given number is prime or not
+
+4. WAP to find sum of prime numbers from 2 to 100
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

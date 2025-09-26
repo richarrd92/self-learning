@@ -1,0 +1,335 @@
+
+Constructors in Inheritance
+---------------------------
+- super() is the first statement added to every constructor implicitly which invokes
+  the Base class default constructor
+- To call parameterized constructor of Base class from Derived class constructor, call it explicitly
+- call to super() must be first statement in constructors
+
+
+	Refer program InheritanceDemo3.java
+
+final keyword
+-------------
+final keyword can be used for the following
+	- variables (data members/local variables)
+	- methods
+	- classes
+
+
+final variable
+--------------
+It is a constant means the value of the variable cannot be modified
+
+Ex:
+	final int MAX = 100;
+	MAX = 500;//error
+
+Ex:
+	final double PI = 3.14;
+
+final method
+------------
+It cannot be overridden
+
+Ex:
+	class Base
+	{
+	   final void ppp(){...}
+	}
+	class Derived extends Base
+	{
+     	   void ppp(){...}//error
+	}
+
+
+final class
+-----------
+It cannot be subclassed
+
+Ex:
+	final class Base {} 
+	class Derived extends Base {} //error
+
+
+Predefined final classes
+------------------------
+- System
+- String
+- Math
+
+Wrapper classes
+---------------
+- Byte
+- Short
+- Character
+- Integer
+- Long
+- Float
+- Double
+- Boolean
+
+
+What is the output?
+
+	class Sample extends Double {} //error
+
+
+
+Inner classes
+-------------
+A class within a class is called as inner class
+
+Ex:
+	class Outer
+	{
+	   class Inner
+	   {
+		...
+           }
+	}
+
+	Refer program InnerDemo.java
+
+Access Modifiers
+----------------
+- private
+	- A class cannot be private
+		Ex:
+			private class MyClass {} //error
+	- private keyword can be used for data members, methods and inner classes
+	- private members are accessible only within the same class
+		Ex:
+			class A
+			{
+			   private int n;
+			   void ppp()
+			   {
+				n = 10;//valid
+		           }
+			}
+			class B
+			{
+			   void qqq()
+			   {
+				A a = new A();
+				a.n = 20;//error - n is not visible (private)
+		           }
+			}
+	
+- default (no need to specify)
+	- A class can be default
+	- accessible only within the same package
+		Ex:
+			package mypack1;
+			public class A
+			{
+			   int n;//default modifier
+			   void ppp()
+			   {
+				n = 10;//valid
+		   	   }
+			}
+			class B
+			{
+			   void qqq()
+			   {
+				A a = new A();
+				a.n = 20;//valid
+			   }
+			}
+			------------------
+			package mypack2;
+			import mypack1.A;
+			class C
+			{
+			  void rrr()
+			  {
+				A a = new A();
+				a.n = 30;//error - n is not visible (default)
+		  	  }
+			}
+
+- protected
+	- A class cannot be protected
+		Ex:
+			protected class MyClass {} //error
+	- protected keyword can be used for data members, methods and inner classes
+	- protected members are accessible within the same package and subclass of another package
+		Ex:
+			package mypack1;
+			public class A
+			{
+			   protected int n;
+			   void ppp()
+			   {
+				n = 10;//valid
+		   	   }
+			}
+			class B
+			{
+			   void qqq()
+			   {
+				A a = new A();
+				a.n = 20;//valid
+			   }
+			}
+			------------------
+			package mypack2;
+			import mypack1.A;
+			class C
+			{
+			  void rrr()
+			  {
+				A a = new A();
+				a.n = 30;//error - n is not visible (protected)
+		  	  }
+			}
+			class D extends A
+			{
+			   void xxx()
+			   {
+				n = 40;//valid
+			   }
+			}
+
+- public
+	- A class can be public
+	- accessible everywhere
+	- If the class is public then the name of the source code file should be same as the classname
+		Ex:
+			MyClass.java
+			------------
+			public class MyClass
+			{}
+	- In a source code file we can have only one public class
+		Ex:
+			A.java (error)
+			------
+			public class A {}
+			public class B {}
+
+Summary
+-------
+- private => accessible only within the same class
+- default => accessible only within the same package
+- protected => accessible within the same package + subclass of another package
+- public => accessible everywhere 
+
+
+Non-Access Modifiers
+--------------------
+- static
+- final
+- abstract
+- synchronized
+- transient
+
+Note: Only final modifier is allowed for local variables
+
+
+Encapsulation
+-------------
+The process of binding (joining) the data members and methods together into a container called class
+and by providing security to data is called as encapsulation
+
+
+Ex:
+	class Customer
+	{
+	    private int age;
+	    void setAge(int a)
+	    {
+		if (a >= 18 && a <= 60)
+		   age = a;
+		else
+		   SOP("Invalid Age");
+            }
+	}
+
+	Customer c = new Customer();
+	c.age = -20;//error
+	c.setAge(30);
+
+
+A class is fully encapsulated(secured) when all data members are private
+
+
+Java OOP Assignment
+-------------------
+Q7 (Inheritance and Polymorphism)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

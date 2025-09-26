@@ -1,0 +1,284 @@
+
+Loops
+-----
+Loops are used to execute the set of statements repeatedly when the condition is true
+
+	Types
+	-----
+	- while loop
+	- do..while loop
+	- for loop
+
+while loop
+----------
+syntax
+------
+while (condition)
+{
+   st-1;
+   st-2;
+   ...
+   st-n;
+}
+
+Note: If no {} then it considers only one statement
+
+
+Ex:
+	1 2 3 4 .... 9 10
+
+	int i=1;
+	while (i <= 10)
+	{
+	   SOP(i);
+	   i++;
+	}
+
+WAP to display odd numbers from 1 to 100
+
+	output
+	------
+	1 3 5 7 9 .... 99
+
+	Refer program Odd.java
+
+
+WAP to find sum of given 10 numbers
+
+	
+	5
+	8
+       --
+	13
+	 6
+	--
+	19
+	 4
+	--
+	23
+	 7
+	--
+	30
+	--
+
+	int sum = 0;
+	sum = sum + n;
+
+	Refer program SumTen.java
+
+
+
+WAP to find biggest of given 10 numbers
+
+	n > big
+         big = n;
+
+	Refer program BigTen.java
+
+
+
+do..while loop
+--------------
+syntax
+------
+do
+{
+  st-1;
+  st-2;
+  ...
+  st-n;
+}while (condition);
+
+Note: If no {} then it considers only one statement
+
+
+In case of while loop the condition is checked before the statements where as
+in case of do..while loop the condition is checked after the statements
+
+	Ex:
+		1 2 3 ... 9 10
+
+		int i=1;
+		do
+		{
+	 	   SOP(i);
+		   i++;
+		}while (i <= 10);
+
+
+WAP to accept the current balance and display the following options/menu
+
+	1.Deposit
+	2.Withdraw
+	3.Display Balance
+	4.Exit
+
+	The menu should display repeatedly when the condition is true
+
+	Refer program Bank.java
+
+	
+Assignment - 3
+--------------
+1. WAP to find sum of even numbers and odd numbers from 1 to 100
+	int sumEven=0, sumOdd=0;
+
+2. WAP to find smallest of given 10 numbers
+
+3. WAP to find sum of digits of a given number
+	n = 525 (5+2+5 = 12)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
