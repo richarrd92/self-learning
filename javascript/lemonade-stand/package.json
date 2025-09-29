@@ -1,0 +1,17 @@
+{
+  "name": "lemonade-stand",
+  "version": "1.0.0",
+  "description": "lemonade stand application",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "babel ./src -d ./build"
+  },
+  "author": "Richard M",
+  "license": "ISC",
+  "devDependencies": {
+    "@babel/cli": "^7.28.3",
+    "@babel/core": "^7.28.4",
+    "@babel/preset-env": "^7.28.3"
+  }
+}
