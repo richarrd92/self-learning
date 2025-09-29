@@ -3,3 +3,4 @@
 venv
 /.idea
 add-submodules.sh
+remove_submodules.md
