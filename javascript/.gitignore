@@ -1,1 +1,7 @@
 node_modules/
+.DS_Store
+.vscode
+venv
+/.idea
+add-submodules.sh
+remove_submodules.md

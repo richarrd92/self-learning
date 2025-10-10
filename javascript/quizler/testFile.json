@@ -1,0 +1,14 @@
+[
+  {
+    "type": "list",
+    "name": "question-1",
+    "message": "what is ur name?",
+    "choices": ["richard", "john"]
+  },
+  {
+    "type": "list",
+    "name": "question-2",
+    "message": "what is ur fav sport?",
+    "choices": ["soccer", "tennis"]
+  }
+]
