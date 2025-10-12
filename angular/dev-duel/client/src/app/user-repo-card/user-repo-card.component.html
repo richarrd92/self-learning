@@ -1,0 +1,42 @@
+<!-- Tie or Winner label above card -->
+<div *ngIf="isWinner" class="winner-label">Winner!</div>
+<div *ngIf="isTie && !isWinner" class="tie-label">Tie</div>
+
+
+<div
+  [ngStyle]="{
+    border: isWinner ? '2px solid green' : '1px solid #ccc',
+    'border-radius': '10px',
+    'text-align': 'center'
+  }"
+  class="repo-card"
+>
+  <div class="user-card-profile">
+    <img [src]="profile?.avatar_url" alt="avatar" class="avatar" />
+    <p><strong>Bio:</strong> {{ profile?.bio || "No bio available" }}</p>
+  </div>
+  <div class="user-card-info">
+    <p><strong>Username:</strong> {{ profile?.username }}</p>
+    <p><strong>Name:</strong> {{ profile?.name || "N/A" }}</p>
+    <p><strong>Location:</strong> {{ profile?.location || "N/A" }}</p>
+
+    <div *ngIf="profile?.titles?.length">
+      <p>
+        <strong>Titles: </strong
+        ><span *ngFor="let title of profile.titles">{{ title }}</span>
+      </p>
+    </div>
+
+    <p>
+      <strong>Favorite Language:</strong> {{ profile?.['favorite-language'] }}
+    </p>
+    <p><strong>Total Stars:</strong> {{ profile?.['total-stars'] }}</p>
+    <p>
+      <strong>Highest Star Count:</strong> {{ profile?.['highest-starred'] }}
+    </p>
+    <p><strong>Public Repos:</strong> {{ profile?.['public-repos'] }}</p>
+    <p><strong>Perfect Repos:</strong> {{ profile?.['perfect-repos'] }}</p>
+    <p><strong>Followers:</strong> {{ profile?.followers }}</p>
+    <p><strong>Following:</strong> {{ profile?.following }}</p>
+  </div>
+</div>

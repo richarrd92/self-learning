@@ -1,0 +1,50 @@
+<div
+  style="
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 20vh;
+  "
+>
+  <!-- Input row -->
+  <div style="display: flex; flex-direction: row; align-items: center">
+    <app-text-input
+      (usernameChange)="receiveUsernameOne($event)"
+    ></app-text-input>
+    <p style="margin: 2vh 20px">VS</p>
+    <app-text-input
+      (usernameChange)="receiveUsernameTwo($event)"
+    ></app-text-input>
+  </div>
+
+  <br /><br />
+  <button class="submit-button" (click)="onSubmit()" [disabled]="loading">
+    {{ loading ? "Dueling..." : "Duel" }}
+  </button>
+
+  <!-- Loading indicator -->
+  <div *ngIf="loading" style="margin-top: 1rem; color: #007bff">Loading...</div>
+
+  <!-- Error message -->
+  <div *ngIf="error" style="margin-top: 1rem; color: red">
+    {{ error }}
+  </div>
+
+  <!-- Tie message -->
+  <div *ngIf="winner === 'tie'" class="winner-label tie-label">It's a tie!</div>
+  <!-- Profiles display -->
+  <div
+    *ngIf="profileOne && profileTwo"
+    style="display: flex; gap: 2rem; margin-top: 2rem"
+  >
+    <app-user-repo-card
+      [profile]="profileOne"
+      [isWinner]="winner === 'one'"
+    ></app-user-repo-card>
+
+    <app-user-repo-card
+      [profile]="profileTwo"
+      [isWinner]="winner === 'two'"
+    ></app-user-repo-card>
+  </div>
+</div>
