@@ -1,0 +1,25 @@
+.counter-display {
+  width: 240px;
+  height: 50px;
+  background-color: gray;
+  border-radius: 5px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+}
+
+.counter-display-label {
+  padding: 8px;
+  color: white;
+}
+
+.counter-display-tracker {
+  background-color: rgb(176, 171, 171);
+  color: white;
+  flex: 1;
+  margin-right: 5px;
+  text-align: right;
+  border-radius: 5px;
+  padding: 5px;
+}

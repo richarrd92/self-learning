@@ -1,0 +1,23 @@
+.counter-button {
+  width: 100px;
+  height: 40px;
+  background-color: gray;
+  justify-content: center;
+  align-items: center;
+  display: flex;
+  border-radius: 5px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.3s, color 0.3s;
+
+  /* Prevent text selection */
+  user-select: none;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+}
+
+/* Hover state */
+.counter-button:hover {
+  filter: brightness(85%); /* darken background */
+}

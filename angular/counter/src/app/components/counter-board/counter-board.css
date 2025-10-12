@@ -1,0 +1,17 @@
+.counter-board {
+  display: flex;
+  background-color: bisque;
+  width: 600px;
+  height: 300px;
+  justify-content: center;
+  align-items: center;
+  border-radius: 12px;
+  flex-direction: column;
+}
+
+.counter-buttons {
+  display: flex;
+  margin-top: 15px;
+  justify-content: flex-start;
+  gap: 20px;
+}

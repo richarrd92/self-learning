@@ -1,0 +1,8 @@
+<div class="counter-board">
+  <app-counter-display [counter]="counter"></app-counter-display>
+  <div class="counter-buttons">
+    <app-counter-button (click)="reset()" label="Reset" bgColor="gray" textColor="white"></app-counter-button>
+    <app-counter-button (click)="decrement()" label="Decrement" bgColor="red" textColor="black"></app-counter-button>
+    <app-counter-button (click)="increment()" label="Increment" bgColor="green" textColor="white"></app-counter-button>
+  </div>
+</div>

@@ -1,0 +1,14 @@
+.app-screen{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: rgb(60, 55, 55);
+}
+
+.app-screen-title{
+    color: bisque;
+    margin-bottom: 15px;
+}
+
