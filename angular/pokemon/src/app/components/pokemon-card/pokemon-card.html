@@ -1,0 +1,23 @@
+<div class="pokemon-dashboard-pokemon">
+  <h2 class="pokemon-dashboard-pokemon-name">{{ pokemon.name | titlecase }}</h2>
+  <div class="pokemon-dashboard-pokemon-info">
+    <div class="pokemon-dashboard-pokemon-image-container">
+      <img
+        class="pokemon-dashboard-pokemon-image"
+        [src]="pokemon.sprites.front_default"
+        alt="{{ pokemon.name }}"
+      />
+    </div>
+    <div class="pokemon-dashboard-pokemon-details">
+      <p><strong>Height:</strong> {{ pokemon.height }}</p>
+      <p><strong>Weight:</strong> {{ pokemon.weight }}</p>
+
+      <h4>Abilities:</h4>
+      <ul>
+        @for (a of pokemon.abilities; track a.ability.name) {
+        <li>{{ a.ability.name }}</li>
+        }
+      </ul>
+    </div>
+  </div>
+</div>

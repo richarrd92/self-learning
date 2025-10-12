@@ -1,0 +1,65 @@
+
+/* Pokémon Card */
+.pokemon-dashboard-pokemon {
+  background-color: white;
+  border-radius: 15px;
+  padding: 20px;
+  width: 350px;
+  box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
+  margin-top: 10px;
+}
+
+.pokemon-dashboard-pokemon-name {
+  font-size: 2rem;
+  color: #ff0000; /* Pokémon red */
+  margin-bottom: 0;
+  text-transform: capitalize;
+}
+
+.pokemon-dashboard-pokemon-image {
+  width: 150px;
+  height: 150px;
+  object-fit: contain;
+  margin-bottom: 0;
+  border: 1px solid #ccc;
+  border-radius: 10px;
+}
+
+.pokemon-dashboard-pokemon p {
+  margin: 5px 0;
+  font-weight: 500;
+}
+
+.pokemon-dashboard-pokemon h4 {
+  margin-top: 15px;
+  font-size: 1rem;
+  color: #3b4cca;
+  text-transform: uppercase;
+  margin-bottom: 3px;
+}
+
+.pokemon-dashboard-pokemon ul {
+  list-style: none;
+  padding: 0;
+  justify-content: center;
+}
+
+.pokemon-dashboard-pokemon li {
+  background-color: yellowgreen; /* Pokémon yellow */
+  margin: 3px 0;
+  padding: 5px;
+  border-radius: 5px;
+  color: white;
+  font-weight: bold;
+  flex: auto;
+  text-align: center;
+}
+
+.pokemon-dashboard-pokemon-info {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 10px;
+  padding: 10px;
+}

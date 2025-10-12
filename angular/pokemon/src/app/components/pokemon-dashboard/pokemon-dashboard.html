@@ -1,0 +1,21 @@
+<div class="pokemon-dashboard">
+  <h1 class="pokemon-dashboard-title">POKÉMON</h1>
+  <div class="pokemon-dashboard-input-container">
+    <input
+      type="text"
+      id="pokemon-name"
+      class="pokemon-dashboard-input"
+      [(ngModel)]="pokemonName"
+      placeholder="Enter pokémon name"
+    />
+    <button class="pokemon-dashboard-button" (click)="fetchPokemon()">Search</button>
+  </div>
+
+  @if (loading) {
+  <div class="pokemon-dashboard-loading">Loading...</div>
+  } @if (error) {
+  <div class="pokemon-dashboard-error" style="color: red">{{ error }}</div>
+  } @if (pokemon && !loading) {
+    <app-pokemon-card [pokemon]="pokemon"></app-pokemon-card>
+  }
+</div>
