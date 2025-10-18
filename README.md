@@ -40,7 +40,7 @@ This repository highlights my ongoing journey as a software engineer. It documen
 - Git, GitHub  
 - Postman (API testing)  
 - Maven, Lombok  
-- Docker (optional)  
+- Docker
 - Command Line Basics  
 
 ## **Data Structures & Algorithms**
