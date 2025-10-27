@@ -1,0 +1,44 @@
+<div class="min-h-screen bg-blue-300 flex flex-col items-center justify-center">
+  <div class="text-center space-y-8 w-full max-w-md px-4">
+    <div class="mb-12">
+      <h1 class="text-5xl font-bold text-blue-900 tracking-wider mb-2">COOK SYSTEMS</h1>
+      <p class="text-xl text-blue-800 font-light">A FINAL APP</p>
+    </div>
+
+    <div class="bg-blue-300/50 p-8 rounded-lg border-2 border-blue-400/30 text-blue-900">
+      <div class="space-y-4">
+        <mat-form-field class="w-full">
+          <mat-label>Email</mat-label>
+          <input matInput type="email" [(ngModel)]="email" placeholder="Enter your email" [disabled]="isLoading" />
+        </mat-form-field>
+
+        <mat-form-field class="w-full">
+          <mat-label>Password</mat-label>
+          <input
+            matInput
+            type="password"
+            [(ngModel)]="password"
+            placeholder="Enter your password"
+            [disabled]="isLoading"
+          />
+        </mat-form-field>
+
+        @if (errorMessage) {
+          <div class="bg-red-500/20 border border-red-500 text-red-200 px-4 py-2 rounded">
+            {{ errorMessage }}
+          </div>
+        }
+
+        <button
+          mat-raised-button
+          color="primary"
+          (click)="login()"
+          class="w-full"
+          [disabled]="isLoading"
+        >
+          {{ isLoading ? 'LOGGING IN...' : 'LOGIN' }}
+        </button>
+      </div>
+    </div>
+  </div>
+</div>

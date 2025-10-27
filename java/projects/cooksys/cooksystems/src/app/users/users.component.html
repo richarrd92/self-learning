@@ -1,0 +1,78 @@
+<div class="min-h-screen bg-blue-300">
+  <app-navbar></app-navbar>
+
+  <!-- Main Content -->
+  <div class="container mx-auto px-8 pb-8">
+    <!-- Page Header -->
+    <div class="flex items-center justify-between mb-6 max-w-6xl mx-auto">
+      <div>
+        <h2 class="text-3xl font-bold text-blue-900">User Registry</h2>
+        <p class="text-blue-700 text-sm mt-1">A general view of all your members in your organization</p>
+      </div>
+      <button
+        *ngIf="isAdmin"
+        (click)="openAddUserModal()"
+        class="px-6 py-2 bg-teal-500 hover:bg-teal-600 text-white font-semibold rounded transition-colors">
+        Add User
+      </button>
+    </div>
+
+    <!-- Loading State -->
+    <div *ngIf="isLoading" class="text-center text-blue-800 py-12">
+      <p class="text-xl">Loading users...</p>
+    </div>
+
+    <!-- Error State -->
+    <div *ngIf="errorMessage" class="text-center text-red-600 py-12">
+      <p class="text-xl">{{ errorMessage }}</p>
+    </div>
+
+    <!-- Users Table -->
+    <div *ngIf="!isLoading && !errorMessage" class="max-w-6xl mx-auto">
+      <div class="bg-blue-400/20 rounded-lg shadow border-2 border-blue-400/40 overflow-hidden">
+        <table class="w-full">
+          <thead>
+            <tr class="bg-blue-400/30 border-b-2 border-blue-400/50">
+              <th class="text-left text-blue-900 font-bold px-6 py-4">Name</th>
+              <th class="text-left text-blue-900 font-bold px-6 py-4">Email</th>
+              <th class="text-center text-blue-900 font-bold px-6 py-4">Active</th>
+              <th class="text-center text-blue-900 font-bold px-6 py-4">Admin</th>
+              <th class="text-center text-blue-900 font-bold px-6 py-4">Status</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let user of users; let i = index"
+                [class.bg-blue-400/5]="i % 2 === 1"
+                class="border-b border-blue-400/30">
+              <td class="text-blue-900 px-6 py-4">
+                {{ user.profile.first }} {{ user.profile.last }}
+              </td>
+              <td class="text-blue-900 px-6 py-4">
+                {{ user.credentials.email }}
+              </td>
+              <td class="text-center px-6 py-4">
+                <span [class]="user.userState.active ? 'text-green-600 font-bold' : 'text-red-600 font-bold'">
+                  {{ user.userState.active ? 'YES' : 'NO' }}
+                </span>
+              </td>
+              <td class="text-center px-6 py-4">
+                <span [class]="user.userState.admin ? 'text-green-600 font-bold' : 'text-red-600 font-bold'">
+                  {{ user.userState.admin ? 'YES' : 'NO' }}
+                </span>
+              </td>
+              <td class="text-center px-6 py-4">
+                <span [class]="user.userState.status === 'JOINED' ? 'text-green-600 font-bold' : 'text-yellow-600 font-bold'">
+                  {{ user.userState.status }}
+                </span>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+
+        <div *ngIf="users.length === 0" class="text-center text-blue-700 py-12">
+          <p class="text-xl">No users yet.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

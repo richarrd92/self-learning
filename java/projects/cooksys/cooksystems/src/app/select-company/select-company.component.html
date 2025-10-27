@@ -1,0 +1,36 @@
+<div class="min-h-screen bg-blue-300 flex flex-col items-center justify-center">
+  <div class="text-center space-y-8 w-full max-w-md px-4">
+    <h1 class="text-5xl font-bold text-blue-900 tracking-wider">
+      Select Company
+    </h1>
+
+    <div class="pt-8" *ngIf="!isLoading && !errorMessage">
+      <mat-form-field appearance="fill" class="w-full">
+        <mat-select
+          [(ngModel)]="selectedCompanyId"
+          (selectionChange)="onCompanySelect()"
+          placeholder="Pick an option"
+          class="text-lg">
+          <mat-option *ngFor="let company of companies" [value]="company.id">
+            {{ company.name }}
+          </mat-option>
+        </mat-select>
+      </mat-form-field>
+    </div>
+
+    <div class="pt-8" *ngIf="isLoading">
+      <p class="text-blue-800 text-xl">Loading companies...</p>
+    </div>
+
+    <div class="pt-8" *ngIf="errorMessage">
+      <p class="text-red-400 text-xl">{{ errorMessage }}</p>
+      <button
+        mat-raised-button
+        color="primary"
+        (click)="loadCompanies()"
+        class="mt-4">
+        Retry
+      </button>
+    </div>
+  </div>
+</div>

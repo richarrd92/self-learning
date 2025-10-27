@@ -1,0 +1,22 @@
+<nav class="bg-blue-400/30 border-b-2 border-blue-400/50 px-8 py-3 mb-8">
+  <div class="flex items-center justify-between max-w-6xl mx-auto">
+    <div class="flex items-center space-x-4">
+      <div class="text-blue-900 font-bold tracking-wider text-lg">
+        {{ companyName || 'COOK SYSTEMS' }}
+      </div>
+      <div class="text-blue-900 font-medium">
+        {{ username }}
+      </div>
+      <div *ngIf="isAdmin" class="bg-red-600 text-white text-xs font-bold uppercase px-2 py-1 rounded">
+        Admin
+      </div>
+    </div>
+    <div class="flex items-center space-x-6">
+      <button (click)="navigateTo('/announcements')" class="text-blue-900 hover:text-blue-700 font-medium">Home</button>
+      <button (click)="navigateTo('/teams')" class="text-blue-900 hover:text-blue-700 font-medium">Teams</button>
+      <button *ngIf="isAdmin" (click)="navigateTo('/users')" class="text-blue-900 hover:text-blue-700 font-medium">Users</button>
+      <button *ngIf="isAdmin" (click)="navigateTo('/company')" class="text-blue-900 hover:text-blue-700 font-medium">Company</button>
+      <button (click)="logout()" class="text-blue-900 hover:text-blue-700 font-medium">Logout</button>
+    </div>
+  </div>
+</nav>
