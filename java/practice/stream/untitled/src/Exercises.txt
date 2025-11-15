@@ -1,0 +1,47 @@
+🟢 Level 1 – Warm-ups (Stream Basics)
+    Print the names of all users who joined after 2021.
+    Get a list of all unique email domains (e.g., "gmail.com", "yahoo.com").
+    Find the total number of users with the role USER.
+    Sort users by joinedAt date (most recent first).
+    Return the names of users who have "travel" as an interest.
+
+🟡 Level 2 – Intermediate (Mapping, Grouping, Reducing)
+    Count how many users registered per email domain.
+    Find the average loginCount for users by Role.
+    Find the top 2 most common interests among all users.
+    Map each User to their List<Order> (like Map<User, List<Order>>).
+    For each user, calculate their total amount spent across all orders.
+
+🟠 Level 3 – Advanced (Nested Streams, Collectors, Joins)
+    Find the user name(s) who spent the most in total.
+    List users who have no delivered orders.
+    Find all distinct months when any order was delivered.
+    Group orders by Status, and within each group sort by totalAmount descending.
+    Create a Map<String, Double> where key = email domain, value = average order amount of users from that domain.
+
+🔴 Level 4 – Trickier (Parallel, Optional, FlatMap Surprises)
+    Using flatMap, get a unique list of all interests across all users.
+    Print users whose interests overlap with Bob’s.
+    Compute total revenue for delivered orders using a parallel stream.
+    Find the user who joined earliest but has never placed an order (return Optional<User>).
+
+    Given the orders, return a formatted string summary like:
+        "Alice: $89.98 (2 orders) | Bob: $249.49 (2 orders) | ..."
+        (Hint: groupingBy + summingDouble + joining)
+
+🔵 Level 5 – Developer Reality Checks (Composability + Debugging)
+    Find top 3 users by average order value (total / number of orders).
+    Return a list of users sorted by: highest spending
+    then most recent join date
+    (chain multiple comparators)
+    Simulate a “loyal customer score”: score = (loginCount * 0.2) + (totalAmountSpent / 50)
+
+Then sort descending by score.
+24. Check if any user with role MANAGER has an order with status CANCELLED.
+25. Return a Map<Role, Boolean> indicating whether all users of that role have at least one order.
+
+🧠 Bonus Challenge (the “Surprise Element” 😈)
+
+Question 26:
+Find the most sociable user — the one whose interests overlap with the most other users.
+(Hint: For each user, count how many other users share at least one interest.)
