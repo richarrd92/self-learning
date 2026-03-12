@@ -11,7 +11,9 @@ function App() {
 
   const getChallenges = async () => {
     try {
-      const response = await axios.get("http://localhost:8080/challenges");
+      const response = await axios.get(
+        "http://challengeapp-env.eba-t8wfdzng.us-east-2.elasticbeanstalk.com/challenges"
+      );
       setChallenges(response.data);
     } catch (error) {
       console.error("Failed to fetch challenges: ", error);

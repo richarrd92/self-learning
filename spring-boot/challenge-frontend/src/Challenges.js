@@ -3,7 +3,9 @@ import axios from "axios";
 function Challenges(props) {
   const handleDelete = async () => {
     try {
-        await axios.delete(`http://localhost:8080/challenges/${props.id}`);
+        await axios.delete(
+          `http://challengeapp-env.eba-t8wfdzng.us-east-2.elasticbeanstalk.com/challenges/${props.id}`
+        );
       //   props.handleAddChallenge();
       props.setChallenges((prev) =>
         prev.filter((challenge) => challenge.id !== props.id)

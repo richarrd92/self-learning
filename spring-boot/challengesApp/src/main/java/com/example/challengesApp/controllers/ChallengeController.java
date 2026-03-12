@@ -10,7 +10,9 @@ import java.util.List;
 @RestController
 @RequestMapping("/challenges")
 @AllArgsConstructor
-@CrossOrigin(origins = "http://localhost:3000/")
+@CrossOrigin(origins = {"http://localhost:3000/",
+                        "http://richard-maliyetu-challenge-app.s3-website.us-east-2.amazonaws.com/"}
+)
 public class ChallengeController {
 
     private final ChallengeService challengeService;
