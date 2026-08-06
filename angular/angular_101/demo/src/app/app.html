@@ -1,0 +1,6 @@
+<div style="padding: 10px; background-color: #a7a5a5; display: flex; flex-direction: column; gap: 10px;">
+  <p>Data received from parent: {{ data }}</p>
+  <p>Data received from FirstChild: {{ firstChildData }}</p>
+  <app-first-child [dataFromParent]="data1" (firstChildEvent)="onFirstChildClick($event)" />
+  <router-outlet />
+</div>
