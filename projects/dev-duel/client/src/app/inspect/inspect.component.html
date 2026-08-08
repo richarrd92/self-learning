@@ -1,0 +1,33 @@
+<div
+  style="
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 20vh;
+  "
+>
+  <!-- Username input -->
+  <app-text-input (usernameChange)="receiveUsername($event)"></app-text-input>
+  <br />
+  <br />
+
+  <!-- Submit button -->
+  <button class="submit-button" (click)="onSubmit()" [disabled]="loading">
+    {{ loading ? 'Inspecting...' : 'Inspect' }}
+  </button>
+
+  <!-- Loading -->
+  <div *ngIf="loading" style="margin-top: 1rem; color: #007bff;">
+    Loading user data...
+  </div>
+
+  <!-- Error -->
+  <div *ngIf="error" style="margin-top: 1rem; color: red;">
+    {{ error }}
+  </div>
+
+  <!-- Profile display -->
+  <div *ngIf="profile && !error" style="margin-top: 2rem;">
+    <app-user-repo-card [profile]="profile"></app-user-repo-card>
+  </div>
+</div>

@@ -1,0 +1,24 @@
+/* Glass effect for sidebar */
+.navbar {
+  width: 380px;
+  display: flex;
+  flex-direction: column;
+  background-color: rgba(255, 255, 255, 0.589);
+  border-radius: var(--radius-box);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+  position: absolute;
+  top: 10px;
+  left: calc(50%);
+  pointer-events: auto;
+  z-index: 1000;
+  visibility: visible;
+  backdrop-filter: blur(5px);
+}
+
+.navbar-title {
+  text-align: center;
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem;
+  font-size: 1.8rem;
+  color: var(--color-base-content);
+}

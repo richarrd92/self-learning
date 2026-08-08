@@ -1,0 +1,11 @@
+{
+  "expo": {
+    "scheme": "acme",
+    "plugins": [
+      "expo-router",
+      "expo-font"
+    ],
+    "name": "job-app",
+    "slug": "job-app"
+  }
+}

@@ -1,0 +1,17 @@
+<div>
+  <h1>Task Manager</h1>
+  <p>Manage your tasks efficiently with our task manager app. Add and delete tasks with ease.</p>
+  <p>Total tasks: {{ totalTasks }} | Completed tasks: {{ completedTasks }}</p>
+  <input type="text" placeholder="Enter task title" [(ngModel)]="newTaskTitle" />
+  <button (click)="addTask()">Add Task</button>
+  <ul>
+    <li *ngFor="let task of tasks">
+      <app-task
+        [id]="task.id"
+        [title]="task.title"
+        [completed]="task.completed"
+        (completionChange)="onTaskCompletion($event)"
+      ></app-task>
+    </li>
+  </ul>
+</div>

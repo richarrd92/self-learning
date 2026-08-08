@@ -1,0 +1,26 @@
+spring:
+  application:
+    name: automation-scheduler
+  datasource:
+    url: ${SPRING_DATASOURCE_URL}
+    username: ${SPRING_DATASOURCE_USERNAME}
+    password: ${SPRING_DATASOURCE_PASSWORD}
+  quartz:
+    job-store-type: jdbc
+    jdbc:
+      initialize-schema: always
+      driver-class-name: org.postgresql.Driver
+    properties:
+      org:
+        quartz:
+          jobStore:
+            driverDelegateClass: org.quartz.impl.jdbcjobstore.PostgreSQLDelegate
+          scheduler:
+            instanceName: AutomationScheduler
+          threadPool:
+            threadCount: 5
+server:
+  port: ${SERVER_PORT}
+todos:
+  api:
+    url: https://jsonplaceholder.typicode.com/todos/

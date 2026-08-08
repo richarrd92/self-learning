@@ -1,0 +1,55 @@
+<div class="card-container">
+  <div class="auth-card">
+    <!-- Dynamic card heading -->
+    <h2>{{ isLoginMode ? 'Login' : 'Sign up' }}</h2>
+    <form [formGroup]="form" (ngSubmit)="onSubmit()">
+      <!-- Register-only field -->
+      <ng-container *ngIf="!isLoginMode">
+        <input type="text" formControlName="name" placeholder="Full Name" autocomplete="name" />
+        <input
+          type="password"
+          formControlName="password"
+          placeholder="Password"
+          autocomplete="new-password"
+        />
+      </ng-container>
+
+      <!-- Login-only field -->
+      <ng-container *ngIf="isLoginMode">
+        <input
+          type="text"
+          formControlName="username"
+          placeholder="Username"
+          autocomplete="username"
+        />
+        <input
+          type="password"
+          formControlName="password"
+          placeholder="Password"
+          autocomplete="current-password"
+        />
+      </ng-container>
+
+      <div *ngIf="isLoginMode" class="options">
+        <button type="button" class="link-btn">Forgot Password?</button>
+      </div>
+
+      <button type="submit" [disabled]="form.invalid" title="Missing required fields">
+        {{ isLoginMode ? 'Login' : 'Create Account' }}
+      </button>
+
+      <p class="error" *ngIf="errorMessage">{{ errorMessage }}</p>
+
+      <p>
+        <ng-container *ngIf="isLoginMode">
+          Don’t have an account?
+          <button type="button" class="link-btn" (click)="toggleMode()">Sign up</button>
+        </ng-container>
+        <ng-container *ngIf="!isLoginMode">
+          Already have an account?
+          <button type="button" class="link-btn" (click)="toggleMode()">Login</button>
+        </ng-container>
+      </p>
+    </form>
+  </div>
+</div>

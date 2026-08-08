@@ -1,0 +1,25 @@
+<aside class="sidebar">
+  <div class="user-info">
+    <i class="fa-regular fa-user user-icon"></i>
+    <span class="username">{{ currentUser?.username || 'User' }}</span>
+  </div>
+
+  <nav>
+    <ul class="main-buttons">
+      <li *ngFor="let btn of buttons">
+        <a
+          [routerLink]="btn.route"
+          [class.active]="isActive(btn.route)"
+          (click)="onButtonClick($event, btn)"
+        >
+          {{ btn.label }}
+        </a>
+      </li>
+    </ul>
+
+    <!-- Logout button -->
+    <ul class="logout-button">
+      <li class="logout" (click)="logout()">Logout</li>
+    </ul>
+  </nav>
+</aside>

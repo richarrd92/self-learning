@@ -1,0 +1,138 @@
+/* Glass effect for sidebar */
+.sidebar {
+  width: 300px;
+  height: calc(60%);
+  padding: 2rem 1.5rem;
+  display: flex;
+  flex-direction: column;
+  background-color: rgba(255, 255, 255, 0.589);
+  border-radius: var(--radius-box);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  pointer-events: auto;
+  overflow-y: auto;
+  transition: opacity 0.3s ease, visibility 0.3s ease, backdrop-filter 0.3s ease;
+  z-index: 1000;
+  visibility: visible;
+  backdrop-filter: blur(5px);
+}
+
+/* User info */
+/* .user-info {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin-bottom: 2rem;
+  padding-bottom: 1rem;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+.user-icon {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  cursor: pointer;
+} */
+
+
+.user-info {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-weight: 600;
+  font-size: 1.1rem;
+  margin-bottom: 1.2rem;
+}
+
+.user-icon {
+  font-size: 1.5rem;
+  /* color: var(--color-base-content, #333); */
+}
+
+.username {
+  flex: 1;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+/* Button container: main buttons + logout */
+.sidebar nav {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  justify-content: space-between;
+}
+
+/* Main buttons wrapper */
+.sidebar nav .main-buttons {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+/* Button list item styling */
+.sidebar nav ul li {
+  list-style: none;
+  width: 100%;
+}
+
+/* Buttons (links) */
+.sidebar nav ul li a {
+  display: block;
+  text-decoration: none;
+  color: var(--color-neutral-content);
+  padding: 0.75rem 1rem;
+  border-radius: var(--radius-box);
+  border: none;
+  font-weight: bolder;
+  cursor: pointer;
+  text-align: left;
+  border: 1px solid var(--color-base-300);
+}
+
+/* Active button */
+.sidebar nav ul li a.active {
+  color: var(--color-secondary-content);
+  background-color: var(--color-base-300);
+  border: 1px solid var(--color-base-300);
+}
+
+.sidebar nav ul li a.active:hover {
+  color: var(--color-secondary-content);
+  background-color: var(--color-base-300);
+  border: 1px solid var(--color-base-300);
+}
+
+/* Hover effect */
+.sidebar nav ul li a:hover {
+  /* background-color: var(--color-base-300); */
+  color: var(--color-primary);
+}
+
+/* Logout button styling */
+.sidebar nav ul li.logout {
+  color: var(--color-error);
+  font-weight: bolder;
+  border: 1px solid var(--color-error);
+  background-color: rgba(255, 0, 0, 0.05);
+  padding: 0.75rem 1rem;
+  border-radius: var(--radius-box);
+  text-align: center;
+  cursor: pointer;
+}
+
+.sidebar nav ul li.logout:hover {
+  color: var(--color-error-content);
+  background-color: rgba(255, 0, 0, 0.15);
+}
+
+/* Button text description */
+.sidebar nav ul li {
+  display: block;
+  margin-top: 0.25rem;
+  font-size: 0.875rem;
+  color: var(--color-base-content);
+}
