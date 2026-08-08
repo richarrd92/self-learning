@@ -1,0 +1,3 @@
+# Client side of the task manager app
+
+to be implemented later...
