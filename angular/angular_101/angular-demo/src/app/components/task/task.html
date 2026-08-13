@@ -1,0 +1,7 @@
+<div class="task" [class.completed]="complete">
+  <h4 [class.strike]="complete">{{ title }}</h4>
+  <div class="task-actions">
+    <button (click)="toggleComplete()">{{ complete ? 'Mark Incomplete' : 'Mark Complete' }}</button>
+    <button (click)="deleteTask()">Delete</button>
+  </div>
+</div>
