@@ -1,14 +1,45 @@
 <app-header></app-header>
 <main>
+  <!--
+  String
+  title="Hello"
+
+  Number
+  [count]="10"
+
+  Boolean
+  [isActive]="true"
+
+  Object
+  [image]="{ src: 'status.png', alt: 'Signal' }"
+
+  Variable
+  [title]="pageTitle"
+
+  Function/expression
+  [count]="items.length"
+-->
+
   <div id="dashboard">
-    <div class="dashboard-item">
-      <app-server-status></app-server-status>
-    </div>
-    <div class="dashboard-item">
-      <app-traffic></app-traffic>
-    </div>
-    <div class="dashboard-item">
-      <app-tickets></app-tickets>
-    </div>
+    <app-dashboard-item
+      [image]="{ src: 'status.png', alt: 'A signal symbol' }"
+      title="A signal symbol"
+    >
+      <app-server-status />
+    </app-dashboard-item>
+
+    <app-dashboard-item
+      [image]="{ src: 'globe.png', alt: 'A globe' }"
+      title="Traffic"
+    >
+      <app-traffic />
+    </app-dashboard-item>
+
+    <app-dashboard-item
+      [image]="{ src: 'list.png', alt: 'A list of items' }"
+      title="Support Tickets"
+    >
+      <app-tickets />
+    </app-dashboard-item>
   </div>
 </main>

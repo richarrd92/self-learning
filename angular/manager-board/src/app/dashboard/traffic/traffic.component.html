@@ -1,15 +1,16 @@
-<article>
-  <header>
+<!-- this content will come from common wrapper element -->
+<!-- <header>
     <img src="globe.png" alt="A globe" />
     <h2>Traffic</h2>
-  </header>
-  <div id="traffic">
-    <p>Last 7 days</p>
+  </header> -->
 
-    <div id="chart">
-      @for (dataPoint of dummyTrafficData; track dataPoint.id) {
-        <div [style.height]="(dataPoint.value / maxTraffic) * 100 + '%'"></div>
-      }
-    </div>
+<!-- this is the component specific content that will be rendered in the ng-content in the wrapper class -->
+<div id="traffic">
+  <p>Last 7 days</p>
+
+  <div id="chart">
+    @for (dataPoint of dummyTrafficData; track dataPoint.id) {
+      <div [style.height]="(dataPoint.value / maxTraffic) * 100 + '%'"></div>
+    }
   </div>
-</article>
+</div>
