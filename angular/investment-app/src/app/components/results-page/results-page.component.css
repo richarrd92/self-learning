@@ -17,3 +17,17 @@ table tbody {
   font-size: 0.85rem;
   color: #c2e9e0;
 }
+
+.mat-elevation-z8{
+  background: linear-gradient(180deg, #307e6c, #2b996d);
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+  border-radius: 20px;
+  color: #c2e9e0;
+}
+
+.paginator {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 1rem;
+}

@@ -1,4 +1,4 @@
-@if (!results){
+@if (!results) {
   <p class="center">
     Please enter your investment details. and click calculate
   </p>
@@ -30,12 +30,16 @@
   </table>
 
   <!-- Paginator -->
-  <mat-paginator
-    [length]="results.length"
-    [pageSize]="5"
-    [pageSizeOptions]="[5, 10, 25, 100]"
-    (page)="onPageChange($event)"
-    aria-label="Select page"
-  >
-  </mat-paginator>
+
+  <div class="paginator">
+    <mat-paginator
+      class="mat-elevation-z8"
+      [length]="results.length"
+      [pageSize]="5"
+      [pageSizeOptions]="[5, 10, 25, 100]"
+      (page)="onPageChange($event)"
+      aria-label="Select page"
+    >
+    </mat-paginator>
+  </div>
 }
