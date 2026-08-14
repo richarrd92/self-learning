@@ -11,35 +11,4 @@ import { InvestmentResult } from './payload';
   templateUrl: './app.component.html',
   imports: [HeaderComponent, UserInputComponent, ResultsPageComponent],
 })
-export class AppComponent {
-  results = signal<InvestmentResult[]>([]);
-
-  calculateInvestmentResults(payload: InvestmentPayload): void {
-    const annualData: InvestmentResult[] = [];
-    let investmentValue = payload.initialInvestment;
-
-    for (let i = 0; i < payload.duration; i++) {
-      const year = i + 1;
-      const interestEarnedInYear =
-        investmentValue * (payload.expectedReturn / 100);
-      investmentValue += interestEarnedInYear + payload.annualInvestment;
-      const totalInterest =
-        investmentValue -
-        payload.annualInvestment * year -
-        payload.initialInvestment;
-      annualData.push({
-        year: year,
-        interest: +interestEarnedInYear.toFixed(2),
-        valueEndOfYear: +investmentValue.toFixed(2),
-        annualInvestment: payload.annualInvestment,
-        totalInterest: +totalInterest.toFixed(2),
-        totalAmountInvested: +(
-          payload.initialInvestment +
-          payload.annualInvestment * year
-        ).toFixed(2),
-      });
-    }
-
-    this.results.set(annualData);
-  }
-}
+export class AppComponent {}

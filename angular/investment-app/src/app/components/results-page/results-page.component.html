@@ -1,4 +1,4 @@
-@if (!results() || results().length === 0) {
+@if (!results){
   <p class="center">
     Please enter your investment details. and click calculate
   </p>
@@ -21,16 +21,17 @@
         <tr>
           <td>{{ result.year }}</td>
           <td>{{ result.valueEndOfYear | currency: "USD" : "symbol" }}</td>
-          <td>{{ result.interest }}</td>
-          <td>{{ result.totalInterest }}</td>
+          <td>{{ result.interest | number: "1.2-2" }}</td>
+          <td>{{ result.totalInterest | number: "1.2-2" }}</td>
           <td>{{ result.totalAmountInvested | currency: "USD" : "symbol" }}</td>
         </tr>
       }
     </tbody>
   </table>
 
+  <!-- Paginator -->
   <mat-paginator
-    [length]="results().length"
+    [length]="results.length"
     [pageSize]="5"
     [pageSizeOptions]="[5, 10, 25, 100]"
     (page)="onPageChange($event)"

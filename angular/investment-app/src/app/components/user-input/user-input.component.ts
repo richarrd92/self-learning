@@ -2,6 +2,7 @@ import { Component, EventEmitter, Output } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { InvestmentPayload } from '../../payload';
+import { InvestmentResultsService } from '../../services/investment-results.service';
 
 @Component({
   selector: 'app-user-input',
@@ -11,22 +12,20 @@ import { InvestmentPayload } from '../../payload';
   styleUrl: './user-input.component.css',
 })
 export class UserInputComponent {
-  // need to send this data to parenet component
-  @Output() investmentData = new EventEmitter<InvestmentPayload>();
 
-  enteredInitialInvestment: string = '20';
-  enteredAnnualInvestment: string = '34';
+  constructor(private investmentResultsService: InvestmentResultsService) { }
+
+  enteredInitialInvestment: string = '10';
+  enteredAnnualInvestment: string = '20';
   enteredExpectedReturn: string = '5';
   enteredDuration: string = '10';
 
   onSubmit() {
-    const payload: InvestmentPayload = {
+    this.investmentResultsService.calculateInvestmentResults({
       initialInvestment: parseFloat(this.enteredInitialInvestment),
       annualInvestment: parseFloat(this.enteredAnnualInvestment),
       expectedReturn: parseFloat(this.enteredExpectedReturn),
       duration: parseInt(this.enteredDuration, 10),
-    };
-    console.log("form submitted with payload:", payload);
-    this.investmentData.emit(payload);
+    });
   }
 }
