@@ -1,0 +1,40 @@
+@if (!results() || results().length === 0) {
+  <p class="center">
+    Please enter your investment details. and click calculate
+  </p>
+} @else {
+  <table>
+    <!-- Header section -->
+    <thead>
+      <tr>
+        <th>Year</th>
+        <th>Investment Value</th>
+        <th>Interest (Year)</th>
+        <th>Total Interest</th>
+        <th>Investment Capital</th>
+      </tr>
+    </thead>
+
+    <!-- Body section -->
+    <tbody>
+      @for (result of getPaginatedResults(); track result.year) {
+        <tr>
+          <td>{{ result.year }}</td>
+          <td>{{ result.valueEndOfYear | currency: "USD" : "symbol" }}</td>
+          <td>{{ result.interest }}</td>
+          <td>{{ result.totalInterest }}</td>
+          <td>{{ result.totalAmountInvested | currency: "USD" : "symbol" }}</td>
+        </tr>
+      }
+    </tbody>
+  </table>
+
+  <mat-paginator
+    [length]="results().length"
+    [pageSize]="5"
+    [pageSizeOptions]="[5, 10, 25, 100]"
+    (page)="onPageChange($event)"
+    aria-label="Select page"
+  >
+  </mat-paginator>
+}
