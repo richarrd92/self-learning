@@ -29,4 +29,9 @@ export class ServerStatusComponent implements OnInit, AfterViewInit {
   ngAfterViewInit() {
     console.log('ServerStatusComponent view initialized');
   }
+
+  ngOnDestroy() {
+    console.log('ServerStatusComponent destroyed');
+    clearInterval(this.interval);
+  }
 }
