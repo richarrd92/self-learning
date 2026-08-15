@@ -1,0 +1,16 @@
+<form>
+  <app-control label="Title">
+    <input name="title" id="title" />
+  </app-control>
+  <app-control label="Request">
+    <textarea name="request" id="request" rows="3"></textarea>
+  </app-control>
+  <p>
+    <!-- this is a customized button html element,
+     using the angular selector feature -->
+    <button appButton>
+      Submit
+      <span ngProjectAs="icon"> → </span>
+    </button>
+  </p>
+</form>
