@@ -16,4 +16,17 @@ export class TicketsComponent {
   onNewTicket(ticket: Ticket) {
     this.tickets.push(ticket)
   }
+
+  onCompleteTicket(ticketId: string) {
+    // update the complete ticket's status
+    this.tickets = this.tickets.map(ticket => {
+      if (ticket.id === ticketId) {
+        return {
+          ...ticket,
+          status: 'closed'
+        }
+      }
+      return ticket
+    })
+  }
 }
