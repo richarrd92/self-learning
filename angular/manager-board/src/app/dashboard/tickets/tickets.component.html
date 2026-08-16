@@ -5,6 +5,18 @@
   </header> -->
 
 <!-- this is the component specific content that will be rendered in the ng-content in the wrapper class -->
+
+<!-- new tickets will be displayed here -->
+<div>
+  <ul>
+    @for(ticket of tickets; track ticket.id) {
+      <app-ticket/>
+    } @empty {
+      <p>Create new tickets</p>
+    }
+  </ul>
+</div>
+
 <div id="new-ticket">
-  <app-new-ticket/>
+  <app-new-ticket (addTicket)="onNewTicket($event)"/>
 </div>
