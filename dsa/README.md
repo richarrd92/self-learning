@@ -1,16 +1,43 @@
-# DATA STRUCTURES AND ALGORITHMS BASICS
+# Data Structures and Algorithms Learning Track
 
-In this folder, I log my progress in mastering data structures and algorithms (DSA) with a focus on Python. The problems tackled here are mainly from Cracking the Coding Interview, NeetCode (website & YouTube), and the underrated gem of a youTube channel DestinationFAANG. This collection is part of my journey to deepen my problem-solving skills and prepare for technical interviews.
+This section reflects my focus on problem-solving, algorithmic thinking, and interview preparation.
 
-[![Notion Log](https://img.shields.io/badge/DSA_Notebook-Notion-000000?logo=notion&logoColor=white)](https://www.notion.so/20b847ec97c780ab8436f565cd0da96c?v=20b847ec97c7812faafe000c33316f50&source=copy_link)
+I use this area to strengthen the fundamentals behind efficient software design and to improve my ability to break down complex coding challenges into clear, testable solutions.
 
-### Topics covered to be practiced:
-- Sorting and Searching:
-- Arrays, Strings, Linked Lists, Stacks, Queues  
-- Trees, Tries, Heaps, Hash Maps|Sets  
-- Recursion and Backtracking  
-- Dynamic Programming  
-- Greedy Algorithms  
-- Graph Algorithms (BFS, DFS, Dijkstra, etc.)  
-- Sliding Window, Two Pointers, Prefix Sum, Binary Search  
-- Bit Manipulation  
+## Core focus areas
+
+- arrays and strings
+- linked lists, stacks, and queues
+- trees, heaps, and hash-based structures
+- recursion and backtracking
+- dynamic programming and greedy approaches
+- graph traversal and shortest-path concepts
+- binary search and sliding window patterns
+- sorting and searching fundamentals
+
+## Skills developed
+
+- analytical problem solving
+- writing efficient and scalable logic
+- identifying patterns in coding challenges
+- improving interview readiness and technical thinking
+
+## Practice areas in this folder
+
+- arrays
+- backtracking_algorithms
+- binary_trees_algorithms
+- data_structures
+- dynamic_programming
+- graph_algorithms
+- recursion
+- sorting_algorithms
+
+## Why this matters
+
+Strong DSA practice improves the way I approach software problems, reasoning, optimization, and code quality. It also supports my preparation for technical interviews and more advanced engineering work.
+
+## Learning path
+
+The work in this folder moves from core data structures and classic algorithms toward more complex problem-solving patterns and interview-style challenges.
+
