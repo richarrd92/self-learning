@@ -1,5 +1,7 @@
-import { Component, signal } from '@angular/core';
+import { Component, inject, signal } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
+import { TeamService } from './team/team-service';
+import type { Team } from './team/team.model';
 
 @Component({
   selector: 'app-root',
@@ -10,9 +12,15 @@ import { RouterOutlet } from '@angular/router';
 export class App {
   protected readonly title = signal('soccerhub');
 
-  teams = signal([
-    { id: 1, name: 'Arsenal' },
-    { id: 2, name: 'Chelsea' },
-    { id: 3, name: 'Liverpool' },
-  ]);
+  private teamService = inject(TeamService);
+  protected teams = this.teamService.getTeams();
+
+  addTeam(input: HTMLInputElement): void {
+    const teamName = input.value.trim();
+    if (!teamName) return;
+    this.teamService.addTeam({ id: Date.now(), name: teamName });
+    input.value = '';
+  }
+
+  onTeamNameInput(): void {}
 }
