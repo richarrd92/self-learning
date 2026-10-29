@@ -13,7 +13,9 @@ export class TeamService {
   ]);
 
   private _status = signal<LoadingState>('loading');
-  private status = this._status;
+
+  // Bookkeeping only: the template never reads the handle, so it's a plain field, not a signal
+  private loadTimer: ReturnType<typeof setTimeout> | undefined;
 
   getTeams() {
     return this.teams.asReadonly();
@@ -27,17 +29,15 @@ export class TeamService {
   }
 
   getStatus() {
-    return this.status.asReadonly();
-  }
-
-  setStatus(status: LoadingState) {
-    this._status.set(status);
+    return this._status.asReadonly();
   }
 
   // Load teams from the server (simulated with a timeout)
-  loadTeams(): void {
-    setTimeout(() => {
-      this.setStatus('loaded');
+  loadTeams(shouldFail: boolean): void {
+    clearTimeout(this.loadTimer);
+    this._status.set('loading');
+    this.loadTimer = setTimeout(() => {
+      this._status.set(shouldFail ? 'error' : 'loaded');
     }, 3000);
   }
 }

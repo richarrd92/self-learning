@@ -25,7 +25,12 @@ export class App implements OnInit {
   protected readonly canAdd = computed(() => this.status() !== 'loading' && !this.isBlank());
 
   ngOnInit(): void {
-    this.teamService.loadTeams();
+    this.teamService.loadTeams(false); // load teams on startup, and succeed
+  }
+
+  reloadWithOppositeOutcome(): void {
+    // toggle the failure state and load teams with the new state
+    this.teamService.loadTeams(this.status() === 'loaded');
   }
 
   onTeamNameInput(input: HTMLInputElement): void {

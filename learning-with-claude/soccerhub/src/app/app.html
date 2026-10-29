@@ -23,23 +23,32 @@
   >
     Add Team
   </button>
+  @if(status() === 'loaded' || status() === 'error') {
+      <!-- simulate failure -->
+  <button class="pill" (click)="reloadWithOppositeOutcome()">{{ status() === 'error' ? 'Simulate Success' : 'Simulate Failure' }}</button>
+  }
+
 </div>
 <div class="right-side">
   <h2>Teams</h2>
-  @if (status() === 'loading') {
-    <p>Loading teams...</p>
-  } @else if (status() === 'loaded') {
-    <div class="pill-group">
-      @for (item of teams(); track item.id) {
-        <a class="pill" href="#">
-          <span>{{ item.name }}</span>
-        </a>
-      } @empty {
-        <p>There are no teams to display.</p>
-      }
-    </div>
-  } @else if (status() === 'error') {
-    <p>error loading teams...</p>
+  @switch (status()) {
+    @case ('loading') {
+      <p>Loading teams...</p>
+    }
+    @case ('loaded') {
+      <div class="pill-group">
+        @for (item of teams(); track item.id) {
+          <a class="pill" href="#">
+            <span>{{ item.name }}</span>
+          </a>
+        } @empty {
+          <p>There are no teams to display.</p>
+        }
+      </div>
+    }
+    @case ('error') {
+      <p>Error loading teams...</p>
+    }
   }
 </div>
 <router-outlet />
