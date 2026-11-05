@@ -28,3 +28,7 @@ __pycache__/
 .env.*.local
 posgress-connection.env
 *.log
+token.js
+
+# Local copy of a folder removed from the repo
+/angular/dev-duel/
