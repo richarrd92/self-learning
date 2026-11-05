@@ -12,22 +12,30 @@
       [disabled]="status() === 'loading'"
       [class.invalid]="showBlankError()"
     />
-    @if(showBlankError()) {
-      <p style="color: red;">Please enter a team name.</p>
+    @if (showBlankError()) {
+      <p style="color: red">Please enter a team name.</p>
     }
   </div>
-  <button
-    (click)="addTeam(teamName)"
-    [disabled]="!canAdd()"
-    class="pill"
-  >
-    Add Team
-  </button>
-  @if(status() === 'loaded' || status() === 'error') {
-      <!-- simulate failure -->
-  <button class="pill" (click)="reloadWithOppositeOutcome()">{{ status() === 'error' ? 'Simulate Success' : 'Simulate Failure' }}</button>
+  <button (click)="addTeam(teamName)" [disabled]="!canAdd()" class="pill">Add Team</button>
+  @if (status() === 'loaded' || status() === 'error') {
+    <!-- simulate failure -->
+    <button class="pill" (click)="reloadWithOppositeOutcome()">
+      {{ status() === 'error' ? 'Simulate Success' : 'Simulate Failure' }}
+    </button>
   }
+</div>
 
+<div class="add-team-section">
+  <div>
+    <input
+      type="text"
+      id="searchTeamName"
+      placeholder="Search Teams"
+      #searchTeamName
+      (input)="onSearchTeamNameInput(searchTeamName)"
+      [disabled]="status() === 'loading'"
+    />
+  </div>
 </div>
 <div class="right-side">
   <h2>Teams</h2>
@@ -37,12 +45,16 @@
     }
     @case ('loaded') {
       <div class="pill-group">
-        @for (item of teams(); track item.id) {
+        @for (item of visibleTeams(); track item.id) {
           <a class="pill" href="#">
             <span>{{ item.name }}</span>
           </a>
         } @empty {
-          <p>There are no teams to display.</p>
+          @if(teams().length === 0) {
+            <p>There are no teams to display.</p>
+          } @else {
+            <p>No teams match the search criteria.</p>
+          }
         }
       </div>
     }

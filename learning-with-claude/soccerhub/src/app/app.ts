@@ -24,6 +24,13 @@ export class App implements OnInit {
   protected readonly showBlankError = computed(() => this.inputEntered() && this.isBlank());
   protected readonly canAdd = computed(() => this.status() !== 'loading' && !this.isBlank());
 
+  protected readonly searchText = signal('');
+
+  protected readonly visibleTeams = computed(() => {
+    const query = this.searchText().trim().toLowerCase();
+    return this.teams().filter((team) => team.name.toLowerCase().includes(query));
+  });
+
   ngOnInit(): void {
     this.teamService.loadTeams(false); // load teams on startup, and succeed
   }
@@ -37,6 +44,17 @@ export class App implements OnInit {
     this._userInput.set(input.value);
     this.inputEntered.set(true);
   }
+
+  onSearchTeamNameInput(input: HTMLInputElement): void {
+    console.log(input.value);
+    this.searchText.set(input.value);
+  }
+
+  // searchTeams(input: HTMLInputElement): void {
+  //   const query = this._userInput().trim();
+  //   if (!query) return;
+  //   this.teams = this.teamService.searchTeams(query);
+  // }
 
   addTeam(input: HTMLInputElement): void {
     const teamName = this._userInput().trim();
