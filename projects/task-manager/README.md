@@ -1,16 +1,7 @@
-# Task Manager Backend
+# Task Manager
 
-A lightweight backend used to support the task manager app and practice API patterns.
+A simple task list.
 
-## Focus
-- REST-style endpoints
-- task data handling
-- basic server-side app flow
+**Stack:** Angular, TypeScript
 
-## Run it
-```bash
-npm install
-npm start
-```
-
-This service is meant to work alongside the front-end task manager interface.
+**Demonstrates:** component structure and passing data between components.
