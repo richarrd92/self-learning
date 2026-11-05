@@ -1,22 +1,7 @@
 # HTML
 
-- HTML document structure and semantics
-- headings, paragraphs, lists, links, and media
-- attributes and form elements
-- accessibility and semantic page structure
-- creating organized, readable page markup
+HTML and CSS practice.
 
-## Skills developed
-
-- structuring content for the web
-- building accessible and semantic HTML pages
-- creating forms and interactive content foundations
-- understanding how HTML supports front-end design and layout
-
-## Practice areas in this folder
-
-- htmlBasics
-- htmlBasics2
-- htmlBasics3
-- htmlBasics4
-
+- `basics-1/`, `basics-2/`: page structure and first layouts
+- `mini-apps/`: small browser apps such as a quiz, notes and weather
+- `flexbox-layouts/`: flexbox practice and a landing page

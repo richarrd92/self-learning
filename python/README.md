@@ -1,20 +1,7 @@
 # Python
 
-- Python syntax and fundamentals
-- variables, conditions, loops, and functions
-- working with data structures and basic logic
-- backend-related application concepts
-- API and application structure experiments
+Python basics and backend practice.
 
-## Skills developed
-
-- writing clean, readable Python logic
-- solving practical programming problems
-- understanding data flow and basic app structure
-- connecting Python learning to backend and API-driven concepts
-
-## Practice areas in this folder
-
-- basics01
-- fastApi
-- store-app
+- `fastapi/`: FastAPI course projects and a Python refresher
+- `store-app/`, `basics-01/`: Python backends with React clients
+- `python-notes.md`: built-in data structures and common operations
