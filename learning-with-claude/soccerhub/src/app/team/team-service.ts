@@ -1,20 +1,15 @@
-import { Injectable, signal } from '@angular/core';
+import { Injectable, signal, Signal } from '@angular/core';
 import type { Team } from './team.model';
+import { teams } from './team.model';
+
 type LoadingState = 'loading' | 'loaded' | 'error';
 
 @Injectable({
   providedIn: 'root',
 })
 export class TeamService {
-  private teams = signal<Team[]>([
-    { id: 1, name: 'Arsenal' },
-    { id: 2, name: 'Chelsea' },
-    { id: 3, name: 'Liverpool' },
-  ]);
-
+  private teams = signal<Team[]>(teams);
   private _status = signal<LoadingState>('loading');
-
-  // Bookkeeping only: the template never reads the handle, so it's a plain field, not a signal
   private loadTimer: ReturnType<typeof setTimeout> | undefined;
 
   getTeams() {
