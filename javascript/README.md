@@ -1,10 +1,4 @@
-# JavaScript Learning Track
-
-This section documents my JavaScript learning journey and the core concepts I practiced to build interactive, browser-based applications.
-
-JavaScript is a major foundation for modern front-end development, and this track focuses on understanding core language behavior, DOM interaction, and problem-solving through practical exercises.
-
-## Core focus areas
+# JavaScript
 
 - variables, data types, and operators
 - functions, scope, and hoisting concepts
@@ -32,12 +26,3 @@ JavaScript is a major foundation for modern front-end development, and this trac
 - quizler
 - server
 - todo
-
-## Why this matters
-
-This track represents the transition from programming fundamentals to front-end application thinking. It demonstrates my ability to work with the browser, user interactions, and dynamic data flow.
-
-## Progression
-
-The learning path in this folder moves from syntax and fundamentals toward interactive UI development, which is a key step before React and modern web frameworks.
-

@@ -1,10 +1,4 @@
-# Data Structures and Algorithms Learning Track
-
-This section reflects my focus on problem-solving, algorithmic thinking, and interview preparation.
-
-I use this area to strengthen the fundamentals behind efficient software design and to improve my ability to break down complex coding challenges into clear, testable solutions.
-
-## Core focus areas
+# Data Structures and Algorithms
 
 - arrays and strings
 - linked lists, stacks, and queues
@@ -33,11 +27,4 @@ I use this area to strengthen the fundamentals behind efficient software design 
 - recursion
 - sorting_algorithms
 
-## Why this matters
-
-Strong DSA practice improves the way I approach software problems, reasoning, optimization, and code quality. It also supports my preparation for technical interviews and more advanced engineering work.
-
-## Learning path
-
-The work in this folder moves from core data structures and classic algorithms toward more complex problem-solving patterns and interview-style challenges.
 

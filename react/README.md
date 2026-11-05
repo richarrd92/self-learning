@@ -1,10 +1,4 @@
-# React Learning Track
-
-This section captures my React development practice and the UI patterns I explored while learning component-based front-end development.
-
-React is one of the core technologies in my front-end learning path, and this folder focuses on building interactive user interfaces with reusable components, state, props, routing, and dynamic rendering.
-
-## Core focus areas
+# React
 
 - component-based architecture
 - JSX and rendering patterns
@@ -34,11 +28,3 @@ React is one of the core technologies in my front-end learning path, and this fo
 - reactrouter
 - tailwindprops
 - todocontext
-
-## Why this matters
-
-This folder shows my progression from basic JavaScript toward modern component-driven front-end work and demonstrates my ability to build user interfaces that are structured, clean, and interactive.
-
-## Learning path
-
-The projects in this folder move from foundational concepts to more practical patterns such as state management, navigation, and styling integration.
