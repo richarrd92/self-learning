@@ -5,7 +5,7 @@ export const projects = [
     description:
       "A backend web services application built using Spring Boot and Java to mimic the inner workings of web services in an app like Twitter.",
     github:
-      "https://github.com/richarrd92/self-learning/tree/main/java/projects/social-media-api",
+      "https://github.com/richarrd92/self-learning/tree/main/projects/social-media-api",
     image: "assets/twitter-clone.png",
   },
   {
