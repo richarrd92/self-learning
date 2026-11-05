@@ -16,6 +16,7 @@ Standalone applications I've built, most complete first.
 | [job-app](job-app/) | Expo, React Native | Mobile job listings |
 | [guessachu](guessachu/) | Angular | Guessing and trivia game |
 | [pokemon](pokemon/) | Angular | Pokémon dashboard |
+| [soccerhub](soccerhub/) | Angular | Soccer team list with live search |
 | [task-manager](task-manager/) | Angular | Task list |
 | [currency-converter](currency-converter/) | React, Tailwind | Live currency conversion |
 | [password-generator](password-generator/) | React, Tailwind | Random password generator |
