@@ -4,3 +4,31 @@ venv
 /.idea
 add-submodules.sh
 remove_submodules.md
+
+# Dependencies and build output
+node_modules/
+target/
+__pycache__/
+*.pyc
+*.class
+.angular/
+/dsa/out/
+
+# Editor settings
+.idea/
+*.iml
+*.iws
+.settings/
+.project
+.classpath
+
+# Secrets and logs
+.env
+.env.local
+.env.*.local
+posgress-connection.env
+*.log
+token.js
+
+# Local copy of a folder removed from the repo
+/angular/dev-duel/

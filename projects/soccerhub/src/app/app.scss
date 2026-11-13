@@ -1,0 +1,54 @@
+.pill {
+  display: flex;
+  justify-content: center;
+  width: 100px;
+  padding: 0.5em 1em;
+  margin: 0.25em;
+  border-radius: 1em;
+  border: 1px solid #ccc;
+  background-color: #f0f0f0;
+  text-decoration: none;
+  color: #333;
+}
+
+.pill-group {
+  display: flex;
+  flex-direction: column;
+}
+
+.add-team-section {
+  display: flex;
+  align-items: flex-start;
+  gap: 2em;
+
+  :focus {
+    border: none;
+    outline: none;
+    box-shadow: none;
+    transition: none;
+  }
+
+  div > input {
+    width: 200px;
+    padding: 0.5em 1em;
+    border-radius: 1em;
+    border: 1px solid #ccc;
+
+    &.invalid {
+      border-color: red;
+      font-weight: bold;
+    }
+
+    &.invalid::placeholder {
+      font-weight: normal;
+    }
+  }
+
+  > button {
+    margin-top: 0;
+  }
+}
+
+.pill:disabled, input:disabled { opacity: 0.5; }
+
+.error { color: red; }
