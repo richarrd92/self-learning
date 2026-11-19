@@ -1,5 +1,7 @@
 # Simple Quartz Scheduler
 
+![Automation Scheduler](cover.png)
+
 The goal is to learn scheduling, persistence, retries, and external calls without needing cloud infrastructure.
 
 ## Stack
