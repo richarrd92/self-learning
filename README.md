@@ -12,6 +12,7 @@ A public record of what I've studied, practiced and built since 2024.
 | Backend | [java](java/) · [spring-boot](spring-boot/) · [python](python/) |
 | Data | [sql](sql/) · [dsa](dsa/) |
 | Tools | [docker](docker/) |
+| Coursework | [c++](c++/) |
 
 ## Conventions
 
